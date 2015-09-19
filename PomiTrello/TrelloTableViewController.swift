@@ -9,13 +9,27 @@
 import UIKit
 
 class TrelloTableViewController: UITableViewController {
+    // MARK: - Private API
+    private var isAuthorized = false
     
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private struct Constants {
+        static var tokenURL = "https://trello.com/1/authorize?key=98fe09a86250735e1462a019ad4087b3&name=PomiTrello&expiration=never&response_type=token"
     }
-
+    
+    private func authorization() {
+        let url = NSURL(string: Constants.tokenURL)!
+        let urlSession = NSURLSession.sharedSession()
+        let task = urlSession.dataTaskWithURL(url) { (data, response, error) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            print(data)
+            print(response)
+            print("Now authorized")
+            self.isAuthorized = true
+        }
+        task.resume()
+    }
 
     // MARK: - Table view data source
 
@@ -27,6 +41,14 @@ class TrelloTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
+    }
+    
+    // MARK: - View Controller Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if !isAuthorized {
+            authorization()
+        }
     }
 
     /*
