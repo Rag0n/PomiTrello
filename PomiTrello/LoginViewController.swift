@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     
@@ -22,9 +22,33 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let url = NSURL(string: Constants.tokenURL) {
+            let request = NSURLRequest(URL: url)
+            webView.loadRequest(request)
+        }
     }
     
-
+    // MARK: - UIWebViewDelegate
+    
+//    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+//        print(request.URL?.absoluteString)
+//        page = NSString(st
+//        return true
+//    }
+    
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        let currentURL : NSString = (webView.request?.URL?.absoluteString)!
+        print(currentURL)
+        if currentURL == "https://trello.com/1/token/approve" {
+            let script = "document.getElementsByTagName('PRE')[0].firstChild.data.replace (/\t+$/, '')"
+            if let token = webView.stringByEvaluatingJavaScriptFromString(script)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) {
+                print(token)
+            }
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 
