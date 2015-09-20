@@ -21,6 +21,29 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         presentViewController(TrelloTableViewController(), animated: true, completion: nil)
     }
     
+    private func getAppKey() -> String {
+        // получаем приватный ключ приложения из файла Keys.plist
+        var keys: NSDictionary?
+        
+        if let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        if let dict = keys {
+            if let appKey = dict[Constants.appKey] as? String {
+                return appKey
+            }
+        }
+        return ""
+    }
+    
+    private func configureKey() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let appKey = getAppKey()
+        let token = defaults.objectForKey(Constants.userToken) as? String ?? ""
+        let key = "key=\(appKey)&token=\(token)"
+        defaults.setObject(key, forKey: Constants.queryKey)
+    }
+    
     
     // MARK: - View Life Cycle
     
@@ -42,7 +65,6 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
             let script = "document.getElementsByTagName('PRE')[0].firstChild.data.replace (/\t+$/, '')"
             if let token = webView.stringByEvaluatingJavaScriptFromString(script)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) {
                 saveToken(token)
-//                print(token)
             }
         }
     }
