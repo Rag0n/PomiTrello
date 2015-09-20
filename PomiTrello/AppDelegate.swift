@@ -12,19 +12,25 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    private struct Constants {
+        static var appKey = "AppKey"
+        static var hasToken = "HasToken"
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let defaults = NSUserDefaults.standardUserDefaults()
         if defaults.boolForKey("HasLaunchedOnce") == false {
             defaults.setBool(true, forKey: "HasLaunchedOnce")
-            defaults.setBool(false, forKey: "HasToken")
+            defaults.setBool(false, forKey: Constants.hasToken)
+            defaults.setObject("98fe09a86250735e1462a019ad4087b3", forKey: Constants.appKey)
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        if defaults.boolForKey("HasToken") == false {
+        if defaults.boolForKey(Constants.hasToken) == false {
             // выбор логина
             let loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
             self.window!.rootViewController = loginViewController

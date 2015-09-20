@@ -10,25 +10,33 @@ import UIKit
 
 class TrelloTableViewController: UITableViewController {
     // MARK: - Private API
-    private var isAuthorized = false
+    private var key: String!
     
     private struct Constants {
-        static var tokenURL = "https://trello.com/1/authorize?key=98fe09a86250735e1462a019ad4087b3&name=PomiTrello&expiration=never&response_type=token"
+        static var userToken = "userToken"
+        static var AppKey = "AppKey"
     }
     
-    private func authorization() {
-        let url = NSURL(string: Constants.tokenURL)!
-        let urlSession = NSURLSession.sharedSession()
-        let task = urlSession.dataTaskWithURL(url) { (data, response, error) -> Void in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            print(data)
-            print(response)
-            print("Now authorized")
-            self.isAuthorized = true
-        }
-        task.resume()
+//    private func authorization() {
+//        let url = NSURL(string: Constants.tokenURL)!
+//        let urlSession = NSURLSession.sharedSession()
+//        let task = urlSession.dataTaskWithURL(url) { (data, response, error) -> Void in
+//            if error != nil {
+//                print(error!.localizedDescription)
+//            }
+//            print(data)
+//            print(response)
+//            print("Now authorized")
+//            self.isAuthorized = true
+//        }
+//        task.resume()
+//    }
+    
+    private func configureKey() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let appKey = defaults.objectForKey(Constants.AppKey) as? String ?? ""
+        let token = defaults.objectForKey(Constants.userToken) as? String ?? ""
+        key = "?key=\(appKey)&token=\(token)"
     }
 
     // MARK: - Table view data source
@@ -46,9 +54,7 @@ class TrelloTableViewController: UITableViewController {
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        if !isAuthorized {
-            authorization()
-        }
+        configureKey()
     }
 
     /*
