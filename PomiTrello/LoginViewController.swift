@@ -25,7 +25,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         // получаем приватный ключ приложения из файла Keys.plist
         var keys: NSDictionary?
         
-        if let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist") {
+        if let path = NSBundle.mainBundle().pathForResource("AppKeys", ofType: "plist") {
             keys = NSDictionary(contentsOfFile: path)
         }
         if let dict = keys {
