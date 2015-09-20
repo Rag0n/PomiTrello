@@ -32,7 +32,8 @@ class TrelloTableViewController: UITableViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         let appKey = defaults.objectForKey(Constants.appKey) as? String ?? ""
         let token = defaults.objectForKey(Constants.userToken) as? String ?? ""
-        key = "?key=\(appKey)&token=\(token)"
+        key = "key=\(appKey)&token=\(token)"
+        defaults.setObject(key, forKey: Constants.queryKey)
     }
 
     // MARK: - Table view data source
