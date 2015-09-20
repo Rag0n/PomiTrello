@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     }
     
     private func getAppKey() -> String {
-        // получаем приватный ключ приложения из файла Keys.plist
+        // достаем приватный ключ приложения из property list
         var keys: NSDictionary?
         
         if let path = NSBundle.mainBundle().pathForResource("AppKeys", ofType: "plist") {
@@ -45,6 +45,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     }
     
     private func configureTokenURL() -> NSURL? {
+        // создаем url для webView
         let urlBegin = "https://trello.com/1/authorize?key="
         let urlEnd = "&name=PomiTrello&expiration=never&response_type=token&scope=read,write"
         let appKey = getAppKey()
@@ -73,7 +74,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         let currentURL: NSString = (webView.request?.URL?.absoluteString)!
         if currentURL == "https://trello.com/1/token/approve" {
             // токен находится под тегом pre
-            let script = "document.getElementsByTagName('PRE')[0].firstChild.data.replace (/\t+$/, '')"
+            let script = "document.getElementsByTagName('PRE')[0].firstChild.data"
             if let token = webView.stringByEvaluatingJavaScriptFromString(script)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) {
                 saveToken(token)
             }

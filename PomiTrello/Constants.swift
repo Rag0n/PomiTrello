@@ -17,14 +17,6 @@ struct Constants {
     static var queryKey = "QueryKey"
 }
 
-struct ApiConstants {
+struct APIConstants {
     static var openBoards = "https://trello.com/1/members/my/boards?"
 }
-
-
-//class Constants {
-////    static let sharedInstance = Constants()
-//    static var appKey = "AppKey"
-//    static var hasToken = "HasToken"
-//}
-
