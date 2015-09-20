@@ -17,7 +17,6 @@
 		1F87D23B1BAE9E8F00B9948B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1F87D23D1BAECECD00B9948B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D23C1BAECECD00B9948B /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		1F87D2441BAF013100B9948B /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2431BAF013100B9948B /* Board.swift */; settings = {ASSET_TAGS = (); }; };
-		1F87D2461BAF043E00B9948B /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D2451BAF043E00B9948B /* Keys.plist */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F87D23C1BAECECD00B9948B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1F87D2431BAF013100B9948B /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
-		1F87D2451BAF043E00B9948B /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				1F87D2131BADBBAC00B9948B /* Info.plist */,
-				1F87D2451BAF043E00B9948B /* Keys.plist */,
 				1F87D20E1BADBBAC00B9948B /* Assets.xcassets */,
 				1F87D2101BADBBAC00B9948B /* LaunchScreen.storyboard */,
 			);
@@ -259,7 +256,6 @@
 				1F87D2121BADBBAC00B9948B /* LaunchScreen.storyboard in Resources */,
 				1F87D20F1BADBBAC00B9948B /* Assets.xcassets in Resources */,
 				1F87D20D1BADBBAC00B9948B /* Main.storyboard in Resources */,
-				1F87D2461BAF043E00B9948B /* Keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
