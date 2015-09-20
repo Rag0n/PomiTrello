@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgc-nV-NQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="-319"/>
+            <point key="canvasLocation" x="407" y="-337"/>
         </scene>
         <!--Trello Table View Controller-->
         <scene sceneID="6gQ-xe-kXd">

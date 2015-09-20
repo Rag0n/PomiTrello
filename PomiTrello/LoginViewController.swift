@@ -16,7 +16,14 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     
     private struct Constants {
         static var tokenURL = "https://trello.com/1/authorize?key=98fe09a86250735e1462a019ad4087b3&name=PomiTrello&expiration=never&response_type=token"
+        static var userToken = "userToken"
     }
+    
+    private func saveToken(token: String) {
+        NSUserDefaults.standardUserDefaults().setObject(token, forKey: Constants.userToken)
+        presentViewController(TrelloTableViewController(), animated: true, completion: nil)s
+    }
+    
     
     // MARK: - View Life Cycle
     
@@ -28,21 +35,16 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         }
     }
     
+    
     // MARK: - UIWebViewDelegate
-    
-//    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-//        print(request.URL?.absoluteString)
-//        page = NSString(st
-//        return true
-//    }
-    
     
     func webViewDidFinishLoad(webView: UIWebView) {
         let currentURL : NSString = (webView.request?.URL?.absoluteString)!
-        print(currentURL)
+//        print(currentURL)
         if currentURL == "https://trello.com/1/token/approve" {
             let script = "document.getElementsByTagName('PRE')[0].firstChild.data.replace (/\t+$/, '')"
             if let token = webView.stringByEvaluatingJavaScriptFromString(script)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) {
+                saveToken(token)
                 print(token)
             }
         }
