@@ -100,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1F87D20B1BADBBAC00B9948B /* Main.storyboard */,
+				1F87D2071BADBBAC00B9948B /* AppDelegate.swift */,
 				1F87D2361BADBC8200B9948B /* TrelloTableViewController.swift */,
 				1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */,
 				1F87D2351BADBBCB00B9948B /* Supporting files */,
@@ -128,7 +129,6 @@
 		1F87D2351BADBBCB00B9948B /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				1F87D2071BADBBAC00B9948B /* AppDelegate.swift */,
 				1F87D2131BADBBAC00B9948B /* Info.plist */,
 				1F87D20E1BADBBAC00B9948B /* Assets.xcassets */,
 				1F87D2101BADBBAC00B9948B /* LaunchScreen.storyboard */,

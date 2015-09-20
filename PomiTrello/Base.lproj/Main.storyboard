@@ -7,7 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="VC6-JY-DfU">
             <objects>
-                <viewController id="Kwq-aq-0GC" customClass="LoginViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Kwq-aq-0GC" customClass="LoginViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aAs-uQ-t0U"/>
                         <viewControllerLayoutGuide type="bottom" id="BCk-p9-veT"/>
@@ -40,7 +40,7 @@
         <!--Trello Table View Controller-->
         <scene sceneID="6gQ-xe-kXd">
             <objects>
-                <tableViewController id="LX6-CJ-H7l" customClass="TrelloTableViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainViewController" id="LX6-CJ-H7l" customClass="TrelloTableViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nym-qO-uRj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

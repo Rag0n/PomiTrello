@@ -15,7 +15,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if defaults.boolForKey("HasLaunchedOnce") == false {
+            defaults.setBool(true, forKey: "HasLaunchedOnce")
+            defaults.setBool(false, forKey: "HasToken")
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        if defaults.boolForKey("HasToken") == false {
+            // выбор логина
+            let loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+            self.window!.rootViewController = loginViewController
+        } else {
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! TrelloTableViewController
+            self.window!.rootViewController = mainViewController
+        }
+
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 
