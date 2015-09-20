@@ -44,12 +44,23 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         defaults.setObject(key, forKey: Constants.queryKey)
     }
     
+    private func configureTokenURL() -> NSURL? {
+        let urlBegin = "https://trello.com/1/authorize?key="
+        let urlEnd = "&name=PomiTrello&expiration=never&response_type=token&scope=read,write"
+        let appKey = getAppKey()
+        let tokenURL = urlBegin + "\(appKey)" + urlEnd
+        if let url = NSURL(string: tokenURL) {
+            return url
+        }
+        return nil
+    }
+    
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let url = NSURL(string: Constants.tokenURL) {
+        if let url = configureTokenURL() {
             let request = NSURLRequest(URL: url)
             webView.loadRequest(request)
         }
