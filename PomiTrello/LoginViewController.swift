@@ -14,12 +14,6 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     
     // MARK: - Private API
     
-    private struct Constants {
-        static var tokenURL = "https://trello.com/1/authorize?key=98fe09a86250735e1462a019ad4087b3&name=PomiTrello&expiration=never&response_type=token&scope=read,write"
-        static var userToken = "userToken"
-        static var hasToken = "HasToken"
-    }
-    
     private func saveToken(token: String) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(token, forKey: Constants.userToken)

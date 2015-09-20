@@ -12,10 +12,6 @@ class TrelloTableViewController: UITableViewController {
     // MARK: - Private API
     private var key: String!
     
-    private struct Constants {
-        static var userToken = "userToken"
-        static var AppKey = "AppKey"
-    }
     
 //    private func authorization() {
 //        let url = NSURL(string: Constants.tokenURL)!
@@ -34,7 +30,7 @@ class TrelloTableViewController: UITableViewController {
     
     private func configureKey() {
         let defaults = NSUserDefaults.standardUserDefaults()
-        let appKey = defaults.objectForKey(Constants.AppKey) as? String ?? ""
+        let appKey = defaults.objectForKey(Constants.appKey) as? String ?? ""
         let token = defaults.objectForKey(Constants.userToken) as? String ?? ""
         key = "?key=\(appKey)&token=\(token)"
     }
