@@ -9,28 +9,30 @@
 import UIKit
 
 class TrelloTableViewController: UITableViewController {
+    // MARK: - Model
+    
+    
     // MARK: - Private API
     private var key: String!
     
-    
-//    private func authorization() {
-//        let url = NSURL(string: Constants.tokenURL)!
-//        let urlSession = NSURLSession.sharedSession()
-//        let task = urlSession.dataTaskWithURL(url) { (data, response, error) -> Void in
-//            if error != nil {
-//                print(error!.localizedDescription)
-//            }
-//            print(data)
-//            print(response)
-//            print("Now authorized")
-//            self.isAuthorized = true
-//        }
-//        task.resume()
-//    }
+    private func getAppKey() -> String {
+        // получаем приватный ключ приложения из файла Keys.plist
+        var keys: NSDictionary?
+        
+        if let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        if let dict = keys {
+            if let appKey = dict[Constants.appKey] as? String {
+                return appKey
+            }
+        }
+        return ""
+    }
     
     private func configureKey() {
         let defaults = NSUserDefaults.standardUserDefaults()
-        let appKey = defaults.objectForKey(Constants.appKey) as? String ?? ""
+        let appKey = getAppKey()
         let token = defaults.objectForKey(Constants.userToken) as? String ?? ""
         key = "key=\(appKey)&token=\(token)"
         defaults.setObject(key, forKey: Constants.queryKey)

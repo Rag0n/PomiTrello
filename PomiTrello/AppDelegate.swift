@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if defaults.boolForKey("HasLaunchedOnce") == false {
             defaults.setBool(true, forKey: "HasLaunchedOnce")
             defaults.setBool(false, forKey: Constants.hasToken)
-            defaults.setObject("98fe09a86250735e1462a019ad4087b3", forKey: Constants.appKey)
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
