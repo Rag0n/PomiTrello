@@ -14,6 +14,7 @@
 		1F87D21D1BADBBAC00B9948B /* PomiTrelloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D21C1BADBBAC00B9948B /* PomiTrelloTests.swift */; };
 		1F87D2281BADBBAC00B9948B /* PomiTrelloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2271BADBBAC00B9948B /* PomiTrelloUITests.swift */; };
 		1F87D2371BADBC8200B9948B /* TrelloTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2361BADBC8200B9948B /* TrelloTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1F87D23B1BAE9E8F00B9948B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1F87D2271BADBBAC00B9948B /* PomiTrelloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomiTrelloUITests.swift; sourceTree = "<group>"; };
 		1F87D2291BADBBAC00B9948B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F87D2361BADBC8200B9948B /* TrelloTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrelloTableViewController.swift; sourceTree = "<group>"; };
+		1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				1F87D20B1BADBBAC00B9948B /* Main.storyboard */,
 				1F87D2361BADBC8200B9948B /* TrelloTableViewController.swift */,
+				1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */,
 				1F87D2351BADBBCB00B9948B /* Supporting files */,
 			);
 			path = PomiTrello;
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F87D23B1BAE9E8F00B9948B /* LoginViewController.swift in Sources */,
 				1F87D2081BADBBAC00B9948B /* AppDelegate.swift in Sources */,
 				1F87D2371BADBC8200B9948B /* TrelloTableViewController.swift in Sources */,
 			);
