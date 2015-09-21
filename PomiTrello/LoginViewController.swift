@@ -12,6 +12,11 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     
+    enum LoginError: ErrorType {
+        case CantFindApplicationKey
+        case IncorrectTokenURL
+    }
+    
     // MARK: - Private API
     
     private func saveToken(token: String) {
@@ -21,13 +26,15 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         presentViewController(TrelloTableViewController(), animated: true, completion: nil)
     }
     
-    private func getAppKey() -> String {
+    private func getAppKey() throws -> String {
         // достаем приватный ключ приложения из property list
         var keys: NSDictionary?
         
-        if let path = NSBundle.mainBundle().pathForResource("AppKeys", ofType: "plist") {
-            keys = NSDictionary(contentsOfFile: path)
+        guard let path = NSBundle.mainBundle().pathForResource("AppKeys", ofType: "plist") else {
+            throw LoginError.CantFindApplicationKey
         }
+        keys = NSDictionary(contentsOfFile: path)
+        
         if let dict = keys {
             if let appKey = dict[Constants.appKey] as? String {
                 return appKey
@@ -38,21 +45,38 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     
     private func configureKey() {
         let defaults = NSUserDefaults.standardUserDefaults()
-        let appKey = getAppKey()
-        let token = defaults.objectForKey(Constants.userToken) as? String ?? ""
-        let key = "key=\(appKey)&token=\(token)"
-        defaults.setObject(key, forKey: Constants.queryKey)
+        do {
+            let appKey = try getAppKey()
+            let token = defaults.objectForKey(Constants.userToken) as? String ?? ""
+            let key = "key=\(appKey)&token=\(token)"
+            defaults.setObject(key, forKey: Constants.queryKey)
+        } catch LoginError.CantFindApplicationKey {
+            print("Cant find trello's developer key")
+        } catch {
+            print("Something went wrong")
+        }
     }
     
     private func configureTokenURL() -> NSURL? {
         // создаем url для webView
         let urlBegin = "https://trello.com/1/authorize?key="
         let urlEnd = "&name=PomiTrello&expiration=never&response_type=token&scope=read,write"
-        let appKey = getAppKey()
-        let tokenURL = urlBegin + "\(appKey)" + urlEnd
-        if let url = NSURL(string: tokenURL) {
+        
+        do {
+            let appKey = try getAppKey()
+            let tokenURL = urlBegin + "\(appKey)" + urlEnd
+            guard let url = NSURL(string: tokenURL) else {
+                throw LoginError.IncorrectTokenURL
+            }
             return url
+        } catch LoginError.CantFindApplicationKey {
+            print("Cant find trello's developer key")
+        } catch LoginError.IncorrectTokenURL {
+            print("Can't configure valid user token URL")
+        } catch {
+            print("Something went wrong")
         }
+
         return nil
     }
     
@@ -75,6 +99,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         if currentURL == "https://trello.com/1/token/approve" {
             // токен находится под тегом pre
             let script = "document.getElementsByTagName('PRE')[0].firstChild.data"
+            // получаем и форматируем токен
             if let token = webView.stringByEvaluatingJavaScriptFromString(script)?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) {
                 saveToken(token)
             }
