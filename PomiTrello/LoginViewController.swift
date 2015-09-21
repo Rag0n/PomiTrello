@@ -12,12 +12,12 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     
-    enum LoginError: ErrorType {
+    
+    // MARK: - Private API
+    private enum LoginError: ErrorType {
         case CantFindApplicationKey
         case IncorrectTokenURL
     }
-    
-    // MARK: - Private API
     
     private func saveToken(token: String) {
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -35,15 +35,15 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         }
         keys = NSDictionary(contentsOfFile: path)
         
-        if let dict = keys {
-            if let appKey = dict[Constants.appKey] as? String {
-                return appKey
-            }
+        if let appKey = keys?[Constants.appKey] as? String {
+            return appKey
         }
         return ""
     }
     
     private func configureKey() {
+        // создаем и сохраняем ключ, содержащий ключ приложения и пользовательский токен
+        // который в дальнейшем будет использоваться для доступа к REST API
         let defaults = NSUserDefaults.standardUserDefaults()
         do {
             let appKey = try getAppKey()
@@ -58,7 +58,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     }
     
     private func configureTokenURL() -> NSURL? {
-        // создаем url для webView
+        // создаем url для запроса пользовательского токена
         let urlBegin = "https://trello.com/1/authorize?key="
         let urlEnd = "&name=PomiTrello&expiration=never&response_type=token&scope=read,write"
         
@@ -82,7 +82,6 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     
     
     // MARK: - View Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let url = configureTokenURL() {
@@ -93,8 +92,8 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     
     
     // MARK: - UIWebViewDelegate
-    
     func webViewDidFinishLoad(webView: UIWebView) {
+        // получаем и сохраняем пользовательский токен
         let currentURL: NSString = (webView.request?.URL?.absoluteString)!
         if currentURL == "https://trello.com/1/token/approve" {
             // токен находится под тегом pre
