@@ -24,7 +24,8 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         defaults.setObject(token, forKey: Constants.userToken)
         defaults.setBool(true, forKey: Constants.hasToken)
         configureKey()
-        presentViewController(TrelloTableViewController(), animated: true, completion: nil)
+        let ttvc = storyboard!.instantiateViewControllerWithIdentifier("MainViewController") as! TrelloTableViewController
+        self.navigationController?.setViewControllers([ttvc], animated: true)
     }
     
     private func getAppKey() throws -> String {

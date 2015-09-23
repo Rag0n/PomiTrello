@@ -83,6 +83,7 @@ class TrelloTableViewController: UITableViewController {
         } catch {
             print("Something went wrong :(")
         }
+        title = "Boards"
     }
 
     
@@ -97,7 +98,7 @@ class TrelloTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("board name", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Board cell", forIndexPath: indexPath) as UITableViewCell
         let board = boards[indexPath.row]
         
         cell.textLabel?.text = board.name
@@ -106,14 +107,15 @@ class TrelloTableViewController: UITableViewController {
     }
     
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "Show list" {
+            
+        }
     }
-    */
+
 
 }

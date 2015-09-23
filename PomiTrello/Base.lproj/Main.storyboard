@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LX6-CJ-H7l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -38,24 +38,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgc-nV-NQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="-337"/>
+            <point key="canvasLocation" x="2743" y="-311"/>
         </scene>
-        <!--Trello Table View Controller-->
+        <!--Boards-->
         <scene sceneID="6gQ-xe-kXd">
             <objects>
-                <tableViewController storyboardIdentifier="MainViewController" id="LX6-CJ-H7l" customClass="TrelloTableViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainViewController" title="Boards" id="LX6-CJ-H7l" customClass="TrelloTableViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nym-qO-uRj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="board name" id="WGd-Bg-GcQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Board cell" id="WGd-Bg-GcQ">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WGd-Bg-GcQ" id="MSe-5x-sMv">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Imw-mV-Nxm" kind="show" identifier="Show list" id="4SH-TN-YDY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -63,10 +66,39 @@
                             <outlet property="delegate" destination="LX6-CJ-H7l" id="HXO-by-7bS"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="gIR-gJ-Auo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPq-s1-l23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="379"/>
+            <point key="canvasLocation" x="2743" y="379"/>
+        </scene>
+        <!--Lists-->
+        <scene sceneID="MFy-za-tJK">
+            <objects>
+                <tableViewController title="Lists" id="Imw-mV-Nxm" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VyA-mE-BPu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="List cell" id="jwc-sj-Qqz">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jwc-sj-Qqz" id="UvM-Lg-JUJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Imw-mV-Nxm" id="uBq-eK-fay"/>
+                            <outlet property="delegate" destination="Imw-mV-Nxm" id="PYq-Gg-hLF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ye-mW-Iig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3469" y="379"/>
         </scene>
     </scenes>
 </document>
