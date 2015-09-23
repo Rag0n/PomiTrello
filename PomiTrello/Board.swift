@@ -15,6 +15,8 @@ class Board {
     var url: NSURL!
     var lists = [List]()
     
+
+    
     // MARK: - Public API
 
 }

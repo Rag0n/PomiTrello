@@ -31,24 +31,25 @@ class TrelloTableViewController: UITableViewController {
             }
             
             // parse JSON
-            self.boards = self.parseBoardsJSON(data!)
+            self.parseBoardsJSON(data!)
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
             })
             
         }
+        
+        task.resume()
     }
     
-    private func parseBoardsJSON(data: NSData) -> [Board] {
-        var boards = [Board]()
-        
+    private func parseBoardsJSON(data: NSData) {
         // get result
         do {
             // get result
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+
             // parse result
-            let jsonBoards = jsonResult as! [AnyObject]
+            let jsonBoards = jsonResult as! [[String:AnyObject]]
             for jsonBoard in jsonBoards {
                 if jsonBoard["closed"] as! Bool == true {
                     continue
@@ -56,18 +57,14 @@ class TrelloTableViewController: UITableViewController {
                 let board = Board()
                 board.id = jsonBoard["id"] as! String
                 board.name = jsonBoard["name"] as! String
-                board.description = jsonBoard["description"] as! String
+                board.description = jsonBoard["desc"] as! String
                 board.url = NSURL(string: jsonBoard["url"] as! String)
-                boards.append(board)
+                
+                self.boards.append(board)
             }
         } catch {
             print("Cannot read json result")
         }
-        
-        // parse result
-
-        
-        return boards
     }
     
     // MARK: - View Controller Life Cycle
@@ -75,6 +72,13 @@ class TrelloTableViewController: UITableViewController {
         super.viewDidLoad()
         key = NSUserDefaults.standardUserDefaults().objectForKey(Constants.queryKey) as? String ?? ""
         print(key)
+        do {
+            try loadBoards()
+        } catch Errors.CantLoadBoards {
+            print("Cant load boards")
+        } catch {
+            print("Something went wrong :(")
+        }
     }
 
     
