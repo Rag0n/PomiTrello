@@ -48,7 +48,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         do {
             let appKey = try getAppKey()
             let token = defaults.objectForKey(Constants.userToken) as? String ?? ""
-            let key = "key=\(appKey)&token=\(token)"
+            let key = "&key=\(appKey)&token=\(token)"
             defaults.setObject(key, forKey: Constants.queryKey)
         } catch LoginError.CantFindApplicationKey {
             print("Cant find trello's developer key")
