@@ -9,6 +9,7 @@
 import Foundation
 
 class Board {
+    var id: String!
     var name: String!
     var description: String!
     var closed: Bool!
