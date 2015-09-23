@@ -42,17 +42,30 @@ class TrelloTableViewController: UITableViewController {
     
     private func parseBoardsJSON(data: NSData) -> [Board] {
         var boards = [Board]()
-        let jsonResult: AnyObject
         
         // get result
         do {
-            jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+            // get result
+            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+            // parse result
+            let jsonBoards = jsonResult as! [AnyObject]
+            for jsonBoard in jsonBoards {
+                if jsonBoard["closed"] as! Bool == true {
+                    continue
+                }
+                let board = Board()
+                board.id = jsonBoard["id"] as! String
+                board.name = jsonBoard["name"] as! String
+                board.description = jsonBoard["description"] as! String
+                board.url = NSURL(string: jsonBoard["url"] as! String)
+                boards.append(board)
+            }
         } catch {
             print("Cannot read json result")
         }
         
         // parse result
-//        let jsonBoards = jsonResult[""]
+
         
         return boards
     }
