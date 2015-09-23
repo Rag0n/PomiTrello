@@ -10,9 +10,12 @@ import UIKit
 
 class TrelloTableViewController: UITableViewController {
     // MARK: - Model
+    
     var boards = [Board]()
     
+    
     // MARK: - Private API
+    
     private var key: String!
     
     enum Errors: ErrorType {
@@ -43,7 +46,6 @@ class TrelloTableViewController: UITableViewController {
     }
     
     private func parseBoardsJSON(data: NSData) {
-        // get result
         do {
             // get result
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
@@ -67,7 +69,9 @@ class TrelloTableViewController: UITableViewController {
         }
     }
     
+    
     // MARK: - View Controller Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         key = NSUserDefaults.standardUserDefaults().objectForKey(Constants.queryKey) as? String ?? ""
@@ -85,13 +89,20 @@ class TrelloTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return boards.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("board name", forIndexPath: indexPath) as UITableViewCell
+        let board = boards[indexPath.row]
+        
+        cell.textLabel?.text = board.name
+        
+        return cell
     }
     
     
