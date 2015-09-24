@@ -15,8 +15,20 @@ class Board {
     var url: NSURL!
     var lists = [List]()
     
+    struct List {
+        var id: String!
+        var name: String!
+        var cards: [Card]!
+    }
+    
+    struct Card {
+        var id: String!
+        var name: String!
+    }
+    
     
     // MARK: - Public API
+    
     func loadLists() {
         let key = NSUserDefaults.standardUserDefaults().valueForKey(Constants.queryKey) as! String
         let urlText =  "https://api.trello.com/1/boards/" + id + "?lists=open&list_fields=name&fields=name,desc&" + key
@@ -34,6 +46,9 @@ class Board {
         task.resume()
     }
     
+    
+    // MARK: - Private API
+    
     private func parseListsJSON(data: NSData) {
         do {
             // get result
@@ -43,9 +58,7 @@ class Board {
             let jsonBoard = jsonResult as! [String:AnyObject]
             let lists = jsonBoard["lists"] as! [[String:String]]
             for list in lists {
-                let newList = List()
-                newList.id = list["id"]!
-                newList.name = list["name"]!
+                let newList = List(id: list["id"]!, name: list["name"]!, cards: [Card]())
                 self.lists.append(newList)
             }
         } catch {
