@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
-    
+    private var presentViewController: UIViewController!
     
     // MARK: - Private API
     private enum LoginError: ErrorType {

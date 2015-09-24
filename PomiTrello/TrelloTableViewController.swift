@@ -53,9 +53,6 @@ class TrelloTableViewController: UITableViewController {
             // parse result
             let jsonBoards = jsonResult as! [[String:AnyObject]]
             for jsonBoard in jsonBoards {
-                if jsonBoard["closed"] as! Bool == true {
-                    continue
-                }
                 let board = Board()
                 board.id = jsonBoard["id"] as! String
                 board.name = jsonBoard["name"] as! String

@@ -18,5 +18,5 @@ struct Constants {
 }
 
 struct APIConstants {
-    static var openBoards = "https://trello.com/1/members/my/boards?"
+    static var openBoards = "https://api.trello.com/1/members/me/boards/?filter=open&"
 }

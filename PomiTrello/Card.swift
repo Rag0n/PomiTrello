@@ -9,5 +9,6 @@
 import Foundation
 
 class Card {
-    
+    var id: String!
+    var name: String!
 }

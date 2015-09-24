@@ -9,5 +9,7 @@
 import Foundation
 
 class List {
-    
+    var id: String!
+    var name: String!
+    var cards = [Card]()
 }

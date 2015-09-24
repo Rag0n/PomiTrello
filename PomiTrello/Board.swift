@@ -18,5 +18,7 @@ class Board {
 
     
     // MARK: - Public API
-
+    func loadLists() {
+        
+    }
 }
