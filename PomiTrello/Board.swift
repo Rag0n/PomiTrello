@@ -29,7 +29,7 @@ class Board {
     
     // MARK: - Public API
     
-    func loadLists() {
+    func loadLists(completionHandler: () -> Void) {
         let key = NSUserDefaults.standardUserDefaults().valueForKey(Constants.queryKey) as! String
         let urlText =  "https://api.trello.com/1/boards/" + id + "?lists=open&list_fields=name&fields=name,desc&" + key
         let url = NSURL(string: urlText)!
@@ -41,6 +41,8 @@ class Board {
             }
             
             self.parseListsJSON(data!)
+            
+            completionHandler()
         }
         
         task.resume()

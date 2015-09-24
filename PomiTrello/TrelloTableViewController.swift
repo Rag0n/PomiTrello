@@ -110,7 +110,11 @@ class TrelloTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Show list" {
-            
+            if let ltvc = segue.destinationViewController as? ListsTableViewController {
+                if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
+                    ltvc.board = boards[indexPath.row]
+                }
+            }
         }
     }
 
