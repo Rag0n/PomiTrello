@@ -8,14 +8,8 @@
 
 import UIKit
 
-class TrelloTableViewController: UITableViewController {
-    // MARK: - Model
-    
+class TrelloTableViewController: UITableViewController {    
     var boards = [Board]()
-    
-    
-    // MARK: - Private API
-    
     
     
     // MARK: - View Controller Life Cycle
@@ -56,11 +50,9 @@ class TrelloTableViewController: UITableViewController {
         return cell
     }
     
-    
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Show list" {
             if let ltvc = segue.destinationViewController as? ListsTableViewController {
