@@ -11,15 +11,14 @@ import UIKit
 class ListsTableViewController: UITableViewController {
     var board: Board!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         board.loadLists { () -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.tableView.reloadData()
-            })
+            self.tableView.reloadData()
         }
     }
-
+    
 
     // MARK: - Table view data source
 
@@ -31,15 +30,16 @@ class ListsTableViewController: UITableViewController {
         return board.lists.count
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        // Configure the cell...
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("List cell", forIndexPath: indexPath)
+        
+        let list = board.lists[indexPath.row]
+        
+        cell.textLabel?.text = list.name
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

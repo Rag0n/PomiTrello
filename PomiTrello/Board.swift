@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class Board {
     var id: String!
     var name: String!
@@ -42,7 +43,10 @@ class Board {
             
             self.parseListsJSON(data!)
             
-            completionHandler()
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                completionHandler()
+            })
         }
         
         task.resume()
@@ -52,6 +56,8 @@ class Board {
     // MARK: - Private API
     
     private func parseListsJSON(data: NSData) {
+        var newLists = [List]() // полностью обновляем
+        
         do {
             // get result
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
@@ -61,10 +67,11 @@ class Board {
             let lists = jsonBoard["lists"] as! [[String:String]]
             for list in lists {
                 let newList = List(id: list["id"]!, name: list["name"]!, cards: [Card]())
-                self.lists.append(newList)
+                newLists.append(newList)
             }
         } catch {
             print("Cannot read json result")
         }
+        self.lists = newLists
     }
 }

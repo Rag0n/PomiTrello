@@ -21,7 +21,7 @@ class TrelloTableViewController: UITableViewController {
     enum Errors: ErrorType {
         case CantLoadBoards
     }
-    
+
     private func loadBoards() throws {
         guard let url = NSURL(string: APIConstants.openBoards + key) else {
             throw Errors.CantLoadBoards
@@ -111,9 +111,8 @@ class TrelloTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Show list" {
             if let ltvc = segue.destinationViewController as? ListsTableViewController {
-                if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
-                    ltvc.board = boards[indexPath.row]
-                }
+                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+                ltvc.board = boards[indexPath.row]
             }
         }
     }
