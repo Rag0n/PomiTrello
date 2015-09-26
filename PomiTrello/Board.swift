@@ -9,23 +9,24 @@
 import Foundation
 
 
+struct List {
+    var id: String!
+    var name: String!
+    var cards: [Card]!
+}
+
+struct Card {
+    var id: String!
+    var name: String!
+}
+
+
 class Board {
     var id: String!
     var name: String!
     var description: String!
     var url: NSURL!
     var lists = [List]()
-    
-    struct List {
-        var id: String!
-        var name: String!
-        var cards: [Card]!
-    }
-    
-    struct Card {
-        var id: String!
-        var name: String!
-    }
     
     
     // MARK: - Public API

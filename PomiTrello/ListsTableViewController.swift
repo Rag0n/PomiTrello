@@ -36,7 +36,6 @@ class ListsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("List cell", forIndexPath: indexPath)
         
         let list = board.lists[indexPath.row]
-        
         cell.textLabel?.text = list.name
 
         return cell
@@ -50,7 +49,12 @@ class ListsTableViewController: UITableViewController {
 
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "Show cards" {
+            if let cvc = segue.destinationViewController as? CardsTableViewController {
+                if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
+                    cvc.cards = board.lists[indexPath.row].cards
+                }
+            }
+        }
     }
 }
