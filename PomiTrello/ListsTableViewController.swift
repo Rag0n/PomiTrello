@@ -52,7 +52,7 @@ class ListsTableViewController: UITableViewController {
         if segue.identifier == "Show cards" {
             if let cvc = segue.destinationViewController as? CardsTableViewController {
                 if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
-                    cvc.cards = board.lists[indexPath.row].cards
+                    cvc.list = board.lists[indexPath.row]
                 }
             }
         }

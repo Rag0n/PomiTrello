@@ -9,11 +9,14 @@
 import UIKit
 
 class CardsTableViewController: UITableViewController {
-    var cards = [Card]()
+    var list: List!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        list.loadCards() { () -> Void in
+            self.tableView.reloadData()
+        }
     }
 
 
@@ -24,12 +27,12 @@ class CardsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cards.count
+        return list.cards.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Card cell", forIndexPath: indexPath)
-        let card = cards[indexPath.row]
+        let card = list.cards[indexPath.row]
         cell.textLabel?.text = card.name
 
         return cell

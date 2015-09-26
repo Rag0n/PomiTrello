@@ -9,18 +9,6 @@
 import Foundation
 
 
-struct List {
-    var id: String!
-    var name: String!
-    var cards: [Card]!
-}
-
-struct Card {
-    var id: String!
-    var name: String!
-}
-
-
 class Board {
     var id: String!
     var name: String!
@@ -76,7 +64,7 @@ class Board {
         
         task.resume()
     }
-    
+
     
     // MARK: - Private API
     
@@ -114,7 +102,10 @@ class Board {
             let jsonBoard = jsonResult as! [String:AnyObject]
             let lists = jsonBoard["lists"] as! [[String:String]]
             for list in lists {
-                let newList = List(id: list["id"]!, name: list["name"]!, cards: [Card]())
+                let newList = List()
+                newList.id = list["id"]!
+                newList.name = list["name"]!
+                newList.cards = [Card]()
                 newLists.append(newList)
             }
         } catch {
