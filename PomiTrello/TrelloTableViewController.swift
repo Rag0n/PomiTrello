@@ -12,14 +12,26 @@ class TrelloTableViewController: UITableViewController {
     var boards = [Board]()
     
     
-    // MARK: - View Controller Life Cycle
+    // MARK: - ViewController LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Boards"
+        refresh()
+    }
+    
+    func refresh() {
+        if refreshControl != nil {
+            refreshControl?.beginRefreshing()
+        }
+        refresh(refreshControl)
+    }
 
+    @IBAction func refresh(sender: UIRefreshControl?) {
         do {
             try Board.loadBoards({ (boards) -> Void in
                 self.boards = boards
+                sender?.endRefreshing()
                 self.tableView.reloadData()
             })
         } catch Errors.CantLoadBoards {
@@ -27,9 +39,7 @@ class TrelloTableViewController: UITableViewController {
         } catch {
             print("Something went wrong :(")
         }
-        title = "Boards"
     }
-
     
     // MARK: - Table view data source
     
