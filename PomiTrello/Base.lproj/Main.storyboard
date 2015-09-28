@@ -104,6 +104,12 @@
                             <outlet property="delegate" destination="Imw-mV-Nxm" id="PYq-Gg-hLF"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Fgs-wq-VSd">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="Imw-mV-Nxm" eventType="valueChanged" id="lJs-YW-QiF"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ye-mW-Iig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

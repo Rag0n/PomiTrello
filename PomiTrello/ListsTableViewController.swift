@@ -16,11 +16,22 @@ class ListsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refresh()
+    }
+    
+    func refresh() {
+        if refreshControl != nil {
+            refreshControl?.beginRefreshing()
+        }
+        refresh(refreshControl)
+    }
+    
+    @IBAction func refresh(sender: UIRefreshControl?) {
         board.loadLists { () -> Void in
+            sender?.endRefreshing()
             self.tableView.reloadData()
         }
     }
-    
 
     // MARK: - TableView Datasource
 
