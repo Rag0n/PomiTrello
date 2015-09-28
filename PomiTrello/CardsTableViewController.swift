@@ -14,11 +14,22 @@ class CardsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refresh()
+    }
+    
+    func refresh() {
+        if refreshControl != nil {
+            refreshControl?.beginRefreshing()
+        }
+        refresh(refreshControl)
+    }
+
+    @IBAction func refresh(sender: UIRefreshControl?) {
         list.loadCards() { () -> Void in
+            sender?.endRefreshing()
             self.tableView.reloadData()
         }
     }
-
 
     // MARK: - Table view data source
 

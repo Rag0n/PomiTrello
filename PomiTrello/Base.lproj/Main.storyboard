@@ -138,6 +138,12 @@
                             <outlet property="delegate" destination="odj-Ml-r3O" id="e2K-6K-d1M"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="rjy-Fi-e4Q">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="odj-Ml-r3O" eventType="valueChanged" id="vQ9-WG-QZM"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5O-RG-kSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
