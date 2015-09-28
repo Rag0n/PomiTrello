@@ -21,7 +21,7 @@ class Board {
     
     static func loadBoards(completionHandler: (boards: [Board]) -> Void) throws {
         let key = NSUserDefaults.standardUserDefaults().valueForKey(Constants.queryKey) as! String
-        guard let url = NSURL(string: APIConstants.openBoards + key) else {
+        guard let url = NSURL(string: "https://api.trello.com/1/members/me/boards/?filter=open&" + key) else {
             throw Errors.CantLoadBoards
         }
         let request = NSURLRequest(URL: url)

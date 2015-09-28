@@ -17,10 +17,6 @@ struct Constants {
     static var queryKey = "QueryKey" // используется для всех запросов
 }
 
-struct APIConstants {
-    static var openBoards = "https://api.trello.com/1/members/me/boards/?filter=open&"
-}
-
 enum Errors: ErrorType {
     case CantLoadBoards
 }
