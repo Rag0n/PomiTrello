@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F10C9741BB9D79A004C960A /* PomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C9731BB9D79A004C960A /* PomodoroViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1F87D2081BADBBAC00B9948B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2071BADBBAC00B9948B /* AppDelegate.swift */; };
 		1F87D20D1BADBBAC00B9948B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D20B1BADBBAC00B9948B /* Main.storyboard */; };
 		1F87D20F1BADBBAC00B9948B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D20E1BADBBAC00B9948B /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F10C9731BB9D79A004C960A /* PomodoroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroViewController.swift; sourceTree = "<group>"; };
 		1F87D2041BADBBAC00B9948B /* PomiTrello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomiTrello.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F87D2071BADBBAC00B9948B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F87D20C1BADBBAC00B9948B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				1F87D2361BADBC8200B9948B /* TrelloTableViewController.swift */,
 				1FDED8131BB33E7F00CD1036 /* ListsTableViewController.swift */,
 				1FEDBCA41BB68485008C50B5 /* CardsTableViewController.swift */,
+				1F10C9731BB9D79A004C960A /* PomodoroViewController.swift */,
 				1F87D23E1BAED30500B9948B /* Model */,
 				1F87D2351BADBBCB00B9948B /* Supporting files */,
 			);
@@ -304,6 +307,7 @@
 				1F87D2441BAF013100B9948B /* Board.swift in Sources */,
 				1F87D2371BADBC8200B9948B /* TrelloTableViewController.swift in Sources */,
 				1FEDBCA51BB68485008C50B5 /* CardsTableViewController.swift in Sources */,
+				1F10C9741BB9D79A004C960A /* PomodoroViewController.swift in Sources */,
 				1F87D23D1BAECECD00B9948B /* Constants.swift in Sources */,
 				1FDED8141BB33E7F00CD1036 /* ListsTableViewController.swift in Sources */,
 			);

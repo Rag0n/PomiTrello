@@ -131,6 +131,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="k56-Ks-q5q" kind="show" identifier="Show pomodoro" id="dV1-fL-xPi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -148,6 +151,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5O-RG-kSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4167" y="379"/>
+        </scene>
+        <!--Pomodoro View Controller-->
+        <scene sceneID="f2z-fv-KIp">
+            <objects>
+                <viewController id="k56-Ks-q5q" customClass="PomodoroViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vMX-p3-4gu"/>
+                        <viewControllerLayoutGuide type="bottom" id="xdm-9K-UuQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rtV-Kh-Lz9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0kC-sR-IQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4845" y="379"/>
         </scene>
     </scenes>
 </document>
