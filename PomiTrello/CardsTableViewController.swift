@@ -16,6 +16,8 @@ class CardsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = list.name
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         refresh()
     }
     
@@ -44,9 +46,8 @@ class CardsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Card cell", forIndexPath: indexPath)
-        let card = list.cards[indexPath.row]
-        cell.textLabel?.text = card.name
+        let cell = tableView.dequeueReusableCellWithIdentifier("Card cell", forIndexPath: indexPath) as! CardsTableViewCell
+        cell.card = list.cards[indexPath.row]
 
         return cell
     }
@@ -57,7 +58,7 @@ class CardsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Show pomodoro" {
             if let pvc = segue.destinationViewController as? PomodoroViewController {
-                if let indexPath = tableView.indexPathForCell(sender as! UITableViewCell) {
+                if let indexPath = tableView.indexPathForCell(sender as! CardsTableViewCell) {
                     pvc.card = list.cards[indexPath.row]
                 }
             }
