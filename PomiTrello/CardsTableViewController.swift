@@ -15,6 +15,7 @@ class CardsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = list.name
         refresh()
     }
     

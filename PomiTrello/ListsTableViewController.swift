@@ -17,6 +17,7 @@ class ListsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = board.name
         refresh()
     }
     

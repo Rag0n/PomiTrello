@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="4167" y="379"/>
         </scene>
-        <!--Pomodoro View Controller-->
+        <!--pomodoro-->
         <scene sceneID="f2z-fv-KIp">
             <objects>
-                <viewController id="k56-Ks-q5q" customClass="PomodoroViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="pomodoro" id="k56-Ks-q5q" customClass="PomodoroViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vMX-p3-4gu"/>
                         <viewControllerLayoutGuide type="bottom" id="xdm-9K-UuQ"/>
