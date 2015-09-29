@@ -25,9 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if defaults.boolForKey(Constants.hasToken) == false {
             // выбор окна с логином
-            let loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
-            let navCon = UINavigationController(rootViewController: loginViewController)
-            self.window!.rootViewController = navCon
+//            let loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+//            let navCon = UINavigationController(rootViewController: loginViewController)
+//            self.window!.rootViewController = navCon
+            let welcomViewContoller = storyboard.instantiateViewControllerWithIdentifier("WelcomViewController") as! WelcomeViewController
+            self.window!.rootViewController = welcomViewContoller
         } else {
             // главное окно
             let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! TrelloTableViewController

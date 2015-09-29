@@ -8,7 +8,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="HwJ-Dt-Cpd">
             <objects>
-                <viewController id="fR5-fL-nB4" customClass="WelcomeViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomViewController" id="fR5-fL-nB4" customClass="WelcomeViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tKX-PV-mep"/>
                         <viewControllerLayoutGuide type="bottom" id="los-At-hv1"/>
@@ -17,31 +17,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PomiTrello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="00v-rp-pLu">
-                                <rect key="frame" x="20" y="28" width="560" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PomiTrello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="00v-rp-pLu">
+                                <rect key="frame" x="20" y="28" width="560" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To begin, sign in with your Trello account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67F-H1-Eug">
-                                <rect key="frame" x="144" y="116" width="312" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To begin, sign in with" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67F-H1-Eug">
+                                <rect key="frame" x="232" y="197" width="137" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeT-NL-i0r">
-                                <rect key="frame" x="207" y="145" width="187" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Sign in with Trello"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PomiTrello allows you to use pomodoro technique with your Trello cards" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFP-5z-CNy">
-                                <rect key="frame" x="27" y="87" width="547" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="allows you to use" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFP-5z-CNy">
+                                <rect key="frame" x="235" y="81" width="130" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pomodoro technique" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-PV-Zxv">
+                                <rect key="frame" x="221" y="109" width="158" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your Trello account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifu-6W-QQi">
+                                <rect key="frame" x="238" y="222" width="124" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with your Trello cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79I-In-Ut7">
+                                <rect key="frame" x="219" y="137" width="163" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeT-NL-i0r">
+                                <rect key="frame" x="207" y="259" width="187" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Sign in with Trello"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="00v-rp-pLu" firstAttribute="trailing" secondItem="JDo-46-fBc" secondAttribute="trailingMargin" id="0Ub-h6-Q3m"/>
+                            <constraint firstItem="00v-rp-pLu" firstAttribute="leading" secondItem="JDo-46-fBc" secondAttribute="leadingMargin" id="3lm-NP-oCc"/>
+                            <constraint firstItem="00v-rp-pLu" firstAttribute="top" secondItem="tKX-PV-mep" secondAttribute="bottom" constant="8" symbolic="YES" id="7er-Ul-Pbn"/>
+                            <constraint firstItem="eIn-PV-Zxv" firstAttribute="top" secondItem="PFP-5z-CNy" secondAttribute="bottom" constant="8" symbolic="YES" id="86g-sH-cl6"/>
+                            <constraint firstItem="79I-In-Ut7" firstAttribute="top" secondItem="eIn-PV-Zxv" secondAttribute="bottom" constant="8" symbolic="YES" id="EMA-Nj-4hl"/>
+                            <constraint firstItem="00v-rp-pLu" firstAttribute="centerX" secondItem="JDo-46-fBc" secondAttribute="centerX" id="I76-yS-vgn"/>
+                            <constraint firstItem="ifu-6W-QQi" firstAttribute="centerX" secondItem="JDo-46-fBc" secondAttribute="centerX" id="I7O-wq-98j"/>
+                            <constraint firstItem="ifu-6W-QQi" firstAttribute="centerX" secondItem="67F-H1-Eug" secondAttribute="centerX" id="Ixh-Ed-oB5"/>
+                            <constraint firstItem="67F-H1-Eug" firstAttribute="top" secondItem="79I-In-Ut7" secondAttribute="bottom" constant="40" id="WLC-c9-X61"/>
+                            <constraint firstItem="ifu-6W-QQi" firstAttribute="top" secondItem="67F-H1-Eug" secondAttribute="bottom" constant="8" symbolic="YES" id="XLV-z6-bGP"/>
+                            <constraint firstItem="PFP-5z-CNy" firstAttribute="top" secondItem="00v-rp-pLu" secondAttribute="bottom" constant="20" id="fy4-va-GNh"/>
+                            <constraint firstItem="yeT-NL-i0r" firstAttribute="centerX" secondItem="JDo-46-fBc" secondAttribute="centerX" id="gGA-TR-X9H"/>
+                            <constraint firstItem="79I-In-Ut7" firstAttribute="centerX" secondItem="JDo-46-fBc" secondAttribute="centerX" id="hpB-wb-yfH"/>
+                            <constraint firstItem="PFP-5z-CNy" firstAttribute="centerX" secondItem="JDo-46-fBc" secondAttribute="centerX" id="vjw-51-Oxs"/>
+                            <constraint firstItem="67F-H1-Eug" firstAttribute="centerX" secondItem="JDo-46-fBc" secondAttribute="centerX" id="wbk-2F-uig"/>
+                            <constraint firstItem="eIn-PV-Zxv" firstAttribute="centerX" secondItem="JDo-46-fBc" secondAttribute="centerX" id="x8g-9t-kLK"/>
+                            <constraint firstItem="PFP-5z-CNy" firstAttribute="leading" secondItem="00v-rp-pLu" secondAttribute="leading" id="xfq-sT-YfZ"/>
+                            <constraint firstItem="yeT-NL-i0r" firstAttribute="top" secondItem="ifu-6W-QQi" secondAttribute="bottom" constant="20" id="zpE-IX-PTG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="I76-yS-vgn"/>
+                                <exclude reference="xfq-sT-YfZ"/>
+                                <exclude reference="Ixh-Ed-oB5"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6M-JP-XmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
