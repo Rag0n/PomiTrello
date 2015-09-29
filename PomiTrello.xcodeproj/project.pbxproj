@@ -21,6 +21,7 @@
 		1F87D2441BAF013100B9948B /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2431BAF013100B9948B /* Board.swift */; settings = {ASSET_TAGS = (); }; };
 		1F87D2481BAF082C00B9948B /* AppKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D2471BAF082C00B9948B /* AppKeys.plist */; settings = {ASSET_TAGS = (); }; };
 		1FDED8141BB33E7F00CD1036 /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDED8131BB33E7F00CD1036 /* ListsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1FED68D51BBB293A007E3A99 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1FEDBCA51BB68485008C50B5 /* CardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDBCA41BB68485008C50B5 /* CardsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1FEDBCA71BB694AA008C50B5 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDBCA61BB694AA008C50B5 /* List.swift */; settings = {ASSET_TAGS = (); }; };
 		1FEDBCA91BB694BB008C50B5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDBCA81BB694BA008C50B5 /* Card.swift */; settings = {ASSET_TAGS = (); }; };
@@ -64,6 +65,7 @@
 		1F87D2431BAF013100B9948B /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		1F87D2471BAF082C00B9948B /* AppKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppKeys.plist; sourceTree = "<group>"; };
 		1FDED8131BB33E7F00CD1036 /* ListsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsTableViewController.swift; sourceTree = "<group>"; };
+		1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1FEDBCA41BB68485008C50B5 /* CardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewController.swift; sourceTree = "<group>"; };
 		1FEDBCA61BB694AA008C50B5 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		1FEDBCA81BB694BA008C50B5 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				1F87D20B1BADBBAC00B9948B /* Main.storyboard */,
 				1F87D2071BADBBAC00B9948B /* AppDelegate.swift */,
 				1F87D23C1BAECECD00B9948B /* Constants.swift */,
+				1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */,
 				1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */,
 				1F87D2361BADBC8200B9948B /* TrelloTableViewController.swift */,
 				1FDED8131BB33E7F00CD1036 /* ListsTableViewController.swift */,
@@ -312,6 +315,7 @@
 				1F87D2371BADBC8200B9948B /* TrelloTableViewController.swift in Sources */,
 				1FEDBCA51BB68485008C50B5 /* CardsTableViewController.swift in Sources */,
 				1F10C9741BB9D79A004C960A /* PomodoroViewController.swift in Sources */,
+				1FED68D51BBB293A007E3A99 /* WelcomeViewController.swift in Sources */,
 				1F87D23D1BAECECD00B9948B /* Constants.swift in Sources */,
 				1FDED8141BB33E7F00CD1036 /* ListsTableViewController.swift in Sources */,
 			);
