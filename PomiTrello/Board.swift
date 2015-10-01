@@ -54,7 +54,7 @@ class Board {
                 print(error?.localizedDescription)
             }
             
-            self.parseListsJSON(data!)
+            self.lists = self.parseListsJSON(data!)
             
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -91,7 +91,7 @@ class Board {
         return boards
     }
     
-    private func parseListsJSON(data: NSData) {
+    private func parseListsJSON(data: NSData) -> [List] {
         var newLists = [List]() // полностью обновляем
         
         do {
@@ -111,6 +111,6 @@ class Board {
         } catch {
             print("Cannot read json result")
         }
-        self.lists = newLists
+        return newLists
     }
 }
