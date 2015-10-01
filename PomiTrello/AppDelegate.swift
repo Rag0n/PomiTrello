@@ -24,12 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         if defaults.boolForKey(Constants.hasToken) == false {
-            // выбор окна с логином
-//            let loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
-//            let navCon = UINavigationController(rootViewController: loginViewController)
-//            self.window!.rootViewController = navCon
+            // окно с приветствием
             let welcomeViewContoller = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.welcomeViewControllerIdentifier) as! WelcomeViewController
-//            let navCon = UINavigationController(rootViewController: welcomeViewContoller)
             self.window!.rootViewController = welcomeViewContoller
         } else {
             // главное окно

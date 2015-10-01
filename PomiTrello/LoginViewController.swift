@@ -23,8 +23,10 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         defaults.setObject(token, forKey: Constants.userToken)
         defaults.setBool(true, forKey: Constants.hasToken)
         configureKey()
-        let ttvc = storyboard!.instantiateViewControllerWithIdentifier("MainViewController") as! TrelloTableViewController
-        self.navigationController?.setViewControllers([ttvc], animated: true)
+        let ttvc = storyboard!.instantiateViewControllerWithIdentifier(StoryBoard.trelloViewControllerIdentifier) as! TrelloTableViewController
+        let navCon = UINavigationController(rootViewController: ttvc)
+        presentViewController(navCon, animated: true, completion: nil)
+//        self.navigationController?.setViewControllers([ttvc], animated: true)
     }
     
     private func getAppKey() throws -> String {
@@ -97,6 +99,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
         // получаем и сохраняем пользовательский токен
         let currentURL: NSString = (webView.request?.URL?.absoluteString)!
         if currentURL == "https://trello.com/1/token/approve" {
+            webView.alpha = 0
             // токен находится под тегом pre
             let script = "document.getElementsByTagName('PRE')[0].firstChild.data"
             // получаем и форматируем токен
