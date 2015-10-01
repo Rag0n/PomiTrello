@@ -10,20 +10,14 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var loginButton: UIButton!
+    
 
-        // Do any additional setup after loading the view.
+    @IBAction func login() {
+        UIView.animateWithDuration(1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: { () -> Void in
+            self.loginButton.bounds.size.width += 80
+        }, completion: nil)
+        let lvc = storyboard!.instantiateViewControllerWithIdentifier(StoryBoard.loginViewControllerIdentifier)
+        presentViewController(lvc, animated: true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

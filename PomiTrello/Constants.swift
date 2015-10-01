@@ -17,6 +17,12 @@ struct Constants {
     static var queryKey = "QueryKey" // используется для всех запросов
 }
 
+struct StoryBoard {
+    static var welcomeViewControllerIdentifier = "WelcomeViewController"
+    static var loginViewControllerIdentifier = "LoginViewController"
+    static var trelloViewControllerIdentifier = "MainViewController"
+}
+
 enum Errors: ErrorType {
     case CantLoadBoards
 }

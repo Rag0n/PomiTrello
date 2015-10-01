@@ -28,11 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            let loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
 //            let navCon = UINavigationController(rootViewController: loginViewController)
 //            self.window!.rootViewController = navCon
-            let welcomViewContoller = storyboard.instantiateViewControllerWithIdentifier("WelcomViewController") as! WelcomeViewController
-            self.window!.rootViewController = welcomViewContoller
+            let welcomeViewContoller = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.welcomeViewControllerIdentifier) as! WelcomeViewController
+//            let navCon = UINavigationController(rootViewController: welcomeViewContoller)
+            self.window!.rootViewController = welcomeViewContoller
         } else {
             // главное окно
-            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! TrelloTableViewController
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.trelloViewControllerIdentifier) as! TrelloTableViewController
             let navCon = UINavigationController(rootViewController: mainViewController)
             self.window!.rootViewController = navCon
         }
