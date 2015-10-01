@@ -302,13 +302,29 @@
                     <view key="view" contentMode="scaleToFill" id="rtV-Kh-Lz9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cardName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAP-X5-EkO">
+                                <rect key="frame" x="261" y="28" width="79" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bAP-X5-EkO" firstAttribute="top" secondItem="vMX-p3-4gu" secondAttribute="bottom" constant="8" symbolic="YES" id="HPE-6u-KFa"/>
+                            <constraint firstItem="bAP-X5-EkO" firstAttribute="centerX" secondItem="rtV-Kh-Lz9" secondAttribute="centerX" id="nyR-03-iM4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardLabel" destination="bAP-X5-EkO" id="B5H-Ho-9cs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kC-sR-IQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4845" y="379"/>
+            <point key="canvasLocation" x="4857" y="379"/>
         </scene>
     </scenes>
 </document>

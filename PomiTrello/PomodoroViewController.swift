@@ -10,10 +10,12 @@ import UIKit
 
 class PomodoroViewController: UIViewController {
 
+    @IBOutlet weak var cardLabel: UILabel!
     var card: Card!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardLabel.text = card.name
     }
 
 }
