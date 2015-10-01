@@ -11,8 +11,8 @@ import UIKit
 class LoginViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
+    private var activityIndicator: UIActivityIndicatorView!
     
-    // MARK: - Private API
     private enum LoginError: ErrorType {
         case CantFindApplicationKey
         case IncorrectTokenURL
@@ -87,15 +87,29 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        activityIndicator.color = UIColor.grayColor()
+        view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+        
+        // запрашиваем доступ к trello
         if let url = configureTokenURL() {
             let request = NSURLRequest(URL: url)
             webView.loadRequest(request)
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        activityIndicator.startAnimating()
+    }
+    
     
     // MARK: - UIWebViewDelegate
     func webViewDidFinishLoad(webView: UIWebView) {
+        if activityIndicator.isAnimating() {
+            activityIndicator.stopAnimating()
+        }
         // получаем и сохраняем пользовательский токен
         let currentURL: NSString = (webView.request?.URL?.absoluteString)!
         if currentURL == "https://trello.com/1/token/approve" {
