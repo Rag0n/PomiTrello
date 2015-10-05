@@ -11,6 +11,10 @@ import CoreData
 
 private let ModelName = "Boards"
 
+protocol ManagedObjectContextSettable: class {
+    var managedObjectContext: NSManagedObjectContext! { get set }
+}
+
 public func createBoardsMainContext() -> NSManagedObjectContext {
     let bundle = NSBundle(forClass: Board.self)
     let coordinator = NSPersistentStoreCoordinator.coordinatorForModelWithName(ModelName, inBundle: bundle)

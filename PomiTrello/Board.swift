@@ -15,7 +15,7 @@ public final class Board: NSManagedObject {
     @NSManaged private(set) var name: String!
     @NSManaged private(set) var desc: String!
     @NSManaged private(set) var url: NSURL!
-    @NSManaged private(set) var lists: NSOrderedSet
+//    @NSManaged private(set) var lists: NSOrderedSet
 //    @NSManaged private(set) var lists = [List]()
     
     
@@ -45,27 +45,27 @@ public final class Board: NSManagedObject {
         task.resume()
     }
     
-    func loadLists(completionHandler: () -> Void) {
-        let key = NSUserDefaults.standardUserDefaults().valueForKey(Constants.queryKey) as! String
-        let urlText =  "https://api.trello.com/1/boards/" + id + "?lists=open&list_fields=name&fields=name,desc&" + key
-        let url = NSURL(string: urlText)!
-        let request = NSURLRequest(URL: url)
-        let urlSession = NSURLSession.sharedSession()
-        let task = urlSession.dataTaskWithRequest(request) { [unowned self] (data, response, error) -> Void in
-            if error != nil {
-                print(error?.localizedDescription)
-            }
-            
-            self.lists = self.parseListsJSON(data!)
-            
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                completionHandler()
-            })
-        }
-        
-        task.resume()
-    }
+//    func loadLists(completionHandler: () -> Void) {
+//        let key = NSUserDefaults.standardUserDefaults().valueForKey(Constants.queryKey) as! String
+//        let urlText =  "https://api.trello.com/1/boards/" + id + "?lists=open&list_fields=name&fields=name,desc&" + key
+//        let url = NSURL(string: urlText)!
+//        let request = NSURLRequest(URL: url)
+//        let urlSession = NSURLSession.sharedSession()
+//        let task = urlSession.dataTaskWithRequest(request) { [unowned self] (data, response, error) -> Void in
+//            if error != nil {
+//                print(error?.localizedDescription)
+//            }
+//            
+//            self.lists = self.parseListsJSON(data!)
+//            
+//            
+//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                completionHandler()
+//            })
+//        }
+//        
+//        task.resume()
+//    }
 
     
     // MARK: - Private API
