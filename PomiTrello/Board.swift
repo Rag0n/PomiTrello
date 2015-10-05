@@ -7,14 +7,16 @@
 //
 
 import Foundation
+import CoreData
 
 
-class Board {
-    var id: String!
-    var name: String!
-    var description: String!
-    var url: NSURL!
-    var lists = [List]()
+public final class Board: NSManagedObject {
+    @NSManaged private(set) var id: String!
+    @NSManaged private(set) var name: String!
+    @NSManaged private(set) var desc: String!
+    @NSManaged private(set) var url: NSURL!
+    @NSManaged private(set) var lists: NSOrderedSet
+//    @NSManaged private(set) var lists = [List]()
     
     
     // MARK: - Public API
@@ -80,7 +82,7 @@ class Board {
                 let board = Board()
                 board.id = jsonBoard["id"] as! String
                 board.name = jsonBoard["name"] as! String
-                board.description = jsonBoard["desc"] as! String
+                board.desc = jsonBoard["desc"] as! String
                 board.url = NSURL(string: jsonBoard["url"] as! String)
                 
                 boards.append(board)
