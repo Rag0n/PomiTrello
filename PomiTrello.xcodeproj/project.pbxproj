@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1F10C9741BB9D79A004C960A /* PomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C9731BB9D79A004C960A /* PomodoroViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1F10C9761BB9DB70004C960A /* CardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C9751BB9DB70004C960A /* CardsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		1F264DE21BBD7E3300012A3B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F264DE11BBD7E3300012A3B /* DataController.swift */; settings = {ASSET_TAGS = (); }; };
 		1F5D222C1BC2756A00FDD41D /* BoardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D222B1BC2756A00FDD41D /* BoardStack.swift */; settings = {ASSET_TAGS = (); }; };
 		1F5D222F1BC275FF00FDD41D /* Boards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D222D1BC275FF00FDD41D /* Boards.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		1F87D2081BADBBAC00B9948B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2071BADBBAC00B9948B /* AppDelegate.swift */; };
@@ -50,7 +49,6 @@
 /* Begin PBXFileReference section */
 		1F10C9731BB9D79A004C960A /* PomodoroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroViewController.swift; sourceTree = "<group>"; };
 		1F10C9751BB9DB70004C960A /* CardsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewCell.swift; sourceTree = "<group>"; };
-		1F264DE11BBD7E3300012A3B /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		1F5D222B1BC2756A00FDD41D /* BoardStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardStack.swift; sourceTree = "<group>"; };
 		1F5D222E1BC275FF00FDD41D /* Boards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Boards.xcdatamodel; sourceTree = "<group>"; };
 		1F87D2041BADBBAC00B9948B /* PomiTrello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomiTrello.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,9 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				1F5D222D1BC275FF00FDD41D /* Boards.xcdatamodeld */,
-				1F264DE11BBD7E3300012A3B /* DataController.swift */,
-				1F87D2431BAF013100B9948B /* Board.swift */,
 				1F5D222B1BC2756A00FDD41D /* BoardStack.swift */,
+				1F87D2431BAF013100B9948B /* Board.swift */,
 				1FEDBCA61BB694AA008C50B5 /* List.swift */,
 				1FEDBCA81BB694BA008C50B5 /* Card.swift */,
 			);
@@ -323,7 +320,6 @@
 				1F87D2441BAF013100B9948B /* Board.swift in Sources */,
 				1F5D222F1BC275FF00FDD41D /* Boards.xcdatamodeld in Sources */,
 				1F87D2371BADBC8200B9948B /* TrelloTableViewController.swift in Sources */,
-				1F264DE21BBD7E3300012A3B /* DataController.swift in Sources */,
 				1FEDBCA51BB68485008C50B5 /* CardsTableViewController.swift in Sources */,
 				1F10C9741BB9D79A004C960A /* PomodoroViewController.swift in Sources */,
 				1FED68D51BBB293A007E3A99 /* WelcomeViewController.swift in Sources */,
