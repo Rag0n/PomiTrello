@@ -4,6 +4,7 @@
         <attribute name="desc" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="position" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="url" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Card" syncable="YES">
@@ -15,7 +16,7 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Board" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Board" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="Card" positionX="-36" positionY="9" width="128" height="75"/>
         <element name="List" positionX="-54" positionY="-9" width="128" height="75"/>
     </elements>

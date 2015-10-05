@@ -10,7 +10,8 @@ import Foundation
 import CoreData
 
 
-public final class Board: NSManagedObject {
+public final class Board: ManagedObject {
+    @NSManaged private(set) var position: Int32
     @NSManaged private(set) var id: String!
     @NSManaged private(set) var name: String!
     @NSManaged private(set) var desc: String!
@@ -114,5 +115,16 @@ public final class Board: NSManagedObject {
             print("Cannot read json result")
         }
         return newLists
+    }
+}
+
+
+extension Board: ManagedObjectType {
+    public static var entityName: String {
+        return "Board"
+    }
+    
+    public static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: "position", ascending: false)]
     }
 }

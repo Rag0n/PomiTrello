@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class TrelloTableViewController: UITableViewController {    
+class TrelloTableViewController: UITableViewController, ManagedObjectContextSettable {
 
     var boards = [Board]()
-    
+    var managedObjectContext: NSManagedObjectContext!
     
     // MARK: - ViewController LifeCycle
     

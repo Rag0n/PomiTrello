@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navCon = UINavigationController(rootViewController: mainViewController)
             self.window!.rootViewController = navCon
         }
+        
+        guard let vc = window?.rootViewController as? ManagedObjectContextSettable else {
+            fatalError("Wrong view controller type(VC should conform to ManagedObjectContextSettable protocol)")
+        }
+        vc.managedObjectContext = managedObjectContext
 
         self.window!.makeKeyAndVisible()
     
