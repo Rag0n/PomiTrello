@@ -76,6 +76,9 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
 
 
     // MARK: - Private
+    private typealias Data = FetchedResultsDataProvider<TrelloTableViewController>
+    private var dataSource: TableViewDataSource<TrelloTableViewController, Data, TrelloTableViewCell>
+    
     // initializing fetched result controller
     private func setupTableView() {
         tableView.estimatedRowHeight = tableView.rowHeight
@@ -89,5 +92,21 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
             sectionNameKeyPath: nil, cacheName: nil)
         let dataProvider = FetchedResultsDataProvider(
             fetchedResultsController: frc, delegate: self)
+        
+        dataSource = TableViewDataSource(tableView: tableView, dataProvider: dataProvider, delegate: self)
+        
+    }
+}
+
+
+extension TrelloTableViewController: DataProviderDelegate {
+    func dataProviderDidUpdate(updates: [DataProviderUpdate<Board>]?) {
+        dataSource.processUpdates(updates)
+    }
+}
+
+extension TrelloTableViewController: DataSourceDelegate {
+    func cellIdentifierForObject(object: Object) -> String {
+        return "BoardCell"
     }
 }
