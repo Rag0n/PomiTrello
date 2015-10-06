@@ -75,4 +75,16 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
 //    }
 
 
+    // MARK: - Private
+    // initializing fetched result controller
+    private func setupTableView() {
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        let request = Board.sortedFetchRequest
+        request.fetchBatchSize = 20
+        request.returnsObjectsAsFaults = false
+        
+        let frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        let dataProvider = FetchedResultDataProvider
+    }
 }
