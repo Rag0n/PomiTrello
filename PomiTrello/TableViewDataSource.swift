@@ -19,6 +19,25 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
         tableView.reloadData()
     }
     
+    func processUpdates(updates: [DataProviderUpdate<Data.Object>]?) {
+        guard let updates = updates else { return tableView.reloadData() }
+        tableView.beginUpdates()
+        for update in updates {
+            switch update {
+            case .Insert(let indexPath):
+                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            case .Update(let indexPath, let object):
+                guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? Cell else { break }
+                cell.configureForObject(object)
+            case .Move(let indexPath, let newIndexPath):
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+            case .Delete(let indexPath):
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+        }
+    }
+    
     // MARK: - TableView DataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataProvider.numberOfItemsInSection(section)
