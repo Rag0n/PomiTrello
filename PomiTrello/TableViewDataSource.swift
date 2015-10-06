@@ -10,4 +10,32 @@ import UIKit
 
 class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell: UITableViewCell where Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.DataSource == Data.Object>: NSObject, UITableViewDataSource {
     
+    required init(tableView: UITableView, dataProvider: Data, delegate: Delegate) {
+        self.tableView = tableView
+        self.dataProvider = dataProvider
+        self.delegate = delegate
+        super.init()
+        tableView.dataSource = self
+        tableView.reloadData()
+    }
+    
+    // MARK: - TableView DataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataProvider.numberOfItemsInSection(section)
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let object = dataProvider.objectAtIndexPath(indexPath)
+        let identifier = delegate.cellIdentifierForObject(object)
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as? Cell else {
+            fatalError("Unexpected cell type at \(indexPath)")
+        }
+        cell.configureForObject(object)
+        return cell
+    }
+    
+    // MARK: - Private
+    private let tableView: UITableView
+    private let dataProvider: Data
+    private weak var delegate: Delegate!
 }
