@@ -161,17 +161,31 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Board cell" id="WGd-Bg-GcQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BoardCell" id="XGN-YU-gvK" customClass="TrelloTableViewCell" customModule="PomiTrello" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WGd-Bg-GcQ" id="MSe-5x-sMv">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XGN-YU-gvK" id="O9h-VI-khb">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unv-TK-Na4">
+                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="unv-TK-Na4" secondAttribute="trailing" id="3xQ-Gz-Tu3"/>
+                                        <constraint firstItem="unv-TK-Na4" firstAttribute="centerY" secondItem="O9h-VI-khb" secondAttribute="centerY" id="ZeE-9D-KmY"/>
+                                        <constraint firstItem="unv-TK-Na4" firstAttribute="leading" secondItem="O9h-VI-khb" secondAttribute="leadingMargin" id="prD-tf-iZg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="Imw-mV-Nxm" kind="show" identifier="Show list" id="4SH-TN-YDY"/>
+                                    <outlet property="label" destination="unv-TK-Na4" id="OzV-em-724"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

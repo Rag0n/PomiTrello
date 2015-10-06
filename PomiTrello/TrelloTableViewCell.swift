@@ -10,11 +10,12 @@ import UIKit
 
 class TrelloTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var label: UILabel!
 }
 
 
-//extension TrelloTableViewCell: ConfigurableCell {
-//    func configureForObject(object: DataSource) {
-//        
-//    }
-//}
+extension TrelloTableViewCell: ConfigurableCell {
+    func configureForObject(object: Board) {
+        label.text = object.name
+    }
+}
