@@ -11,73 +11,44 @@ import CoreData
 
 class TrelloTableViewController: UITableViewController, ManagedObjectContextSettable {
 
+    // MARK: - Public API
     var boards = [Board]()
     var managedObjectContext: NSManagedObjectContext!
     
-    // MARK: - ViewController LifeCycle
     
+    // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Boards"
-        refresh()
+//        refresh()
+        setupTableView()
     }
     
-    func refresh() {
-        if refreshControl != nil {
-            refreshControl?.beginRefreshing()
-        }
-        refresh(refreshControl)
-    }
-
-    @IBAction func refresh(sender: UIRefreshControl?) {
-        do {
-            try Board.loadBoards({ (boards) -> Void in
-                self.boards = boards
-                sender?.endRefreshing()
-                self.tableView.reloadData()
-            })
-        } catch Errors.CantLoadBoards {
-            print("Cant load boards")
-        } catch {
-            print("Something went wrong :(")
-        }
-    }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return boards.count
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Board cell", forIndexPath: indexPath) as UITableViewCell
-        let board = boards[indexPath.row]
-        
-        cell.textLabel?.text = board.name
-        
-        return cell
-    }
-    
-
-    // MARK: - Navigation
-
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "Show list" {
-//            if let ltvc = segue.destinationViewController as? ListsTableViewController {
-//                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-//                ltvc.board = boards[indexPath.row]
-//            }
+//    func refresh() {
+//        if refreshControl != nil {
+//            refreshControl?.beginRefreshing()
+//        }
+//        refresh(refreshControl)
+//    }
+//
+//    @IBAction func refresh(sender: UIRefreshControl?) {
+//        do {
+//            try Board.loadBoards({ (boards) -> Void in
+//                self.boards = boards
+//                sender?.endRefreshing()
+//                self.tableView.reloadData()
+//            })
+//        } catch Errors.CantLoadBoards {
+//            print("Cant load boards")
+//        } catch {
+//            print("Something went wrong :(")
 //        }
 //    }
-
-
+    
+    
     // MARK: - Private
     private typealias Data = FetchedResultsDataProvider<TrelloTableViewController>
-    private var dataSource: TableViewDataSource<TrelloTableViewController, Data, TrelloTableViewCell>
+    private var dataSource: TableViewDataSource<TrelloTableViewController, Data, TrelloTableViewCell>!
     
     // initializing fetched result controller
     private func setupTableView() {
@@ -96,10 +67,22 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
         dataSource = TableViewDataSource(tableView: tableView, dataProvider: dataProvider, delegate: self)
         
     }
+    
+    // MARK: - Navigation
+    
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //        if segue.identifier == "Show list" {
+    //            if let ltvc = segue.destinationViewController as? ListsTableViewController {
+    //                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+    //                ltvc.board = boards[indexPath.row]
+    //            }
+    //        }
+    //    }
 }
 
 
 extension TrelloTableViewController: DataProviderDelegate {
+    // passing updates from data provider to data source
     func dataProviderDidUpdate(updates: [DataProviderUpdate<Board>]?) {
         dataSource.processUpdates(updates)
     }
