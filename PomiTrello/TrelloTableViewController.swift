@@ -84,7 +84,10 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
         request.fetchBatchSize = 20
         request.returnsObjectsAsFaults = false
         
-        let frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        let dataProvider = FetchedResultDataProvider
+        let frc = NSFetchedResultsController(fetchRequest: request,
+            managedObjectContext: managedObjectContext,
+            sectionNameKeyPath: nil, cacheName: nil)
+        let dataProvider = FetchedResultsDataProvider(
+            fetchedResultsController: frc, delegate: self)
     }
 }

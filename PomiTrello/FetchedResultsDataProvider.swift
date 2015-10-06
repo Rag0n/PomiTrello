@@ -13,8 +13,8 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate> : NSObject, NSF
     
     typealias Object = Delegate.Object
     
-    init(fetchedResultController: NSFetchedResultsController, delegate: Delegate) {
-        self.fetchedResultsController = fetchedResultController
+    init(fetchedResultsController: NSFetchedResultsController, delegate: Delegate) {
+        self.fetchedResultsController = fetchedResultsController
         self.delegate = delegate
         super.init()
         fetchedResultsController.delegate = self
