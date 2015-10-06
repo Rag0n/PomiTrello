@@ -23,7 +23,30 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate> : NSObject, NSF
     
     // MARK: - NSFetchedResultsControllerDelegate
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
-        
+        updates = []
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        delegate.dataProviderDidUpdate(updates)
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        switch type {
+        case .Insert:
+            guard let indexPath = newIndexPath else { fatalError("IndexPath cant be nil") }
+            updates.append(.Insert(indexPath))
+        case .Update:
+            guard let indexPath = indexPath else { fatalError("IndexPath cant be nil") }
+            let object = objectAtIndexPath(indexPath)
+            updates.append(.Update(indexPath, object))
+        case .Move:
+            guard let indexPath = indexPath else { fatalError("IndexPath cant be nil") }
+            guard let newIndexPath = newIndexPath else { fatalError("IndexPath cant be nil") }
+            updates.append(.Move(indexPath, newIndexPath))
+        case .Delete:
+            guard let indexPath = indexPath else { fatalError("IndexPath cant be nil") }
+            updates.append(.Delete(indexPath))
+        }
     }
     
     
@@ -43,4 +66,5 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate> : NSObject, NSF
     // MARK: - Private
     private let fetchedResultsController: NSFetchedResultsController
     private weak var delegate: Delegate!
+    private var updates: [DataProviderUpdate<Object>] = []
 }
