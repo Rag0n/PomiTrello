@@ -78,15 +78,15 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
     }
     
     // MARK: - Navigation
-    
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //        if segue.identifier == "Show list" {
-    //            if let ltvc = segue.destinationViewController as? ListsTableViewController {
-    //                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-    //                ltvc.board = boards[indexPath.row]
-    //            }
-    //        }
-    //    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segueIdentifierForSegue
+        if segue.identifier == "Show list" {
+            if let ltvc = segue.destinationViewController as? ListsTableViewController {
+                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+                ltvc.board = boards[indexPath.row]
+            }
+        }
+    }
 }
 
 
