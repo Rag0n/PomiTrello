@@ -20,8 +20,17 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Boards"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "createNewBoard")
 //        refresh()
         setupTableView()
+    }
+    
+    // MARK: Temp code
+    var position = 0
+    func createNewBoard() {
+        self.managedObjectContext.performBlock {
+            Board.insertIntoContext(self.managedObjectContext, position: self.position++, id: "id  \(self.position)", name: "New Board \(self.position)", desc: "Board description", url: NSURL(string: "board url \(self.position)"))
+        }
     }
     
 //    func refresh() {
