@@ -22,10 +22,21 @@ public final class Board: ManagedObject {
     
     // MARK: - Public API
     
-    public static func insertIntoContext(moc: NSManagedObjectContext, data: NSData) {
+    public struct BoardData {
+        let name: String!
+        let desc: String!
+        let url: NSURL!
+        let id: String!
+    }
+    
+    public static func insertIntoContext(moc: NSManagedObjectContext, data: BoardData) -> Board {
         let board: Board = moc.insertObject()
-        // TODO: impelement parsing here
-        // board.name = .....
+        board.name = data.name
+        board.id = data.id
+        board.url = data.url
+        board.desc = data.desc
+        // TODO: position?
+        
         return board
     }
     
