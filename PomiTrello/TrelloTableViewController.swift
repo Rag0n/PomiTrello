@@ -98,7 +98,10 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
             guard let vc = segue.destinationViewController as? ListsTableViewController else {
                 fatalError("Wrong View Controller Type")
             }
-//            guard let board = dataSource.selected
+            guard let board = dataSource.selectedObject else {
+                fatalError("Cant find selected row")
+            }
+            vc.board = board
         }
     }
 }
