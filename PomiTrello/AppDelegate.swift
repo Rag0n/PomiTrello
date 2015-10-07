@@ -24,19 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if defaults.boolForKey(Constants.hasUserToken) == false {
             let welcomeViewContoller = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.welcomeViewControllerIdentifier) as! WelcomeViewController
             self.window!.rootViewController = welcomeViewContoller
+            welcomeViewContoller.managedObjectContext = managedObjectContext
         } else {
             let mainViewController = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.trelloViewControllerIdentifier) as! TrelloTableViewController
+            mainViewController.managedObjectContext = managedObjectContext
             let navCon = UINavigationController(rootViewController: mainViewController)
             self.window!.rootViewController = navCon
         }
         
-        guard let vc = window?.rootViewController as? ManagedObjectContextSettable else {
-            fatalError("Wrong view controller type(VC should conform to ManagedObjectContextSettable protocol)")
-        }
-        vc.managedObjectContext = managedObjectContext
-
         self.window!.makeKeyAndVisible()
-    
         return true
     }
 }
