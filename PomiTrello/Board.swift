@@ -22,6 +22,13 @@ public final class Board: ManagedObject {
     
     // MARK: - Public API
     
+    public static func insertIntoContext(moc: NSManagedObjectContext, data: NSData) {
+        let board: Board = moc.insertObject()
+        // TODO: impelement parsing here
+        // board.name = .....
+        return board
+    }
+    
     static func loadBoards(completionHandler: (boards: [Board]) -> Void) throws {
         let key = NSUserDefaults.standardUserDefaults().valueForKey(Constants.queryKey) as! String
         guard let url = NSURL(string: "https://api.trello.com/1/members/me/boards/?filter=open&" + key) else {
