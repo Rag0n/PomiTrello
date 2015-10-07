@@ -15,21 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let managedObjectContext = createBoardsMainContext()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if defaults.boolForKey("HasLaunchedOnce") == false {
-            defaults.setBool(true, forKey: "HasLaunchedOnce")
-            defaults.setBool(false, forKey: Constants.hasToken)
-        }
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        if defaults.boolForKey(Constants.hasToken) == false {
-            // окно с приветствием
+        let defaults = NSUserDefaults.standardUserDefaults()
+        // checks if app has user key for trello api
+        if defaults.boolForKey(Constants.hasUserToken) == false {
             let welcomeViewContoller = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.welcomeViewControllerIdentifier) as! WelcomeViewController
             self.window!.rootViewController = welcomeViewContoller
         } else {
-            // главное окно
             let mainViewController = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.trelloViewControllerIdentifier) as! TrelloTableViewController
             let navCon = UINavigationController(rootViewController: mainViewController)
             self.window!.rootViewController = navCon
