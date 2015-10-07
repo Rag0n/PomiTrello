@@ -18,3 +18,23 @@ extension NSManagedObjectContext {
     }
     
 }
+
+extension NSManagedObjectContext {
+    public func saveOrRollBack() -> Bool {
+        do {
+            try save()
+            return true
+        } catch {
+            rollback()
+            return false
+        }
+    }
+    
+    // makes sure we'r in correct queue to make changes
+    public func performChanges(block: () -> ()) {
+        performBlock {
+            block()
+            self.saveOrRollBack()
+        }
+    }
+}
