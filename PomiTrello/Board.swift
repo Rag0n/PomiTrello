@@ -21,27 +21,18 @@ public final class Board: ManagedObject {
     
     
     // MARK: - Public API
-    
-    public struct BoardData {
-        let name: String!
-        let desc: String!
-        let url: NSURL!
-        let id: String!
-    }
-    
-    public static func insertIntoContext(moc: NSManagedObjectContext, data: BoardData) -> Board {
+    public static func insertIntoContext(moc: NSManagedObjectContext, position: Int32, id:String, name: String, desc: String, url: NSURL) -> Board {
         let board: Board = moc.insertObject()
-        board.name = data.name
-        board.id = data.id
-        board.url = data.url
-        board.desc = data.desc
-        // TODO: position?
+        board.position = position
+        board.name = name
+        board.id = id
+        board.url = url
+        board.desc = desc
         
         return board
     }
     
-    static func loadBoards(completionHandler: (boards: [Board]) -> Void) throws {
-        let key = NSUserDefaults.standardUserDefaults().valueForKey(Constants.queryKey) as! String
+    static func loadBoards(moc: NSManagedObjectContext, completionHandler: (boards: [Board]) -> Void) throws {
         guard let url = NSURL(string: "https://api.trello.com/1/members/me/boards/?filter=open&" + key) else {
             throw Errors.CantLoadBoards
         }
@@ -52,13 +43,7 @@ public final class Board: ManagedObject {
                 print(error?.localizedDescription)
             }
             
-            // parse JSON
-            let boards = Board.parseBoardsJSON(data!)
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                completionHandler(boards: boards)
-            })
-            
+            parseBoardsJSON(moc, data: data!)
         }
         
         task.resume()
@@ -88,52 +73,55 @@ public final class Board: ManagedObject {
 
     
     // MARK: - Private API
+    private static var key: String {
+        return NSUserDefaults.standardUserDefaults().valueForKey(Constants.queryKey) as! String
+    }
     
-    static private func parseBoardsJSON(data: NSData) -> [Board] {
-        var boards = [Board]()
+    static private func parseBoardsJSON(moc: NSManagedObjectContext, data: NSData) {
         do {
             // get result
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
             
             // parse result
             let jsonBoards = jsonResult as! [[String:AnyObject]]
+            var position: Int32 = 0;
             for jsonBoard in jsonBoards {
-                let board = Board()
-                board.id = jsonBoard["id"] as! String
-                board.name = jsonBoard["name"] as! String
-                board.desc = jsonBoard["desc"] as! String
-                board.url = NSURL(string: jsonBoard["url"] as! String)
+                let id = jsonBoard["id"] as! String
+                let name = jsonBoard["name"] as! String
+                let desc = jsonBoard["desc"] as! String
+                let url = NSURL(string: jsonBoard["url"] as! String)
+                insertIntoContext(moc, position: position, id: id, name: name, desc: desc, url: url!)
                 
-                boards.append(board)
+                position++
             }
         } catch {
-            print("Cannot read json result")
+            // TODO: improve error handling
+            fatalError("Cannot parse Board JSON")
         }
-        return boards
     }
     
-    private func parseListsJSON(data: NSData) -> [List] {
-        var newLists = [List]() // полностью обновляем
-        
-        do {
-            // get result
-            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
-            
-            // parse result
-            let jsonBoard = jsonResult as! [String:AnyObject]
-            let lists = jsonBoard["lists"] as! [[String:String]]
-            for list in lists {
-                let newList = List()
-                newList.id = list["id"]!
-                newList.name = list["name"]!
-                newList.cards = [Card]()
-                newLists.append(newList)
-            }
-        } catch {
-            print("Cannot read json result")
-        }
-        return newLists
-    }
+//    private func parseListsJSON(data: NSData) -> [List] {
+//        var newLists = [List]() // полностью обновляем
+//        
+//        do {
+//            // get result
+//            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+//            
+//            // parse result
+//            let jsonBoard = jsonResult as! [String:AnyObject]
+//            let lists = jsonBoard["lists"] as! [[String:String]]
+//            for list in lists {
+//                let newList = List()
+//                newList.id = list["id"]!
+//                newList.name = list["name"]!
+//                newList.cards = [Card]()
+//                newLists.append(newList)
+//            }
+//        } catch {
+//            print("Cannot read json result")
+//        }
+//        return newLists
+//    }
 }
 
 
