@@ -15,10 +15,6 @@ class LoginViewController: UIViewController, UIWebViewDelegate, ManagedObjectCon
     @IBOutlet weak var webView: UIWebView!
     private var activityIndicator: UIActivityIndicatorView!
     
-    private enum LoginError: ErrorType {
-        case CantFindApplicationKey
-        case IncorrectTokenURL
-    }
     
     private func saveToken(token: String) {
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -29,77 +25,65 @@ class LoginViewController: UIViewController, UIWebViewDelegate, ManagedObjectCon
         ttvc.managedObjectContext = managedObjectContext
         let navCon = UINavigationController(rootViewController: ttvc)
         presentViewController(navCon, animated: true, completion: nil)
-//        self.navigationController?.setViewControllers([ttvc], animated: true)
     }
     
-    private func getAppKey() throws -> String {
+    private func getAppKey() -> String {
         // достаем приватный ключ приложения из property list
         var keys: NSDictionary?
-        
         guard let path = NSBundle.mainBundle().pathForResource("AppKeys", ofType: "plist") else {
-            throw LoginError.CantFindApplicationKey
+            fatalError("App should provide trello api's developer key")
         }
         keys = NSDictionary(contentsOfFile: path)
         
-        if let appKey = keys?[Constants.appKey] as? String {
-            return appKey
+        guard let appKey = keys?[Constants.appKey] as? String else {
+            fatalError("App should provide trello api's developer key")
         }
-        return ""
+        return appKey
     }
     
     private func configureKey() {
         // создаем и сохраняем ключ, содержащий ключ приложения и пользовательский токен
         // который в дальнейшем будет использоваться для доступа к REST API
         let defaults = NSUserDefaults.standardUserDefaults()
-        do {
-            let appKey = try getAppKey()
-            let token = defaults.objectForKey(Constants.userToken) as? String ?? ""
-            let key = "key=\(appKey)&token=\(token)"
-            defaults.setObject(key, forKey: Constants.queryKey)
-        } catch LoginError.CantFindApplicationKey {
-            print("Cant find trello's developer key")
-        } catch {
-            print("Something went wrong")
+        let appKey = getAppKey()
+        guard let token = defaults.objectForKey(Constants.userToken) as? String else {
+            fatalError("Cant configure user token")
         }
+        let key = "key=\(appKey)&token=\(token)"
+        defaults.setObject(key, forKey: Constants.queryKey)
     }
     
-    private func configureTokenURL() -> NSURL? {
+    private func configureTokenURL() -> NSURL {
         // создаем url для запроса пользовательского токена
         let urlBegin = "https://trello.com/1/authorize?key="
         let urlEnd = "&name=PomiTrello&expiration=never&response_type=token&scope=read,write"
         
-        do {
-            let appKey = try getAppKey()
-            let tokenURL = urlBegin + "\(appKey)" + urlEnd
-            guard let url = NSURL(string: tokenURL) else {
-                throw LoginError.IncorrectTokenURL
-            }
-            return url
-        } catch LoginError.CantFindApplicationKey {
-            print("Cant find trello's developer key")
-        } catch LoginError.IncorrectTokenURL {
-            print("Can't configure valid user token URL")
-        } catch {
-            print("Something went wrong")
+        let appKey = getAppKey()
+        let tokenURL = urlBegin + "\(appKey)" + urlEnd
+        guard let url = NSURL(string: tokenURL) else {
+            fatalError("Cant configure valid user token URL")
         }
-
-        return nil
+        
+        return url
+    }
+    
+    private func addActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        activityIndicator.color = UIColor.grayColor()
+        view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
     }
     
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
-        activityIndicator.color = UIColor.grayColor()
-        view.addSubview(activityIndicator)
-        activityIndicator.center = view.center
+        addActivityIndicator()
         
         // запрашиваем доступ к trello
-        if let url = configureTokenURL() {
-            let request = NSURLRequest(URL: url)
-            webView.loadRequest(request)
-        }
+        let url = configureTokenURL()
+        let request = NSURLRequest(URL: url)
+        webView.loadRequest(request)
     }
     
     override func viewWillAppear(animated: Bool) {
