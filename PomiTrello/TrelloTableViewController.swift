@@ -14,7 +14,12 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
     enum SegueIdentifier: String {
         case ShowLists = "showLists"
     }
+    
+    struct StoryBoard {
+        static let navTitle = "Boards"
+    }
 
+    
     // MARK: - Public API
     var boards = [Board]()
     var managedObjectContext: NSManagedObjectContext!
@@ -23,11 +28,12 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
     // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Boards"
+        title = StoryBoard.navTitle
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "createNewBoard")
 //        refresh()
         setupTableView()
     }
+    
     
     // MARK: Temp code
     var position: Int32 = 0
@@ -81,17 +87,8 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
         
     }
     
-    // MARK: - Navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        switch segueIdentifierForSegue
-//        if segue.identifier == "Show list" {
-//            if let ltvc = segue.destinationViewController as? ListsTableViewController {
-//                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-//                ltvc.board = boards[indexPath.row]
-//            }
-//        }
-//    }
     
+    // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segueIdentifierForSegue(segue) {
         case .ShowLists:
