@@ -26,6 +26,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate, ManagedObjectCon
         defaults.setBool(true, forKey: Constants.hasUserToken)
         configureKey()
         let ttvc = storyboard!.instantiateViewControllerWithIdentifier(StoryBoard.trelloViewControllerIdentifier) as! TrelloTableViewController
+        ttvc.managedObjectContext = managedObjectContext
         let navCon = UINavigationController(rootViewController: ttvc)
         presentViewController(navCon, animated: true, completion: nil)
 //        self.navigationController?.setViewControllers([ttvc], animated: true)
