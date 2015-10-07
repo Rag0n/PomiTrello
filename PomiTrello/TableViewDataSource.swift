@@ -27,6 +27,9 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
     func processUpdates(updates: [DataProviderUpdate<Data.Object>]?) {
         guard let updates = updates else { return tableView.reloadData() }
         tableView.beginUpdates()
+        defer {
+            tableView.endUpdates()
+        }
         for update in updates {
             switch update {
             case .Insert(let indexPath):
@@ -41,7 +44,6 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
         }
-        tableView.endUpdates()
     }
     
     // MARK: - TableView DataSource
