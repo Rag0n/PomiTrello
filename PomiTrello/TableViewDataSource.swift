@@ -41,6 +41,7 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
         }
+        tableView.endUpdates()
     }
     
     // MARK: - TableView DataSource
