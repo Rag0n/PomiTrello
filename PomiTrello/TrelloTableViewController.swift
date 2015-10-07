@@ -30,10 +30,10 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
     }
     
     // MARK: Temp code
-    var position = 0
+    var position: Int32 = 0
     func createNewBoard() {
         self.managedObjectContext.performBlock {
-            Board.insertIntoContext(self.managedObjectContext, position: self.position++, id: "id  \(self.position)", name: "New Board \(self.position)", desc: "Board description", url: NSURL(string: "board url \(self.position)"))
+            Board.insertIntoContext(self.managedObjectContext, position: self.position++, id: "id  \(self.position)", name: "New Board \(self.position)", desc: "Board description", url: NSURL(string: "board url \(self.position)")!)
         }
     }
     

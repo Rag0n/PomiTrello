@@ -19,6 +19,11 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
         tableView.reloadData()
     }
     
+    var selectedObject: Data.Object? {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return nil }
+        return dataProvider.objectAtIndexPath(indexPath)
+    }
+    
     func processUpdates(updates: [DataProviderUpdate<Data.Object>]?) {
         guard let updates = updates else { return tableView.reloadData() }
         tableView.beginUpdates()
