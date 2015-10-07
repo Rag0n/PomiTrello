@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, ManagedObjectContextSettable {
 
+    var managedObjectContext: NSManagedObjectContext!
     @IBOutlet weak var loginButton: UIButton!
-    
 
     @IBAction func login() {
         UIView.animateWithDuration(1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: { () -> Void in

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
-class LoginViewController: UIViewController, UIWebViewDelegate {
+class LoginViewController: UIViewController, UIWebViewDelegate, ManagedObjectContextSettable {
 
+    var managedObjectContext: NSManagedObjectContext!
     @IBOutlet weak var webView: UIWebView!
     private var activityIndicator: UIActivityIndicatorView!
     
@@ -21,7 +23,7 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     private func saveToken(token: String) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(token, forKey: Constants.userToken)
-        defaults.setBool(true, forKey: Constants.hasToken)
+        defaults.setBool(true, forKey: Constants.hasUserToken)
         configureKey()
         let ttvc = storyboard!.instantiateViewControllerWithIdentifier(StoryBoard.trelloViewControllerIdentifier) as! TrelloTableViewController
         let navCon = UINavigationController(rootViewController: ttvc)

@@ -18,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+
         // checks if app has user key for trello api
+        let defaults = NSUserDefaults.standardUserDefaults()
         if defaults.boolForKey(Constants.hasUserToken) == false {
             let welcomeViewContoller = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.welcomeViewControllerIdentifier) as! WelcomeViewController
             self.window!.rootViewController = welcomeViewContoller
