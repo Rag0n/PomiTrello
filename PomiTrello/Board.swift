@@ -15,13 +15,13 @@ public final class Board: ManagedObject {
     @NSManaged private(set) var id: String!
     @NSManaged private(set) var name: String!
     @NSManaged private(set) var desc: String!
-    @NSManaged private(set) var url: NSURL!
+    @NSManaged private(set) var url: String!
 //    @NSManaged private(set) var lists: NSOrderedSet
 //    @NSManaged private(set) var lists = [List]()
     
     
     // MARK: - Public API
-    public static func insertIntoContext(moc: NSManagedObjectContext, position: Int32, id:String, name: String, desc: String, url: NSURL) -> Board {
+    public static func insertIntoContext(moc: NSManagedObjectContext, position: Int32, id:String, name: String, desc: String, url: String) -> Board {
         let board: Board = moc.insertObject()
         board.position = position
         board.name = name
@@ -89,8 +89,8 @@ public final class Board: ManagedObject {
                 let id = jsonBoard["id"] as! String
                 let name = jsonBoard["name"] as! String
                 let desc = jsonBoard["desc"] as! String
-                let url = NSURL(string: jsonBoard["url"] as! String)
-                insertIntoContext(moc, position: position, id: id, name: name, desc: desc, url: url!)
+                let url = jsonBoard["url"] as! String
+                insertIntoContext(moc, position: position, id: id, name: name, desc: desc, url: url)
                 
                 position++
             }
