@@ -186,6 +186,7 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="label" destination="unv-TK-Na4" id="OzV-em-724"/>
+                                    <segue destination="Imw-mV-Nxm" kind="show" identifier="showLists" id="VGC-gv-UGG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

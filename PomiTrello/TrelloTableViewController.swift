@@ -9,7 +9,11 @@
 import UIKit
 import CoreData
 
-class TrelloTableViewController: UITableViewController, ManagedObjectContextSettable {
+class TrelloTableViewController: UITableViewController, ManagedObjectContextSettable, SegueHandlerType {
+    
+    enum SegueIdentifier: String {
+        case ShowLists = "showLists"
+    }
 
     // MARK: - Public API
     var boards = [Board]()
@@ -78,13 +82,23 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
     }
     
     // MARK: - Navigation
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        switch segueIdentifierForSegue
+//        if segue.identifier == "Show list" {
+//            if let ltvc = segue.destinationViewController as? ListsTableViewController {
+//                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+//                ltvc.board = boards[indexPath.row]
+//            }
+//        }
+//    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch segueIdentifierForSegue
-        if segue.identifier == "Show list" {
-            if let ltvc = segue.destinationViewController as? ListsTableViewController {
-                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-                ltvc.board = boards[indexPath.row]
+        switch segueIdentifierForSegue(segue) {
+        case .ShowLists:
+            guard let vc = segue.destinationViewController as? ListsTableViewController else {
+                fatalError("Wrong View Controller Type")
             }
+//            guard let board = dataSource.selected
         }
     }
 }
