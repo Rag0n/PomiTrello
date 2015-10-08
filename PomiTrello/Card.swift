@@ -7,8 +7,20 @@
 //
 
 import Foundation
+import CoreData
 
-class Card {
-    var id: String!
-    var name: String!
+public final class Card {
+    @NSManaged private(set) var position: Int32
+    @NSManaged private(set) var id: String!
+    @NSManaged private(set) var name: String!
+}
+
+extension Card: ManagedObjectType {
+    public static var entityName: String {
+        return "Card"
+    }
+    
+    public static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: "position", ascending: false)]
+    }
 }
