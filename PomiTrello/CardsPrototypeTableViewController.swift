@@ -16,13 +16,24 @@ class CardsPrototypeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        loadSeedD
+        loadSeedData()
         
         tableView.dataSource = CardsPrototypeDataSource(withItems: cards, cellIdentifier: cellIdentifier, configureCell: configureCell)
     }
     
     func configureCell(cell: UITableViewCell, item: AnyObject) {
         cell.textLabel?.text = (item as! Card).name
+    }
+    
+    func loadSeedData() {
+        var num = 5
+        while num > 0 {
+            let card = Card()
+            card.name = "card \(num)"
+            card.id = "\(num)"
+            cards.append(card)
+            num--
+        }
     }
 
 

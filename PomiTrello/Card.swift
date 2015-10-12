@@ -10,9 +10,14 @@ import Foundation
 import CoreData
 
 public final class Card {
-    @NSManaged private(set) var position: Int32
-    @NSManaged private(set) var id: String!
-    @NSManaged private(set) var name: String!
+//    @NSManaged private(set) var position: Int32
+//    @NSManaged private(set) var id: String!
+//    @NSManaged private(set) var name: String!
+    
+    @NSManaged var position: Int32
+    @NSManaged var id: String!
+    @NSManaged var name: String!
+    
 //    @NSManaged private(set) var list: List!
 }
 
