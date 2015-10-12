@@ -31,17 +31,17 @@ class TrelloTableViewController: UITableViewController, ManagedObjectContextSett
         title = StoryBoard.navTitle
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "createNewBoard")
 //        refresh()
-        setupTableView()
+//        setupTableView()
     }
     
     
-    // MARK: Temp code
-    var position: Int32 = 0
-    func createNewBoard() {
-        self.managedObjectContext.performBlock {
-            Board.insertIntoContext(self.managedObjectContext, position: self.position++, id: "id  \(self.position)", name: "New Board \(self.position)", desc: "Board description", url: "Board url \(self.position)")
-        }
-    }
+//    // MARK: Temp code
+//    var position: Int32 = 0
+//    func createNewBoard() {
+//        self.managedObjectContext.performBlock {
+//            Board.insertIntoContext(self.managedObjectContext, position: self.position++, id: "id  \(self.position)", name: "New Board \(self.position)", desc: "Board description", url: "Board url \(self.position)")
+//        }
+//    }
     
 //    func refresh() {
 //        if refreshControl != nil {

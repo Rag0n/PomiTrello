@@ -13,6 +13,8 @@ public final class List {
     @NSManaged private(set) var position: Int32
     @NSManaged private(set) var id: String!
     @NSManaged private(set) var name: String!
+    @NSManaged private(set) var board: Board!
+//    @NSManaged private(set) var cards: Set<Card>
 //    var cards: [Card]!
     
 //    func loadCards(completionHandler: () -> Void) {

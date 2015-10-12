@@ -16,6 +16,8 @@ public final class Board: ManagedObject {
     @NSManaged private(set) var name: String!
     @NSManaged private(set) var desc: String!
     @NSManaged private(set) var url: String!
+//    @NSManaged private(set) var lists: Set<List>
+    
 //    @NSManaged private(set) var lists: NSOrderedSet
 //    @NSManaged private(set) var lists = [List]()
     

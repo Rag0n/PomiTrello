@@ -13,6 +13,7 @@ public final class Card {
     @NSManaged private(set) var position: Int32
     @NSManaged private(set) var id: String!
     @NSManaged private(set) var name: String!
+//    @NSManaged private(set) var list: List!
 }
 
 extension Card: ManagedObjectType {

@@ -9,7 +9,7 @@
 import CoreData
 
 
-private let ModelName = "Boards"
+private let ModelName = "PomiTrello"
 
 protocol ManagedObjectContextSettable: class {
     var managedObjectContext: NSManagedObjectContext! { get set }
@@ -37,7 +37,7 @@ extension NSPersistentStoreCoordinator {
     private static func storeURLForName(name: String) -> NSURL {
         let fm = NSFileManager.defaultManager()
         let documentDirURL = try! fm.URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
-        return documentDirURL.URLByAppendingPathComponent(name).URLByAppendingPathExtension("boards")
+        return documentDirURL.URLByAppendingPathComponent(name).URLByAppendingPathExtension("pomiTrello")
     }
     
 }
