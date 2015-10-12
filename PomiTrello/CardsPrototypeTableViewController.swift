@@ -16,13 +16,14 @@ class CardsPrototypeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadSeedData()
-        
+        setupTableView()
+    }
+    
+    func setupTableView() {
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         cardsDataSource = CardsPrototypeDataSource(withItems: cards, cellIdentifier: cellIdentifier, configureCell: configureCell)
-
         tableView.dataSource = cardsDataSource
     }
     
