@@ -12,11 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let managedObjectContext = createBoardsMainContext()
+//    let managedObjectContext = createBoardsMainContext()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
 
         // checks if app has user key for trello api
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            self.window!.rootViewController = navCon
 //        }
         
-        self.window!.makeKeyAndVisible()
+//        self.window!.makeKeyAndVisible()
         return true
     }
 }

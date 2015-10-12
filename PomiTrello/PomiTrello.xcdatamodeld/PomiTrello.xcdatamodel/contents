@@ -8,7 +8,7 @@
         <attribute name="url" attributeType="String" syncable="YES"/>
         <relationship name="lists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="List" inverseName="board" inverseEntity="List" syncable="YES"/>
     </entity>
-    <entity name="Card" representedClassName=".Card" syncable="YES">
+    <entity name="Card" representedClassName="." syncable="YES">
         <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="position" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>

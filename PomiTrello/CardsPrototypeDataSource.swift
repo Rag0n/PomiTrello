@@ -36,7 +36,7 @@ class CardsPrototypeDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return items.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
