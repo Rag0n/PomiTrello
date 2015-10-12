@@ -229,10 +229,6 @@
                                 <animations/>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Kax-80-qIo" id="HCA-WQ-cGq"/>
-                            <outlet property="delegate" destination="Kax-80-qIo" id="oY6-S5-lRC"/>
-                        </connections>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCu-Uh-xPW" userLabel="First Responder" sceneMemberID="firstResponder"/>

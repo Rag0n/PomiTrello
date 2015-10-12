@@ -21,6 +21,7 @@
 		1F5D22311BC2884700FDD41D /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D22301BC2884700FDD41D /* ManagedObject.swift */; settings = {ASSET_TAGS = (); }; };
 		1F6379061BC6B0AA00139621 /* PomiTrello.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F6379041BC6B0AA00139621 /* PomiTrello.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		1F7E4DF11BCC508B00F27E13 /* CardsPrototypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E4DF01BCC508B00F27E13 /* CardsPrototypeTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1F7E4DF31BCC512D00F27E13 /* CardsPrototypeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E4DF21BCC512D00F27E13 /* CardsPrototypeDataSource.swift */; settings = {ASSET_TAGS = (); }; };
 		1F87D2081BADBBAC00B9948B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2071BADBBAC00B9948B /* AppDelegate.swift */; };
 		1F87D20D1BADBBAC00B9948B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D20B1BADBBAC00B9948B /* Main.storyboard */; };
 		1F87D20F1BADBBAC00B9948B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D20E1BADBBAC00B9948B /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		1F5D22301BC2884700FDD41D /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
 		1F6379051BC6B0AA00139621 /* PomiTrello.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PomiTrello.xcdatamodel; sourceTree = "<group>"; };
 		1F7E4DF01BCC508B00F27E13 /* CardsPrototypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsPrototypeTableViewController.swift; sourceTree = "<group>"; };
+		1F7E4DF21BCC512D00F27E13 /* CardsPrototypeDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsPrototypeDataSource.swift; sourceTree = "<group>"; };
 		1F87D2041BADBBAC00B9948B /* PomiTrello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomiTrello.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F87D2071BADBBAC00B9948B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F87D20C1BADBBAC00B9948B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				1FEDBCA41BB68485008C50B5 /* CardsTableViewController.swift */,
 				1F10C9731BB9D79A004C960A /* PomodoroViewController.swift */,
 				1F7E4DF01BCC508B00F27E13 /* CardsPrototypeTableViewController.swift */,
+				1F7E4DF21BCC512D00F27E13 /* CardsPrototypeDataSource.swift */,
 				1F0716301BC4180000EB40B6 /* Views */,
 				1F07162D1BC40E5300EB40B6 /* Protocols */,
 				1F0716281BC402FA00EB40B6 /* Data Source/Providers */,
@@ -385,6 +388,7 @@
 				1F07162C1BC40DB500EB40B6 /* DataSource.swift in Sources */,
 				1F10C9761BB9DB70004C960A /* CardsTableViewCell.swift in Sources */,
 				1F87D2441BAF013100B9948B /* Board.swift in Sources */,
+				1F7E4DF31BCC512D00F27E13 /* CardsPrototypeDataSource.swift in Sources */,
 				1F07162F1BC40E7400EB40B6 /* ConfigurableCell.swift in Sources */,
 				1F7E4DF11BCC508B00F27E13 /* CardsPrototypeTableViewController.swift in Sources */,
 				1F87D2371BADBC8200B9948B /* TrelloTableViewController.swift in Sources */,
