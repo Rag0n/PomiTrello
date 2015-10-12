@@ -20,17 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 
         // checks if app has user key for trello api
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if defaults.boolForKey(Constants.hasUserToken) == false {
-            let welcomeViewContoller = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.welcomeViewControllerIdentifier) as! WelcomeViewController
-            self.window!.rootViewController = welcomeViewContoller
-            welcomeViewContoller.managedObjectContext = managedObjectContext
-        } else {
-            let mainViewController = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.trelloViewControllerIdentifier) as! TrelloTableViewController
-            mainViewController.managedObjectContext = managedObjectContext
-            let navCon = UINavigationController(rootViewController: mainViewController)
-            self.window!.rootViewController = navCon
-        }
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        if defaults.boolForKey(Constants.hasUserToken) == false {
+//            let welcomeViewContoller = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.welcomeViewControllerIdentifier) as! WelcomeViewController
+//            self.window!.rootViewController = welcomeViewContoller
+//            welcomeViewContoller.managedObjectContext = managedObjectContext
+//        } else {
+//            let mainViewController = storyboard.instantiateViewControllerWithIdentifier(StoryBoard.trelloViewControllerIdentifier) as! TrelloTableViewController
+//            mainViewController.managedObjectContext = managedObjectContext
+//            let navCon = UINavigationController(rootViewController: mainViewController)
+//            self.window!.rootViewController = navCon
+//        }
         
         self.window!.makeKeyAndVisible()
         return true
