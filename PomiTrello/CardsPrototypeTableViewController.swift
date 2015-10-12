@@ -9,23 +9,34 @@
 import UIKit
 
 class CardsPrototypeTableViewController: UITableViewController {
-
+    
+    var cards = [Card]()
+    let cellIdentifier = "CardCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        loadSeedD
+        
+        tableView.dataSource = CardsPrototypeDataSource(withItems: cards, cellIdentifier: cellIdentifier, configureCell: configureCell)
+    }
+    
+    func configureCell(cell: UITableViewCell, item: AnyObject) {
+        cell.textLabel?.text = (item as! Card).name
     }
 
 
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    // MARK: - Table view data source
+//
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
