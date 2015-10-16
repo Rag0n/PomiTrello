@@ -8,22 +8,15 @@
         <attribute name="url" attributeType="String" syncable="YES"/>
         <relationship name="lists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="List" inverseName="board" inverseEntity="List" syncable="YES"/>
     </entity>
-    <entity name="Card" representedClassName="." syncable="YES">
-        <attribute name="id" attributeType="String" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="position" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="list" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="List" inverseName="cards" inverseEntity="List" syncable="YES"/>
-    </entity>
     <entity name="List" representedClassName=".List" syncable="YES">
         <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="position" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="board" maxCount="1" deletionRule="Nullify" destinationEntity="Board" inverseName="lists" inverseEntity="Board" syncable="YES"/>
-        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="list" inverseEntity="Card" syncable="YES"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" syncable="YES"/>
     </entity>
     <elements>
         <element name="Board" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="Card" positionX="-54" positionY="-9" width="128" height="105"/>
         <element name="List" positionX="-36" positionY="9" width="128" height="120"/>
     </elements>
 </model>
