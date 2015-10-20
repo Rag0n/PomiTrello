@@ -151,67 +151,10 @@
             </objects>
             <point key="canvasLocation" x="2743" y="-311"/>
         </scene>
-        <!--Boards-->
-        <scene sceneID="6gQ-xe-kXd">
-            <objects>
-                <tableViewController storyboardIdentifier="MainViewController" title="Boards" id="LX6-CJ-H7l" customClass="TrelloTableViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nym-qO-uRj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BoardCell" id="XGN-YU-gvK" customClass="TrelloTableViewCell" customModule="PomiTrello" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XGN-YU-gvK" id="O9h-VI-khb">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unv-TK-Na4">
-                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="unv-TK-Na4" secondAttribute="trailing" id="3xQ-Gz-Tu3"/>
-                                        <constraint firstItem="unv-TK-Na4" firstAttribute="centerY" secondItem="O9h-VI-khb" secondAttribute="centerY" id="ZeE-9D-KmY"/>
-                                        <constraint firstItem="unv-TK-Na4" firstAttribute="leading" secondItem="O9h-VI-khb" secondAttribute="leadingMargin" id="prD-tf-iZg"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <animations/>
-                                <connections>
-                                    <outlet property="label" destination="unv-TK-Na4" id="OzV-em-724"/>
-                                    <segue destination="Imw-mV-Nxm" kind="show" identifier="showLists" id="VGC-gv-UGG"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="LX6-CJ-H7l" id="JCa-FN-hKo"/>
-                            <outlet property="delegate" destination="LX6-CJ-H7l" id="HXO-by-7bS"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="gIR-gJ-Auo"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="h9t-79-ndb">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                        <connections>
-                            <action selector="refresh:" destination="LX6-CJ-H7l" eventType="valueChanged" id="n1f-r0-hzl"/>
-                        </connections>
-                    </refreshControl>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IPq-s1-l23" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2743" y="379"/>
-        </scene>
-        <!--Cards Prototype Table View Controller-->
+        <!--Cards Table View Controller-->
         <scene sceneID="SVs-cO-fhc">
             <objects>
-                <tableViewController id="Kax-80-qIo" customClass="CardsPrototypeTableViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Kax-80-qIo" customClass="CardsTableViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eLV-sw-ieC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,109 +176,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCu-Uh-xPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2739" y="1106"/>
-        </scene>
-        <!--Lists-->
-        <scene sceneID="MFy-za-tJK">
-            <objects>
-                <tableViewController title="Lists" id="Imw-mV-Nxm" customClass="ListsTableViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VyA-mE-BPu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="List cell" id="jwc-sj-Qqz">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jwc-sj-Qqz" id="UvM-Lg-JUJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                                <connections>
-                                    <segue destination="odj-Ml-r3O" kind="show" identifier="Show cards" id="vQs-4a-LRd"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Imw-mV-Nxm" id="uBq-eK-fay"/>
-                            <outlet property="delegate" destination="Imw-mV-Nxm" id="PYq-Gg-hLF"/>
-                        </connections>
-                    </tableView>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Fgs-wq-VSd">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                        <connections>
-                            <action selector="refresh:" destination="Imw-mV-Nxm" eventType="valueChanged" id="lJs-YW-QiF"/>
-                        </connections>
-                    </refreshControl>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4ye-mW-Iig" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3469" y="379"/>
-        </scene>
-        <!--Cards Table View Controller-->
-        <scene sceneID="CIQ-yC-szL">
-            <objects>
-                <tableViewController id="odj-Ml-r3O" customClass="CardsTableViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="M4K-Pv-jWT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Card cell" rowHeight="50" id="IZ0-hU-v1G" customClass="CardsTableViewCell" customModule="PomiTrello" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IZ0-hU-v1G" id="FVH-Ag-PMj">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S16-zE-E0t">
-                                            <rect key="frame" x="8" y="8" width="584" height="33"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstItem="S16-zE-E0t" firstAttribute="trailing" secondItem="FVH-Ag-PMj" secondAttribute="trailingMargin" id="1bF-Tx-ClC"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="S16-zE-E0t" secondAttribute="bottom" id="hwR-eg-WwD"/>
-                                        <constraint firstItem="S16-zE-E0t" firstAttribute="top" secondItem="FVH-Ag-PMj" secondAttribute="topMargin" id="q0H-pn-Sfn"/>
-                                        <constraint firstItem="S16-zE-E0t" firstAttribute="leading" secondItem="FVH-Ag-PMj" secondAttribute="leadingMargin" id="waF-kF-vuw"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <animations/>
-                                <connections>
-                                    <outlet property="cardName" destination="S16-zE-E0t" id="t9j-lP-ksT"/>
-                                    <segue destination="k56-Ks-q5q" kind="show" identifier="Show pomodoro" id="dV1-fL-xPi"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="odj-Ml-r3O" id="5YH-kB-qTT"/>
-                            <outlet property="delegate" destination="odj-Ml-r3O" id="e2K-6K-d1M"/>
-                        </connections>
-                    </tableView>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="rjy-Fi-e4Q">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                        <connections>
-                            <action selector="refresh:" destination="odj-Ml-r3O" eventType="valueChanged" id="vQ9-WG-QZM"/>
-                        </connections>
-                    </refreshControl>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R5O-RG-kSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4167" y="379"/>
+            <point key="canvasLocation" x="2743" y="446"/>
         </scene>
         <!--pomodoro-->
         <scene sceneID="f2z-fv-KIp">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0kC-sR-IQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="pomodoro" id="k56-Ks-q5q" customClass="PomodoroViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vMX-p3-4gu"/>
@@ -364,9 +210,8 @@
                         <outlet property="cardLabel" destination="bAP-X5-EkO" id="B5H-Ho-9cs"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0kC-sR-IQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4857" y="379"/>
+            <point key="canvasLocation" x="3451" y="446"/>
         </scene>
     </scenes>
 </document>

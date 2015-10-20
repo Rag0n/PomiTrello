@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CardsPrototypeDataSource: NSObject, UITableViewDataSource {
+class CardsDataSource: NSObject, UITableViewDataSource {
     
     var items: [AnyObject]
     var cellIdentifier: String

@@ -1,69 +1,113 @@
 //
-//  CardsTableViewController.swift
+//  CardsPrototypeTableViewController.swift
 //  PomiTrello
 //
-//  Created by Александр on 26.09.15.
+//  Created by Александр on 12.10.15.
 //  Copyright © 2015 Alexander. All rights reserved.
 //
 
 import UIKit
 
 class CardsTableViewController: UITableViewController {
-
-//    var list: List!
-//    
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        title = list.name
-//        tableView.estimatedRowHeight = tableView.rowHeight
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        refresh()
-//    }
-//    
-//    func refresh() {
-//        if refreshControl != nil {
-//            refreshControl?.beginRefreshing()
+    
+    var cards = [Card]()
+    let cellIdentifier = "CardCell"
+    var cardsDataSource: CardsDataSource!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        loadSeedData()
+        setupTableView()
+    }
+    
+    func setupTableView() {
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+        cardsDataSource = CardsDataSource(withItems: cards, cellIdentifier: cellIdentifier, configureCell: configureCell)
+        tableView.dataSource = cardsDataSource
+    }
+    
+    func configureCell(cell: UITableViewCell, item: AnyObject) {
+        cell.textLabel?.text = (item as! Card).name
+    }
+    
+//    func loadSeedData() {
+//        var num = 5
+//        while num > 0 {
+//            let card = Card()
+//            card.name = "card \(num)"
+//            card.id = "\(num)"
+//            cards.append(card)
+//            num--
 //        }
-//        refresh(refreshControl)
 //    }
+
+
+//    // MARK: - Table view data source
 //
-//    @IBAction func refresh(sender: UIRefreshControl?) {
-//        list.loadCards() { () -> Void in
-//            sender?.endRefreshing()
-//            self.tableView.reloadData()
-//        }
-//    }
-
-    // MARK: - Table view data source
-
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return 1
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
 //    }
 //
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return list.cards.count
-//    }
-//
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("Card cell", forIndexPath: indexPath) as! CardsTableViewCell
-//        cell.card = list.cards[indexPath.row]
-//
-//        return cell
-//    }
-//
-//
-//    // MARK: - Navigation
-//
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "Show pomodoro" {
-//            if let pvc = segue.destinationViewController as? PomodoroViewController {
-//                if let indexPath = tableView.indexPathForCell(sender as! CardsTableViewCell) {
-//                    pvc.card = list.cards[indexPath.row]
-//                }
-//            }
-//        }
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
 //    }
 
+    /*
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    */
+
+    /*
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
+    */
+
+    /*
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+
+    }
+    */
+
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+    */
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
