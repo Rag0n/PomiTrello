@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
-class CardsTableViewController: UITableViewController {
+class CardsTableViewController: UITableViewController, ManagedObjectContextSettable {
     
     var cards = [Card]()
+    var managedObjectContext: NSManagedObjectContext!
+    
     let cellIdentifier = "CardCell"
     var cardsDataSource: CardsDataSource!
     
