@@ -11,9 +11,9 @@ import CoreData
 
 private let ModelName = "PomiTrello"
 
-protocol ManagedObjectContextSettable: class {
-    var managedObjectContext: NSManagedObjectContext! { get set }
-}
+//protocol ManagedObjectContextSettable: class {
+//    var managedObjectContext: NSManagedObjectContext! { get set }
+//}
 
 public func createBoardsMainContext() -> NSManagedObjectContext {
     let bundle = NSBundle(forClass: Board.self)

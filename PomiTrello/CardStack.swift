@@ -32,6 +32,7 @@ public func createCardMainContext() -> NSManagedObjectContext {
     return context
 }
 
+
 extension NSURL {
     // возвращает url директории документов
     static var documentsURL: NSURL {
