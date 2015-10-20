@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F05631A1BD11EA90001DCC4 /* Pomodoro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F0563181BD11EA90001DCC4 /* Pomodoro.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		1F0582C71BD6524100AA8307 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0582C61BD6524100AA8307 /* CardStack.swift */; settings = {ASSET_TAGS = (); }; };
 		1F0716251BC4003D00EB40B6 /* FetchedResultsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716241BC4003D00EB40B6 /* FetchedResultsDataProvider.swift */; settings = {ASSET_TAGS = (); }; };
 		1F0716271BC402F200EB40B6 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716261BC402F200EB40B6 /* DataProvider.swift */; settings = {ASSET_TAGS = (); }; };
 		1F07162A1BC40CD400EB40B6 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716291BC40CD400EB40B6 /* TableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		1F0563191BD11EA90001DCC4 /* Pomodoro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoro.xcdatamodel; sourceTree = "<group>"; };
+		1F0582C61BD6524100AA8307 /* CardStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		1F0716241BC4003D00EB40B6 /* FetchedResultsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsDataProvider.swift; sourceTree = "<group>"; };
 		1F0716261BC402F200EB40B6 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		1F0716291BC40CD400EB40B6 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				1F87D2431BAF013100B9948B /* Board.swift */,
 				1FEDBCA61BB694AA008C50B5 /* List.swift */,
 				1FEDBCA81BB694BA008C50B5 /* Card.swift */,
+				1F0582C61BD6524100AA8307 /* CardStack.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				1F5D22311BC2884700FDD41D /* ManagedObject.swift in Sources */,
 				1FEDBCA71BB694AA008C50B5 /* List.swift in Sources */,
 				1F87D2081BADBBAC00B9948B /* AppDelegate.swift in Sources */,
+				1F0582C71BD6524100AA8307 /* CardStack.swift in Sources */,
 				1F07162C1BC40DB500EB40B6 /* DataSource.swift in Sources */,
 				1F10C9761BB9DB70004C960A /* CardsTableViewCell.swift in Sources */,
 				1F05631A1BD11EA90001DCC4 /* Pomodoro.xcdatamodeld in Sources */,
