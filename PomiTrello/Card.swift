@@ -15,12 +15,13 @@ public final class Card: ManagedObject {
     @NSManaged private(set) var pos: Int32
 }
 
-//extension Card: ManagedObjectType {
-//    public static var entityName: String {
-//        return "Card"
-//    }
-//    
-//    public static var defaultSortDescriptors: [NSSortDescriptor] {
-//        return [NSSortDescriptor(key: "position", ascending: false)]
-//    }
-//}
+
+extension Card: ManagedObjectType {
+    public static var entityName: String {
+        return "Card"
+    }
+    
+    public static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: "pos", ascending: false)]
+    }
+}

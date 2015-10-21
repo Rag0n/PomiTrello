@@ -14,7 +14,8 @@ public class ManagedObject: NSManagedObject {
 }
 
 
-public protocol ManagedObjectType {
+// каждый entity должен подтвреждать этот протокол
+public protocol ManagedObjectType: class {
     static var entityName: String { get }
     static var defaultSortDescriptors: [NSSortDescriptor] { get }
 }
@@ -22,11 +23,12 @@ public protocol ManagedObjectType {
 
 extension ManagedObjectType {
     
+    // сортировка по умолчанию
     public static var defaultSortDescriptors: [NSSortDescriptor] {
         return []
     }
     
-    // fetch request with default sort descriptors
+    // запрос с дефолтным дескриптором сортировки
     public static var sortedFetchRequest: NSFetchRequest {
         let request = NSFetchRequest(entityName: entityName)
         request.sortDescriptors = defaultSortDescriptors
