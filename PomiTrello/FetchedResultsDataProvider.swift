@@ -23,10 +23,12 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate> : NSObject, NSF
     
     // MARK: - NSFetchedResultsControllerDelegate
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        // собираем все обновления
         updates = []
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        // и посылаем обратно view controller(у)
         delegate.dataProviderDidUpdate(updates)
     }
     
