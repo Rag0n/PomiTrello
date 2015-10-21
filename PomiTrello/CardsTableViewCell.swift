@@ -9,24 +9,12 @@
 import UIKit
 
 class CardsTableViewCell: UITableViewCell {
-
-    // Public API
-    var card: Card? {
-        didSet {
-            configure()
-        }
-    }
-    
-    private func configure() {
-        cardName.text = card!.name
-    }
-
     @IBOutlet weak var cardName: UILabel!
 }
 
 
 extension CardsTableViewCell: ConfigurableCell {
     func configureForObject(object: Card) {
-        
+        cardName.text = object.name
     }
 }
