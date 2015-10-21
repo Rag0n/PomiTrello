@@ -181,7 +181,6 @@
         <!--pomodoro-->
         <scene sceneID="f2z-fv-KIp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0kC-sR-IQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="pomodoro" id="k56-Ks-q5q" customClass="PomodoroViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vMX-p3-4gu"/>
@@ -210,6 +209,7 @@
                         <outlet property="cardLabel" destination="bAP-X5-EkO" id="B5H-Ho-9cs"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0kC-sR-IQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3451" y="446"/>
         </scene>
