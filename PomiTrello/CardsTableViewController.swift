@@ -13,6 +13,11 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
     
     var managedObjectContext: NSManagedObjectContext!
     
+    // MARK: Private
+    
+    private typealias Data = FetchedResultsDataProvider<CardsTableViewController>
+    private var dataSource: TableViewDataSource<CardsTableViewController, Data, CardsTableViewCell>!
+    
 //    let cellIdentifier = "CardCell"
 //    var cardsDataSource: CardsDataSource!
     
@@ -41,5 +46,17 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
     
     func configureCell(cell: UITableViewCell, item: AnyObject) {
         cell.textLabel?.text = (item as! Card).name
+    }
+}
+
+extension CardsTableViewController : DataProviderDelegate {
+    func dataProviderDidUpdate(updates: [DataProviderUpdate<Card>]?) {
+        dataSource.processUpdates(updates)
+    }
+}
+
+extension CardsTableViewController : DataSourceDelegate {
+    func cellIdentifierForObject(object: Card) -> String {
+        return "CardCell"
     }
 }

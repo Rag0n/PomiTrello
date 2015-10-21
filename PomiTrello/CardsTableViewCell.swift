@@ -23,3 +23,10 @@ class CardsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cardName: UILabel!
 }
+
+
+extension CardsTableViewCell: ConfigurableCell {
+    func configureForObject(object: Card) {
+        
+    }
+}
