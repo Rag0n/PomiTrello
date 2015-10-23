@@ -38,6 +38,6 @@ extension Card: ManagedObjectType {
     }
     
     public static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: "name", ascending: false)]
+        return [NSSortDescriptor(key: "pos", ascending: false)]
     }
 }
