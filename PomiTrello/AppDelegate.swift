@@ -35,9 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
         
 //        self.window!.makeKeyAndVisible()
+
         
-        
-        guard let vc = window?.rootViewController as? ManagedObjectContextSettable else {
+        guard let vc = window?.rootViewController?.contentViewController as? ManagedObjectContextSettable else {
             fatalError("Wrong view controller type")
         }
         vc.managedObjectContext = managedObjectContext

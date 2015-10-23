@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController {
     var contentViewController: UIViewController {
         if let navCon = self as? UINavigationController {
-            return navCon.visibleViewController
+            return navCon.visibleViewController!
         } else {
             return self
         }
