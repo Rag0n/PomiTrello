@@ -11,27 +11,22 @@ import CoreData
 
 class CardsTableViewController: UITableViewController, ManagedObjectContextSettable {
     
-    var id: NSUUID = NSUUID.init()
+    var pos: Int32 = 0
     var managedObjectContext: NSManagedObjectContext!
     
-    // MARK: Private
-    
-    private typealias Data = FetchedResultsDataProvider<CardsTableViewController>
-    private var dataSource: TableViewDataSource<CardsTableViewController, Data, CardsTableViewCell>!
-    
-//    let cellIdentifier = "CardCell"
-//    var cardsDataSource: CardsDataSource!
+    // MARK: ViewController LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
     
+    // MARK: Private
+    
+    private typealias Data = FetchedResultsDataProvider<CardsTableViewController>
+    private var dataSource: TableViewDataSource<CardsTableViewController, Data, CardsTableViewCell>!
+    
     private func setupTableView() {
-//        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-//        
-//        cardsDataSource = CardsDataSource(withItems: cards, cellIdentifier: cellIdentifier, configureCell: configureCell)
-//        tableView.dataSource = cardsDataSource
         // self sizing cells
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -47,10 +42,11 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
     
     // MARK: IBActions
     @IBAction func add(sender: UIBarButtonItem) {
+        let id = NSUUID.init()
         self.managedObjectContext.performBlock() {
-            Card.insertIntoContext(managedObjectContext, name: "Test \(id.UUIDString)", id: "\(id.UUIDString)")
+            Card.insertIntoContext(managedObjectContext, name: "Test \(id.UUIDString)", id: "\(id.UUIDString)", pos: pos)
         }
-        id = NSUUID.init()
+        pos++
     }
 }
 

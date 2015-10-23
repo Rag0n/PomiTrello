@@ -21,6 +21,14 @@ public final class Card: ManagedObject {
         card.name = name
         return card
     }
+    
+    public static func insertIntoContext(moc: NSManagedObjectContext, name: String, id: String, pos: Int32) -> Card {
+        let card: Card = moc.insertObject()
+        card.id = id
+        card.name = name
+        card.pos = pos
+        return card
+    }
 }
 
 
@@ -30,6 +38,6 @@ extension Card: ManagedObjectType {
     }
     
     public static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: "pos", ascending: false)]
+        return [NSSortDescriptor(key: "name", ascending: false)]
     }
 }
