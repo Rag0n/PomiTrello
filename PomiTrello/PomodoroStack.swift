@@ -14,4 +14,7 @@ private let ModelName = "Pomodoro"
 public func createPomodoroMainContext() -> NSManagedObjectContext {
     let bundle = NSBundle(forClass: Card.self)
     let coordinator = NSPersistentStoreCoordinator.coordinatorForModelWithName(ModelName, inBundle: bundle)
+    let context = NSManagedObjectContext.mainContextForCoordinator(coordinator)
+    
+    return context
 }

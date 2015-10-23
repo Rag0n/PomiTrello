@@ -18,6 +18,12 @@ extension NSManagedObjectContext {
         return obj
     }
     
+    public static func mainContextForCoordinator(coordinator: NSPersistentStoreCoordinator) -> NSManagedObjectContext {
+        let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        context.persistentStoreCoordinator = coordinator
+        return context
+    }
+    
 }
 
 extension NSManagedObjectContext {
