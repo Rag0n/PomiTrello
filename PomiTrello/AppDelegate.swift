@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let managedObjectContext = createCardMainContext()
+    let managedObjectContext = createPomodoroMainContext()
     
 //    let managedObjectContext = createBoardsMainContext()
 
