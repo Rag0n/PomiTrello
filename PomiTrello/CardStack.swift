@@ -8,7 +8,7 @@
 
 import CoreData
 
-private let StoreURL = NSURL.documentsURL.URLByAppendingPathComponent("Card.card")
+private let StoreURL = NSURL.documentsURL.URLByAppendingPathComponent("Pomodoro")
 
 
 public func createCardMainContext() -> NSManagedObjectContext {
@@ -19,6 +19,8 @@ public func createCardMainContext() -> NSManagedObjectContext {
     guard let model = NSManagedObjectModel.mergedModelFromBundles([bundle]) else {
         fatalError("model not found")
     }
+//    let modelURL = bundle.URLForResource("Pomodoro", withExtension:"momd")
+//    let model = NSManagedObjectModel(contentsOfURL: modelURL!)!
     
     // создаем persistent store coordinator для нашей модели и добавляем persistent store
     let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
