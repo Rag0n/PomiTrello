@@ -64,6 +64,7 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
         self.managedObjectContext.performBlock() {
             Card.insertIntoContext(managedObjectContext, name: "Test \(id.UUIDString)", id: "\(id.UUIDString)", pos: pos)
         }
+        self.managedObjectContext.saveOrRollBack()
         pos++
     }
 }
