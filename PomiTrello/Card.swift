@@ -12,7 +12,6 @@ import CoreData
 public final class Card: ManagedObject {
     @NSManaged private(set) var id: String?
     @NSManaged private(set) var name: String!
-    @NSManaged private(set) var pos: Int32
 }
 
 
