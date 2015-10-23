@@ -47,7 +47,9 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
     
     // MARK: IBActions
     @IBAction func add(sender: UIBarButtonItem) {
-        Card.insertIntoContext(managedObjectContext, name: "Test \(id.UUIDString)", id: "\(id.UUIDString)")
+        self.managedObjectContext.performBlock() {
+            Card.insertIntoContext(managedObjectContext, name: "Test \(id.UUIDString)", id: "\(id.UUIDString)")
+        }
         id = NSUUID.init()
     }
 }

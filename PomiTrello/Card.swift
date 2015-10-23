@@ -12,6 +12,7 @@ import CoreData
 public final class Card: ManagedObject {
     @NSManaged private(set) var id: String!
     @NSManaged private(set) var name: String!
+    @NSManaged private(set) var pos: Int32
     
     // API для инкапсуляции создания объекта
     public static func insertIntoContext(moc: NSManagedObjectContext, name: String, id: String) -> Card {
