@@ -167,9 +167,26 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C7p-n4-Ue0" id="4Od-bF-f3V">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhH-u1-x6w">
+                                            <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="qhH-u1-x6w" secondAttribute="trailing" constant="8" id="NiM-Bb-g1Y"/>
+                                        <constraint firstItem="qhH-u1-x6w" firstAttribute="leading" secondItem="4Od-bF-f3V" secondAttribute="leading" constant="8" id="aJt-Bn-svz"/>
+                                        <constraint firstItem="qhH-u1-x6w" firstAttribute="top" secondItem="4Od-bF-f3V" secondAttribute="top" constant="8" id="thR-Op-21w"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="cardName" destination="qhH-u1-x6w" id="At0-NB-463"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>

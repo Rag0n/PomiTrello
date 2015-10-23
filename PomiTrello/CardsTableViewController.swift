@@ -11,6 +11,7 @@ import CoreData
 
 class CardsTableViewController: UITableViewController, ManagedObjectContextSettable {
     
+    var id: NSUUID = NSUUID.init()
     var managedObjectContext: NSManagedObjectContext!
     
     // MARK: Private
@@ -46,6 +47,8 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
     
     // MARK: IBActions
     @IBAction func add(sender: UIBarButtonItem) {
+        Card.insertIntoContext(managedObjectContext, name: "Test \(id.UUIDString)", id: "\(id.UUIDString)")
+        id = NSUUID.init()
     }
 }
 
