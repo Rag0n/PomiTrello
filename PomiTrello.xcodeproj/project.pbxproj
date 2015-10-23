@@ -15,9 +15,9 @@
 		1F07162C1BC40DB500EB40B6 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07162B1BC40DB500EB40B6 /* DataSource.swift */; settings = {ASSET_TAGS = (); }; };
 		1F07162F1BC40E7400EB40B6 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07162E1BC40E7400EB40B6 /* ConfigurableCell.swift */; settings = {ASSET_TAGS = (); }; };
 		1F0716321BC4182800EB40B6 /* TrelloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716311BC4182800EB40B6 /* TrelloTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		1F10C9741BB9D79A004C960A /* PomodoroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C9731BB9D79A004C960A /* PomodoroViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1F10C9761BB9DB70004C960A /* CardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C9751BB9DB70004C960A /* CardsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		1F5003F21BD9D8EE002D3AF9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5003F11BD9D8EE002D3AF9 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
+		1F567B251BD9F2D1007C8734 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B241BD9F2D1007C8734 /* CardDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1F58CDE81BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58CDE71BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift */; settings = {ASSET_TAGS = (); }; };
 		1F58CDEA1BC5279C00A7E0D1 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58CDE91BC5279C00A7E0D1 /* SegueHandlerType.swift */; settings = {ASSET_TAGS = (); }; };
 		1F5D222C1BC2756A00FDD41D /* BoardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D222B1BC2756A00FDD41D /* BoardStack.swift */; settings = {ASSET_TAGS = (); }; };
@@ -65,9 +65,9 @@
 		1F07162B1BC40DB500EB40B6 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		1F07162E1BC40E7400EB40B6 /* ConfigurableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		1F0716311BC4182800EB40B6 /* TrelloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrelloTableViewCell.swift; sourceTree = "<group>"; };
-		1F10C9731BB9D79A004C960A /* PomodoroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroViewController.swift; sourceTree = "<group>"; };
 		1F10C9751BB9DB70004C960A /* CardsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewCell.swift; sourceTree = "<group>"; };
 		1F5003F11BD9D8EE002D3AF9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1F567B241BD9F2D1007C8734 /* CardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		1F58CDE71BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
 		1F58CDE91BC5279C00A7E0D1 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		1F5D222B1BC2756A00FDD41D /* BoardStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardStack.swift; sourceTree = "<group>"; };
@@ -162,9 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				1F7E4DF01BCC508B00F27E13 /* CardsTableViewController.swift */,
+				1F567B241BD9F2D1007C8734 /* CardDetailViewController.swift */,
 				1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */,
 				1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */,
-				1F10C9731BB9D79A004C960A /* PomodoroViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -403,13 +403,13 @@
 				1F10C9761BB9DB70004C960A /* CardsTableViewCell.swift in Sources */,
 				1F05631A1BD11EA90001DCC4 /* Pomodoro.xcdatamodeld in Sources */,
 				1F5003F21BD9D8EE002D3AF9 /* Extensions.swift in Sources */,
+				1F567B251BD9F2D1007C8734 /* CardDetailViewController.swift in Sources */,
 				1F87D2441BAF013100B9948B /* Board.swift in Sources */,
 				1F07162F1BC40E7400EB40B6 /* ConfigurableCell.swift in Sources */,
 				1F7E4DF11BCC508B00F27E13 /* CardsTableViewController.swift in Sources */,
 				1FE4FCF61BD65C970077F4F8 /* ManagedObjectContextSettable.swift in Sources */,
 				1F58CDE81BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift in Sources */,
 				1F0716251BC4003D00EB40B6 /* FetchedResultsDataProvider.swift in Sources */,
-				1F10C9741BB9D79A004C960A /* PomodoroViewController.swift in Sources */,
 				1FED68D51BBB293A007E3A99 /* WelcomeViewController.swift in Sources */,
 				1F0716271BC402F200EB40B6 /* DataProvider.swift in Sources */,
 				1F87D23D1BAECECD00B9948B /* Constants.swift in Sources */,

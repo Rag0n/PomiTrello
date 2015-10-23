@@ -9,20 +9,37 @@
 import UIKit
 import CoreData
 
-class CardsTableViewController: UITableViewController, ManagedObjectContextSettable {
+class CardsTableViewController: UITableViewController, ManagedObjectContextSettable, SegueHandlerType {
+    
+    enum SegueIdentifier: String {
+        case ShowCardDetail = "showCardDetail"
+    }
     
     var pos: Int32 = 0
     var managedObjectContext: NSManagedObjectContext!
     
-    // MARK: ViewController LifeCycle
     
+    // MARK: ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
     
-    // MARK: Private
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segueIdentifierForSegue(segue) {
+        case .ShowCardDetail:
+            guard let vc = segue.destinationViewController as? CardDetailViewController else {
+                fatalError("Wrong view controller")
+            }
+            guard let card = dataSource.selectedObject else {
+                fatalError("Impossible to show detail without selected object")
+            }
+            vc.card = card
+        }
+    }
     
+    
+    // MARK: Private
     private typealias Data = FetchedResultsDataProvider<CardsTableViewController>
     private var dataSource: TableViewDataSource<CardsTableViewController, Data, CardsTableViewCell>!
     
@@ -39,6 +56,7 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
         let dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
         dataSource = TableViewDataSource(tableView: tableView, dataProvider: dataProvider, delegate: self)
     }
+    
     
     // MARK: IBActions
     @IBAction func add(sender: UIBarButtonItem) {
