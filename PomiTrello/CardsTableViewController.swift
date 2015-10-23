@@ -26,7 +26,7 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
         setupTableView()
     }
     
-    func setupTableView() {
+    private func setupTableView() {
 //        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
 //        
 //        cardsDataSource = CardsDataSource(withItems: cards, cellIdentifier: cellIdentifier, configureCell: configureCell)
@@ -44,8 +44,8 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
         dataSource = TableViewDataSource(tableView: tableView, dataProvider: dataProvider, delegate: self)
     }
     
-    func configureCell(cell: UITableViewCell, item: AnyObject) {
-        cell.textLabel?.text = (item as! Card).name
+    // MARK: IBActions
+    @IBAction func add(sender: UIBarButtonItem) {
     }
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kax-80-qIo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Neh-eC-61F">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -162,7 +162,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardCell" id="C7p-n4-Ue0" customClass="CardsTableViewCell" customModule="PomiTrello" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C7p-n4-Ue0" id="4Od-bF-f3V">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -173,10 +173,17 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
+                    <navigationItem key="navigationItem" id="zSR-bq-8xC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="U6O-IT-X1r">
+                            <connections>
+                                <action selector="add:" destination="Kax-80-qIo" id="m1h-rA-Sq5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCu-Uh-xPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743" y="446"/>
+            <point key="canvasLocation" x="3555" y="446"/>
         </scene>
         <!--pomodoro-->
         <scene sceneID="f2z-fv-KIp">
@@ -211,7 +218,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kC-sR-IQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3451" y="446"/>
+            <point key="canvasLocation" x="4263" y="446"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WzA-rH-AVP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Neh-eC-61F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="56g-nU-UDy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kax-80-qIo" kind="relationship" relationship="rootViewController" id="YnW-Dg-Pb8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EO8-As-agz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2743" y="446"/>
         </scene>
     </scenes>
 </document>
