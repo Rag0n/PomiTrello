@@ -18,6 +18,8 @@
 		1F10C9761BB9DB70004C960A /* CardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C9751BB9DB70004C960A /* CardsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		1F5003F21BD9D8EE002D3AF9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5003F11BD9D8EE002D3AF9 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		1F567B251BD9F2D1007C8734 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B241BD9F2D1007C8734 /* CardDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1F567B271BD9F6A9007C8734 /* PomodoroStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B261BD9F6A9007C8734 /* PomodoroStack.swift */; settings = {ASSET_TAGS = (); }; };
+		1F567B291BD9F77E007C8734 /* NSPersistentStoreCoordinator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B281BD9F77E007C8734 /* NSPersistentStoreCoordinator+Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		1F58CDE81BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58CDE71BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift */; settings = {ASSET_TAGS = (); }; };
 		1F58CDEA1BC5279C00A7E0D1 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58CDE91BC5279C00A7E0D1 /* SegueHandlerType.swift */; settings = {ASSET_TAGS = (); }; };
 		1F5D222C1BC2756A00FDD41D /* BoardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D222B1BC2756A00FDD41D /* BoardStack.swift */; settings = {ASSET_TAGS = (); }; };
@@ -68,6 +70,8 @@
 		1F10C9751BB9DB70004C960A /* CardsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewCell.swift; sourceTree = "<group>"; };
 		1F5003F11BD9D8EE002D3AF9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1F567B241BD9F2D1007C8734 /* CardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		1F567B261BD9F6A9007C8734 /* PomodoroStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroStack.swift; sourceTree = "<group>"; };
+		1F567B281BD9F77E007C8734 /* NSPersistentStoreCoordinator+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPersistentStoreCoordinator+Extensions.swift"; sourceTree = "<group>"; };
 		1F58CDE71BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
 		1F58CDE91BC5279C00A7E0D1 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		1F5D222B1BC2756A00FDD41D /* BoardStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardStack.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				1FEDBCA61BB694AA008C50B5 /* List.swift */,
 				1FEDBCA81BB694BA008C50B5 /* Card.swift */,
 				1F0582C61BD6524100AA8307 /* CardStack.swift */,
+				1F567B261BD9F6A9007C8734 /* PomodoroStack.swift */,
+				1F567B281BD9F77E007C8734 /* NSPersistentStoreCoordinator+Extensions.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 			files = (
 				1F07162A1BC40CD400EB40B6 /* TableViewDataSource.swift in Sources */,
 				1F87D23B1BAE9E8F00B9948B /* LoginViewController.swift in Sources */,
+				1F567B291BD9F77E007C8734 /* NSPersistentStoreCoordinator+Extensions.swift in Sources */,
 				1FEDBCA91BB694BB008C50B5 /* Card.swift in Sources */,
 				1F0716321BC4182800EB40B6 /* TrelloTableViewCell.swift in Sources */,
 				1F58CDEA1BC5279C00A7E0D1 /* SegueHandlerType.swift in Sources */,
@@ -414,6 +421,7 @@
 				1F0716271BC402F200EB40B6 /* DataProvider.swift in Sources */,
 				1F87D23D1BAECECD00B9948B /* Constants.swift in Sources */,
 				1F5D222C1BC2756A00FDD41D /* BoardStack.swift in Sources */,
+				1F567B271BD9F6A9007C8734 /* PomodoroStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
