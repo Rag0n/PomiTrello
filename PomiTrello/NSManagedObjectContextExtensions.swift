@@ -21,6 +21,8 @@ extension NSManagedObjectContext {
 }
 
 extension NSManagedObjectContext {
+    
+    // проверяем на ошибку при сохранении, если есть - откатываемся назад
     public func saveOrRollBack() -> Bool {
         do {
             try save()
@@ -31,7 +33,7 @@ extension NSManagedObjectContext {
         }
     }
     
-    // makes sure we'r in correct queue to make changes
+    // выполняет замыкания и сохраняет контекст на корректной очереди задач
     public func performChanges(block: () -> ()) {
         performBlock {
             block()
