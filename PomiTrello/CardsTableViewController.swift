@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CardsTableViewController: UITableViewController, ManagedObjectContextSettable, SegueHandlerType {
+class CardsTableViewController: UITableViewController, ManagedObjectContextSettable, SegueHandlerType, UIPopoverPresentationControllerDelegate {
     
     enum SegueIdentifier: String {
         case ShowCardDetail = "showCardDetail"
@@ -40,7 +40,24 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
             guard let vc = segue.destinationViewController.contentViewController as? AddNewCardViewController else {
                 fatalError("Wrong view controller")
             }
+            if let ppc = vc.popoverPresentationController {
+                // определяем минимальные размер окна с помощью auto layout
+                let minimumSize = vc.view.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+                // если возможно, задаем ширину
+                vc.preferredContentSize = CGSize(width: Constants.AddNewCardPopoverWidth, height: minimumSize.height)
+                // доступ к методам адаптации iphone
+                ppc.delegate = self
+            }
         }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        // модальный экран над текущим, а не вместо
+        return UIModalPresentationStyle.OverFullScreen
+    }
+    
+    func presentationController(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+        return UINavigationController(rootViewController: controller.presentedViewController)
     }
     
     
@@ -60,6 +77,10 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
         let frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         let dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
         dataSource = TableViewDataSource(tableView: tableView, dataProvider: dataProvider, delegate: self)
+    }
+    
+    private struct Constants {
+        static let AddNewCardPopoverWidth: CGFloat = 320
     }
     
     
