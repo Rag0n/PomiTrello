@@ -15,7 +15,16 @@ class CardDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         cardLabel.text = card.name
     }
 
+    func setupView() {
+        let deleteButton = UIBarButtonItem(barButtonSystemItem: .Trash, target: self, action: "delete")
+        navigationItem.rightBarButtonItem = deleteButton
+    }
+    
+    func delete() {
+        
+    }
 }
