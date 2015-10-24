@@ -8,14 +8,18 @@
 
 import UIKit
 
-class CardEditViewController: UIViewController {
+class AddNewCardViewController: UIViewController {
 
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
+    }
+    
+    func setupView() {
+        
+        nameTextField.becomeFirstResponder()
     }
 }
