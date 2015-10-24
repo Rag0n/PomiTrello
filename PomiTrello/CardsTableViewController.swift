@@ -11,14 +11,12 @@ import CoreData
 
 class CardsTableViewController: UITableViewController, ManagedObjectContextSettable, SegueHandlerType, UIPopoverPresentationControllerDelegate {
     
+    var managedObjectContext: NSManagedObjectContext!
+    
     enum SegueIdentifier: String {
         case ShowCardDetail = "showCardDetail"
         case AddNewCard = "Add Card"
     }
-    
-    
-    var managedObjectContext: NSManagedObjectContext!
-    
     
     // MARK: ViewController LifeCycle
     override func viewDidLoad() {
@@ -52,6 +50,8 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
         }
     }
     
+    
+    // MARK: PopoverPresentation Delegate
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         // модальный экран над текущим, а не вместо
         return UIModalPresentationStyle.OverFullScreen
@@ -88,16 +88,6 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
     private struct Constants {
         static let AddNewCardPopoverWidth: CGFloat = 320
     }
-    
-    
-//    // MARK: IBActions
-//    @IBAction func add(sender: UIBarButtonItem) {
-//        let id = NSUUID.init()
-//        self.managedObjectContext.performChanges {
-//            Card.insertIntoContext(self.managedObjectContext, name: "Test \(id.UUIDString)", id: "\(id.UUIDString)", pos: self.pos)
-//        }
-//        pos++
-//    }
 }
 
 extension CardsTableViewController : DataProviderDelegate {
