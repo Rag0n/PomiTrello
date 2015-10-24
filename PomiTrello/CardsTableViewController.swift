@@ -13,9 +13,10 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
     
     enum SegueIdentifier: String {
         case ShowCardDetail = "showCardDetail"
+        case AddNewCard = "Add Card"
     }
     
-    var pos: Int32 = 0
+    
     var managedObjectContext: NSManagedObjectContext!
     
     
@@ -28,13 +29,17 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segueIdentifierForSegue(segue) {
         case .ShowCardDetail:
-            guard let vc = segue.destinationViewController as? CardDetailViewController else {
+            guard let vc = segue.destinationViewController.contentViewController as? CardDetailViewController else {
                 fatalError("Wrong view controller")
             }
             guard let card = dataSource.selectedObject else {
                 fatalError("Impossible to show detail without selected object")
             }
             vc.card = card
+        case .AddNewCard:
+            guard let vc = segue.destinationViewController.contentViewController as? AddNewCardViewController else {
+                fatalError("Wrong view controller")
+            }
         }
     }
     
@@ -58,14 +63,14 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
     }
     
     
-    // MARK: IBActions
-    @IBAction func add(sender: UIBarButtonItem) {
-        let id = NSUUID.init()
-        self.managedObjectContext.performChanges {
-            Card.insertIntoContext(self.managedObjectContext, name: "Test \(id.UUIDString)", id: "\(id.UUIDString)", pos: self.pos)
-        }
-        pos++
-    }
+//    // MARK: IBActions
+//    @IBAction func add(sender: UIBarButtonItem) {
+//        let id = NSUUID.init()
+//        self.managedObjectContext.performChanges {
+//            Card.insertIntoContext(self.managedObjectContext, name: "Test \(id.UUIDString)", id: "\(id.UUIDString)", pos: self.pos)
+//        }
+//        pos++
+//    }
 }
 
 extension CardsTableViewController : DataProviderDelegate {
