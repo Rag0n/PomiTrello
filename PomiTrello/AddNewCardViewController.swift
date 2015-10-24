@@ -14,7 +14,7 @@ class AddNewCardViewController: UIViewController, UITextFieldDelegate, ManagedOb
     var managedObjectContext: NSManagedObjectContext!
 
     @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField! { didSet { nameTextField.delegate = self } }
     
     override func viewDidLoad() {
         super.viewDidLoad()
