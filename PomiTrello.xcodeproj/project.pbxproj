@@ -7,38 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F05631A1BD11EA90001DCC4 /* Pomodoro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F0563181BD11EA90001DCC4 /* Pomodoro.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
-		1F0582C71BD6524100AA8307 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0582C61BD6524100AA8307 /* CardStack.swift */; settings = {ASSET_TAGS = (); }; };
-		1F0716251BC4003D00EB40B6 /* FetchedResultsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716241BC4003D00EB40B6 /* FetchedResultsDataProvider.swift */; settings = {ASSET_TAGS = (); }; };
-		1F0716271BC402F200EB40B6 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716261BC402F200EB40B6 /* DataProvider.swift */; settings = {ASSET_TAGS = (); }; };
-		1F07162A1BC40CD400EB40B6 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716291BC40CD400EB40B6 /* TableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		1F07162C1BC40DB500EB40B6 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07162B1BC40DB500EB40B6 /* DataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		1F07162F1BC40E7400EB40B6 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07162E1BC40E7400EB40B6 /* ConfigurableCell.swift */; settings = {ASSET_TAGS = (); }; };
-		1F0716321BC4182800EB40B6 /* TrelloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716311BC4182800EB40B6 /* TrelloTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		1F10C9761BB9DB70004C960A /* CardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C9751BB9DB70004C960A /* CardsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		1F5003F21BD9D8EE002D3AF9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5003F11BD9D8EE002D3AF9 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		1F567B251BD9F2D1007C8734 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B241BD9F2D1007C8734 /* CardDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		1F567B271BD9F6A9007C8734 /* PomodoroStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B261BD9F6A9007C8734 /* PomodoroStack.swift */; settings = {ASSET_TAGS = (); }; };
-		1F567B291BD9F77E007C8734 /* NSPersistentStoreCoordinator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B281BD9F77E007C8734 /* NSPersistentStoreCoordinator+Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		1F567B2B1BD9FB54007C8734 /* NSManagedObjectModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B2A1BD9FB54007C8734 /* NSManagedObjectModel+Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		1F58CDE81BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58CDE71BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift */; settings = {ASSET_TAGS = (); }; };
-		1F58CDEA1BC5279C00A7E0D1 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58CDE91BC5279C00A7E0D1 /* SegueHandlerType.swift */; settings = {ASSET_TAGS = (); }; };
-		1F5D22311BC2884700FDD41D /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D22301BC2884700FDD41D /* ManagedObject.swift */; settings = {ASSET_TAGS = (); }; };
-		1F7E4DF11BCC508B00F27E13 /* CardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E4DF01BCC508B00F27E13 /* CardsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1F05631A1BD11EA90001DCC4 /* Pomodoro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F0563181BD11EA90001DCC4 /* Pomodoro.xcdatamodeld */; };
+		1F0582C71BD6524100AA8307 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0582C61BD6524100AA8307 /* CardStack.swift */; };
+		1F0716251BC4003D00EB40B6 /* FetchedResultsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716241BC4003D00EB40B6 /* FetchedResultsDataProvider.swift */; };
+		1F0716271BC402F200EB40B6 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716261BC402F200EB40B6 /* DataProvider.swift */; };
+		1F07162A1BC40CD400EB40B6 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716291BC40CD400EB40B6 /* TableViewDataSource.swift */; };
+		1F07162C1BC40DB500EB40B6 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07162B1BC40DB500EB40B6 /* DataSource.swift */; };
+		1F07162F1BC40E7400EB40B6 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07162E1BC40E7400EB40B6 /* ConfigurableCell.swift */; };
+		1F0716321BC4182800EB40B6 /* TrelloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0716311BC4182800EB40B6 /* TrelloTableViewCell.swift */; };
+		1F10C9761BB9DB70004C960A /* CardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C9751BB9DB70004C960A /* CardsTableViewCell.swift */; };
+		1F5003F21BD9D8EE002D3AF9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5003F11BD9D8EE002D3AF9 /* Extensions.swift */; };
+		1F567B251BD9F2D1007C8734 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B241BD9F2D1007C8734 /* CardDetailViewController.swift */; };
+		1F567B271BD9F6A9007C8734 /* PomodoroStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B261BD9F6A9007C8734 /* PomodoroStack.swift */; };
+		1F567B291BD9F77E007C8734 /* NSPersistentStoreCoordinator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B281BD9F77E007C8734 /* NSPersistentStoreCoordinator+Extensions.swift */; };
+		1F567B2B1BD9FB54007C8734 /* NSManagedObjectModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F567B2A1BD9FB54007C8734 /* NSManagedObjectModel+Extensions.swift */; };
+		1F58CDE81BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58CDE71BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift */; };
+		1F58CDEA1BC5279C00A7E0D1 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58CDE91BC5279C00A7E0D1 /* SegueHandlerType.swift */; };
+		1F5D22311BC2884700FDD41D /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D22301BC2884700FDD41D /* ManagedObject.swift */; };
+		1F7AAC9E1BDB3F2700C70E6E /* CardEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7AAC9D1BDB3F2700C70E6E /* CardEditViewController.swift */; };
+		1F7E4DF11BCC508B00F27E13 /* CardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E4DF01BCC508B00F27E13 /* CardsTableViewController.swift */; };
 		1F87D2081BADBBAC00B9948B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2071BADBBAC00B9948B /* AppDelegate.swift */; };
 		1F87D20D1BADBBAC00B9948B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D20B1BADBBAC00B9948B /* Main.storyboard */; };
 		1F87D20F1BADBBAC00B9948B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D20E1BADBBAC00B9948B /* Assets.xcassets */; };
 		1F87D2121BADBBAC00B9948B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D2101BADBBAC00B9948B /* LaunchScreen.storyboard */; };
 		1F87D21D1BADBBAC00B9948B /* PomiTrelloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D21C1BADBBAC00B9948B /* PomiTrelloTests.swift */; };
 		1F87D2281BADBBAC00B9948B /* PomiTrelloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2271BADBBAC00B9948B /* PomiTrelloUITests.swift */; };
-		1F87D23B1BAE9E8F00B9948B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		1F87D23D1BAECECD00B9948B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D23C1BAECECD00B9948B /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
-		1F87D2441BAF013100B9948B /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2431BAF013100B9948B /* Board.swift */; settings = {ASSET_TAGS = (); }; };
-		1F87D2481BAF082C00B9948B /* AppKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D2471BAF082C00B9948B /* AppKeys.plist */; settings = {ASSET_TAGS = (); }; };
-		1FE4FCF61BD65C970077F4F8 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4FCF51BD65C970077F4F8 /* ManagedObjectContextSettable.swift */; settings = {ASSET_TAGS = (); }; };
-		1FED68D51BBB293A007E3A99 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		1FEDBCA71BB694AA008C50B5 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDBCA61BB694AA008C50B5 /* List.swift */; settings = {ASSET_TAGS = (); }; };
-		1FEDBCA91BB694BB008C50B5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDBCA81BB694BA008C50B5 /* Card.swift */; settings = {ASSET_TAGS = (); }; };
+		1F87D23B1BAE9E8F00B9948B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */; };
+		1F87D23D1BAECECD00B9948B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D23C1BAECECD00B9948B /* Constants.swift */; };
+		1F87D2441BAF013100B9948B /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2431BAF013100B9948B /* Board.swift */; };
+		1F87D2481BAF082C00B9948B /* AppKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D2471BAF082C00B9948B /* AppKeys.plist */; };
+		1FE4FCF61BD65C970077F4F8 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4FCF51BD65C970077F4F8 /* ManagedObjectContextSettable.swift */; };
+		1FED68D51BBB293A007E3A99 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */; };
+		1FEDBCA71BB694AA008C50B5 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDBCA61BB694AA008C50B5 /* List.swift */; };
+		1FEDBCA91BB694BB008C50B5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDBCA81BB694BA008C50B5 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		1F58CDE71BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
 		1F58CDE91BC5279C00A7E0D1 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		1F5D22301BC2884700FDD41D /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
+		1F7AAC9D1BDB3F2700C70E6E /* CardEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEditViewController.swift; sourceTree = "<group>"; };
 		1F7E4DF01BCC508B00F27E13 /* CardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewController.swift; sourceTree = "<group>"; };
 		1F87D2041BADBBAC00B9948B /* PomiTrello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomiTrello.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F87D2071BADBBAC00B9948B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				1F7E4DF01BCC508B00F27E13 /* CardsTableViewController.swift */,
+				1F7AAC9D1BDB3F2700C70E6E /* CardEditViewController.swift */,
 				1F567B241BD9F2D1007C8734 /* CardDetailViewController.swift */,
 				1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */,
 				1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */,
@@ -406,6 +409,7 @@
 				1F5D22311BC2884700FDD41D /* ManagedObject.swift in Sources */,
 				1FEDBCA71BB694AA008C50B5 /* List.swift in Sources */,
 				1F87D2081BADBBAC00B9948B /* AppDelegate.swift in Sources */,
+				1F7AAC9E1BDB3F2700C70E6E /* CardEditViewController.swift in Sources */,
 				1F0582C71BD6524100AA8307 /* CardStack.swift in Sources */,
 				1F07162C1BC40DB500EB40B6 /* DataSource.swift in Sources */,
 				1F10C9761BB9DB70004C960A /* CardsTableViewCell.swift in Sources */,

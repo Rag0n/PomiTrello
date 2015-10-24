@@ -238,6 +238,77 @@
             </objects>
             <point key="canvasLocation" x="4263" y="446"/>
         </scene>
+        <!--Card Edit View Controller-->
+        <scene sceneID="7HI-pR-CbY">
+            <objects>
+                <viewController id="0iF-0Q-WkL" customClass="CardEditViewController" customModule="PomiTrello" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VL1-wl-BUK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pfi-Sd-jhV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o4d-EG-40y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vED-ai-z9S">
+                                <rect key="frame" x="73" y="28" width="507" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdZ-Uv-cgm">
+                                <rect key="frame" x="20" y="31" width="45" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZl-1V-Kjq">
+                                <rect key="frame" x="50" y="66" width="15" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="idValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUG-WK-Vvs">
+                                <rect key="frame" x="73" y="66" width="56" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pUG-WK-Vvs" firstAttribute="leading" secondItem="vED-ai-z9S" secondAttribute="leading" id="1Tw-Eo-ksE"/>
+                            <constraint firstItem="pUG-WK-Vvs" firstAttribute="top" secondItem="vED-ai-z9S" secondAttribute="bottom" constant="8" symbolic="YES" id="2mu-UZ-Sxk"/>
+                            <constraint firstItem="VdZ-Uv-cgm" firstAttribute="leading" secondItem="o4d-EG-40y" secondAttribute="leading" constant="20" symbolic="YES" id="89R-KB-r8R"/>
+                            <constraint firstItem="uZl-1V-Kjq" firstAttribute="top" secondItem="vED-ai-z9S" secondAttribute="bottom" constant="8" symbolic="YES" id="LqI-AB-hSx"/>
+                            <constraint firstItem="vED-ai-z9S" firstAttribute="leading" secondItem="VdZ-Uv-cgm" secondAttribute="trailing" constant="8" symbolic="YES" id="MK3-vK-7gw"/>
+                            <constraint firstItem="VdZ-Uv-cgm" firstAttribute="baseline" secondItem="vED-ai-z9S" secondAttribute="baseline" id="ciM-ZP-uY3"/>
+                            <constraint firstItem="pUG-WK-Vvs" firstAttribute="centerY" secondItem="uZl-1V-Kjq" secondAttribute="centerY" id="fR9-Mw-LAz"/>
+                            <constraint firstItem="uZl-1V-Kjq" firstAttribute="trailing" secondItem="VdZ-Uv-cgm" secondAttribute="trailing" id="ilk-bQ-wkF"/>
+                            <constraint firstAttribute="trailing" secondItem="vED-ai-z9S" secondAttribute="trailing" constant="20" symbolic="YES" id="m6Y-uX-jze"/>
+                            <constraint firstItem="vED-ai-z9S" firstAttribute="top" secondItem="VL1-wl-BUK" secondAttribute="bottom" constant="8" symbolic="YES" id="qal-b1-P1C"/>
+                            <constraint firstItem="vED-ai-z9S" firstAttribute="leading" secondItem="VdZ-Uv-cgm" secondAttribute="trailing" constant="8" symbolic="YES" id="toI-WR-XyJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MK3-vK-7gw"/>
+                                <exclude reference="LqI-AB-hSx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="idLabel" destination="pUG-WK-Vvs" id="Bsy-lE-lIt"/>
+                        <outlet property="nameTextField" destination="vED-ai-z9S" id="9vE-4m-Jgj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A6e-bK-dkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4263" y="1144"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WzA-rH-AVP">
             <objects>
