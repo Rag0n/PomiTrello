@@ -48,6 +48,7 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
                 // доступ к методам адаптации iphone
                 ppc.delegate = self
             }
+            vc.managedObjectContext = managedObjectContext
         }
     }
     
