@@ -25,6 +25,9 @@ class CardDetailViewController: UIViewController {
     }
     
     func delete() {
-        
+        card.managedObjectContext?.performChanges() {
+            self.card.managedObjectContext?.deleteObject(self.card)
+        }
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
