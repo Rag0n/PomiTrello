@@ -29,12 +29,12 @@ class AddNewCardViewController: UIViewController, UITextFieldDelegate, ManagedOb
         nameTextField.becomeFirstResponder()
     }
     
-    private func cancel() {
+    func cancel() {
         // presenting view controller ответственнен за dismiss
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    private func add() {
+    func add() {
         guard let name = self.nameTextField.text, let id = self.idLabel.text else {
             return
             // TODO: alert
@@ -42,6 +42,7 @@ class AddNewCardViewController: UIViewController, UITextFieldDelegate, ManagedOb
         managedObjectContext.performChanges() {
             Card.insertIntoContext(self.managedObjectContext, name: name, id: id)
         }
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: TextField Delefate
