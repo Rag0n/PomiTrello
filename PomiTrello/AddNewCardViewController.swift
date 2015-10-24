@@ -25,6 +25,7 @@ class AddNewCardViewController: UIViewController, UITextFieldDelegate, ManagedOb
         let closeButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "cancel")
         let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "add")
         navigationItem.leftBarButtonItem = closeButton
+        navigationItem.rightBarButtonItem = doneButton
         nameTextField.becomeFirstResponder()
     }
     
@@ -34,8 +35,12 @@ class AddNewCardViewController: UIViewController, UITextFieldDelegate, ManagedOb
     }
     
     private func add() {
+        guard let name = self.nameTextField.text, let id = self.idLabel.text else {
+            return
+            // TODO: alert
+        }
         managedObjectContext.performChanges() {
-            Card.insertIntoContext(self.managedObjectContext, name: self.nameTextField.text!, id: self.idLabel.text!)
+            Card.insertIntoContext(self.managedObjectContext, name: name, id: id)
         }
     }
     
