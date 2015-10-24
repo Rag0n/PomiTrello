@@ -57,7 +57,12 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
     }
     
     func presentationController(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
-        return UINavigationController(rootViewController: controller.presentedViewController)
+        let navCon = UINavigationController(rootViewController: controller.presentedViewController)
+        // добавляем blur эффект для вьюшек под popover
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+        visualEffectView.frame = navCon.view.bounds
+        navCon.view.insertSubview(visualEffectView, atIndex: 0)
+        return navCon
     }
     
     
