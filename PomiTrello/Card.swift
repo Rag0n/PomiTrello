@@ -40,4 +40,8 @@ extension Card: ManagedObjectType {
     public static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: "pos", ascending: false)]
     }
+    
+    public static var defaultPredicate: NSPredicate {
+        return notMarkedForDeletionPredicate
+    }
 }
