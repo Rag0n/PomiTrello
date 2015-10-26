@@ -21,9 +21,15 @@ class AddNewCardViewController: UIViewController, UITextFieldDelegate, ManagedOb
         setupView()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        nameTextField.resignFirstResponder()
+    }
+    
     private func setupView() {
         let closeButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "cancel")
         let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "add")
+        title = "Add new card"
         navigationItem.leftBarButtonItem = closeButton
         navigationItem.rightBarButtonItem = doneButton
         nameTextField.becomeFirstResponder()
