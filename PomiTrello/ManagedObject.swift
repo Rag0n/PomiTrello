@@ -18,7 +18,7 @@ public class ManagedObject: NSManagedObject {
 public protocol ManagedObjectType: class {
     static var entityName: String { get }
     static var defaultSortDescriptors: [NSSortDescriptor] { get }
-    static var defaultPredicate: NSPredicate { get }
+    static var defaultPredicate: NSPredicate? { get }
     var managedObjectContext: NSManagedObjectContext? { get }
 }
 
@@ -34,7 +34,9 @@ extension ManagedObjectType {
     public static var sortedFetchRequest: NSFetchRequest {
         let request = NSFetchRequest(entityName: entityName)
         request.sortDescriptors = defaultSortDescriptors
-        request.predicate = defaultPredicate
+        if let predicate = defaultPredicate {
+            request.predicate = predicate
+        }
         return request
     }
 }

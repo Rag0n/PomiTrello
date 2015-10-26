@@ -18,8 +18,8 @@ public final class ManagedObjectObserver {
     }
     
     public init?(object: ManagedObjectType, changeHandler: (ChangeType) -> ()) {
-        guard let moc = object.managedObjectContext else { return nil }
-        objectHasBeenDeleted = !object.dynamicType.defaultPredicate.evaluateWithObject(object)
+//        guard let moc = object.managedObjectContext else { return nil }
+//        objectHasBeenDeleted = !object.dynamicType.defaultPredicate.evaluateWithObject(object)
         
 //        token = moc.addob
     }
