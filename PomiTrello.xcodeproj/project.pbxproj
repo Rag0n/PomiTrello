@@ -39,6 +39,7 @@
 		1FE4FCF61BD65C970077F4F8 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4FCF51BD65C970077F4F8 /* ManagedObjectContextSettable.swift */; };
 		1FED68D51BBB293A007E3A99 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */; };
 		1FEDBCA91BB694BB008C50B5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDBCA81BB694BA008C50B5 /* Card.swift */; };
+		D8A79C50C5AF47B0E6B59972 /* Pods_PomiTrello.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7716EEF0891E2CB94F54411E /* Pods_PomiTrello.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,9 @@
 		1FE4FCF51BD65C970077F4F8 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
 		1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1FEDBCA81BB694BA008C50B5 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		2107B450816577928252B17F /* Pods-PomiTrello.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomiTrello.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomiTrello/Pods-PomiTrello.debug.xcconfig"; sourceTree = "<group>"; };
+		7716EEF0891E2CB94F54411E /* Pods_PomiTrello.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PomiTrello.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD63CCEC7141D75C25D13C0A /* Pods-PomiTrello.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomiTrello.release.xcconfig"; path = "Pods/Target Support Files/Pods-PomiTrello/Pods-PomiTrello.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A79C50C5AF47B0E6B59972 /* Pods_PomiTrello.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +197,8 @@
 				1F87D21B1BADBBAC00B9948B /* PomiTrelloTests */,
 				1F87D2261BADBBAC00B9948B /* PomiTrelloUITests */,
 				1F87D2051BADBBAC00B9948B /* Products */,
+				EA08AE4CD8D919B2759A18C0 /* Pods */,
+				992C3B24C6B34242CC053CE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,6 +279,23 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		992C3B24C6B34242CC053CE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7716EEF0891E2CB94F54411E /* Pods_PomiTrello.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA08AE4CD8D919B2759A18C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2107B450816577928252B17F /* Pods-PomiTrello.debug.xcconfig */,
+				FD63CCEC7141D75C25D13C0A /* Pods-PomiTrello.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,9 +303,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F87D22C1BADBBAC00B9948B /* Build configuration list for PBXNativeTarget "PomiTrello" */;
 			buildPhases = (
+				42CBAD2D7097F8CC98D67732 /* Check Pods Manifest.lock */,
 				1F87D2001BADBBAC00B9948B /* Sources */,
 				1F87D2011BADBBAC00B9948B /* Frameworks */,
 				1F87D2021BADBBAC00B9948B /* Resources */,
+				1B0AC9460F95463CD2460AAB /* Embed Pods Frameworks */,
+				68CF0A92FE2FEF23FC6B169C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -398,6 +425,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B0AC9460F95463CD2460AAB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PomiTrello/Pods-PomiTrello-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42CBAD2D7097F8CC98D67732 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		68CF0A92FE2FEF23FC6B169C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PomiTrello/Pods-PomiTrello-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F87D2001BADBBAC00B9948B /* Sources */ = {
@@ -569,6 +644,7 @@
 		};
 		1F87D22D1BADBBAC00B9948B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2107B450816577928252B17F /* Pods-PomiTrello.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -583,6 +659,7 @@
 		};
 		1F87D22E1BADBBAC00B9948B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD63CCEC7141D75C25D13C0A /* Pods-PomiTrello.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
