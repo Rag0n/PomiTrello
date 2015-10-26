@@ -216,25 +216,9 @@
                     <view key="view" contentMode="scaleToFill" id="rtV-Kh-Lz9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJH-1K-ybR">
-                                <rect key="frame" x="279" y="289" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="EJH-1K-ybR" firstAttribute="centerX" secondItem="rtV-Kh-Lz9" secondAttribute="centerX" id="OZU-Vo-amu"/>
-                            <constraint firstItem="EJH-1K-ybR" firstAttribute="centerY" secondItem="rtV-Kh-Lz9" secondAttribute="centerY" id="VjR-eo-ixJ"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="cardLabel" destination="EJH-1K-ybR" id="Uhb-K0-kIZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kC-sR-IQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -297,8 +281,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="MK3-vK-7gw"/>
                                 <exclude reference="LqI-AB-hSx"/>
+                                <exclude reference="MK3-vK-7gw"/>
                             </mask>
                         </variation>
                     </view>
