@@ -30,24 +30,51 @@ class CardDetailViewController: UIViewController {
     private func setupView() {
         let deleteButton = UIBarButtonItem(barButtonSystemItem: .Trash, target: self, action: "delete")
         navigationItem.rightBarButtonItem = deleteButton
+        
+        
+        view.addSubview(cardName)
+        
+        pomodoroView.backgroundColor = UIColor.grayColor()
+        view.addSubview(pomodoroView)
+        
+        
+        setupConstraints()
     }
     
     private func updateUI() {
         cardName.text = card.name
     }
     
-    
     // MARK: UI
-    private lazy var cardName: UILabel = {
-        let cardNameLabel = UILabel()
+    private var cardName = UILabel()
+    private var pomodoroView = UIView()
+    
+//    private lazy var cardName: UILabel = {
+//        let cardNameLabel = UILabel()
+//        
+//        self.view.addSubview(cardNameLabel)
+//        
+//        constrain(cardNameLabel, cardNameLabel.superview!, block: { (cardNameLabel, superview) -> () in
+//            cardNameLabel.centerX == superview.centerX
+//            cardNameLabel.centerY == superview.centerY
+//        })
+//        
+//        return cardNameLabel
+//    }()
+    
+    func setupConstraints() {
+        let length = self.topLayoutGuide.length
+        let navHeight: CGFloat = self.navigationController?.navigationBar.frame.size.height ?? 0
         
-        self.view.addSubview(cardNameLabel)
-        
-        constrain(cardNameLabel, cardNameLabel.superview!, block: { (cardNameLabel, superview) -> () in
-            cardNameLabel.centerX == superview.centerX
-            cardNameLabel.centerY == superview.centerY
+        constrain(pomodoroView, self.view, cardName, block: { (pomodoroView, view, cardName) -> () in
+            let topMarginHeight = navHeight + length
+            cardName.topMargin == view.topMargin + topMarginHeight + 38
+            cardName.centerX == view.centerX
+            
+            pomodoroView.topMargin == cardName.bottomMargin + 20
+            pomodoroView.centerX == view.centerX
+            pomodoroView.width == view.width * 0.8
+            pomodoroView.height == 200
         })
-        
-        return cardNameLabel
-    }()
+    }
 }
