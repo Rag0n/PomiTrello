@@ -43,6 +43,5 @@ extension Card: ManagedObjectType {
     
     public static var defaultPredicate: NSPredicate? {
         return nil
-//        return notMarkedForDeletionPredicate
     }
 }
