@@ -12,6 +12,7 @@ import CoreData
 public final class Pomodoro: ManagedObject {
     @NSManaged private(set) var time: Int32
     @NSManaged internal var updatedAt: NSDate
+    @NSManaged private(set) var card: Card
 }
 
 extension Pomodoro: ManagedObjectType {
