@@ -11,10 +11,7 @@ import CoreData
 
 public final class Pomodoro: ManagedObject {
     @NSManaged private(set) var time: Int32
-    @NSManaged private(set) var completedDate: NSDate?
-    
-    
-    
+    @NSManaged internal var updatedAt: NSDate
 }
 
 extension Pomodoro: ManagedObjectType {
@@ -23,10 +20,14 @@ extension Pomodoro: ManagedObjectType {
     }
     
     public static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: "completedDate", ascending: false)]
+        return [NSSortDescriptor(key: NSUpdatedObjectsKey, ascending: false)]
     }
     
     public static var defaultPredicate: NSPredicate? {
         return nil
     }
+}
+
+extension Pomodoro: UpdatedTimestampable {
+    
 }
