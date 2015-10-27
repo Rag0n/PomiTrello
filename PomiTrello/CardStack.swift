@@ -6,42 +6,42 @@
 //  Copyright © 2015 Alexander. All rights reserved.
 //
 
-import CoreData
+//import CoreData
+//
+//private let StoreURL = NSURL.documentsURL.URLByAppendingPathComponent("Pomodoro")
+//
+//
+//public func createCardMainContext() -> NSManagedObjectContext {
+//    // получаем bundle(будет работать, если перенесем в другой модуль)
+//    let bundle = NSBundle(forClass: Card.self)
+//    
+//    // загружаем объектную модель
+//    guard let model = NSManagedObjectModel.mergedModelFromBundles([bundle]) else {
+//        fatalError("model not found")
+//    }
+////    let modelURL = bundle.URLForResource("Pomodoro", withExtension:"momd")
+////    let model = NSManagedObjectModel(contentsOfURL: modelURL!)!
+//    
+//    // создаем persistent store coordinator для нашей модели и добавляем persistent store
+//    let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
+//    try! psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: StoreURL, options: nil)
+//    
+//    // привязываем контекст к main thread
+//    // т.о можем безопасно обращаться к контексту в UI коде
+//    let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+//    context.persistentStoreCoordinator = psc
+//    
+//    return context
+//}
 
-private let StoreURL = NSURL.documentsURL.URLByAppendingPathComponent("Pomodoro")
-
-
-public func createCardMainContext() -> NSManagedObjectContext {
-    // получаем bundle(будет работать, если перенесем в другой модуль)
-    let bundle = NSBundle(forClass: Card.self)
-    
-    // загружаем объектную модель
-    guard let model = NSManagedObjectModel.mergedModelFromBundles([bundle]) else {
-        fatalError("model not found")
-    }
-//    let modelURL = bundle.URLForResource("Pomodoro", withExtension:"momd")
-//    let model = NSManagedObjectModel(contentsOfURL: modelURL!)!
-    
-    // создаем persistent store coordinator для нашей модели и добавляем persistent store
-    let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
-    try! psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: StoreURL, options: nil)
-    
-    // привязываем контекст к main thread
-    // т.о можем безопасно обращаться к контексту в UI коде
-    let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-    context.persistentStoreCoordinator = psc
-    
-    return context
-}
-
-
-extension NSURL {
-    // возвращает url директории документов
-    static var documentsURL: NSURL {
-        let fileManager = NSFileManager.defaultManager()
-        
-        let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        
-        return urls[0]
-    }
-}
+//
+//extension NSURL {
+//    // возвращает url директории документов
+//    static var documentsURL: NSURL {
+//        let fileManager = NSFileManager.defaultManager()
+//        
+//        let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+//        
+//        return urls[0]
+//    }
+//}

@@ -35,7 +35,6 @@
 		1F87D23D1BAECECD00B9948B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D23C1BAECECD00B9948B /* Constants.swift */; };
 		1F87D2481BAF082C00B9948B /* AppKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D2471BAF082C00B9948B /* AppKeys.plist */; };
 		1FAF8C0E1BDDD4DC006397B0 /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAF8C0D1BDDD4DC006397B0 /* ManagedObjectObserver.swift */; };
-		1FAF8C111BDDDCFD006397B0 /* RemoteDeletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAF8C101BDDDCFD006397B0 /* RemoteDeletable.swift */; };
 		1FE4FCF61BD65C970077F4F8 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4FCF51BD65C970077F4F8 /* ManagedObjectContextSettable.swift */; };
 		1FED68D51BBB293A007E3A99 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */; };
 		1FEDBCA91BB694BB008C50B5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDBCA81BB694BA008C50B5 /* Card.swift */; };
@@ -94,7 +93,6 @@
 		1F87D23C1BAECECD00B9948B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1F87D2471BAF082C00B9948B /* AppKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppKeys.plist; sourceTree = "<group>"; };
 		1FAF8C0D1BDDD4DC006397B0 /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectObserver.swift; sourceTree = "<group>"; };
-		1FAF8C101BDDDCFD006397B0 /* RemoteDeletable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDeletable.swift; sourceTree = "<group>"; };
 		1FE4FCF51BD65C970077F4F8 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
 		1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1FEDBCA81BB694BA008C50B5 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -262,21 +260,12 @@
 		1F87D23E1BAED30500B9948B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1FAF8C0F1BDDDCC7006397B0 /* Protocols */,
 				1F0563181BD11EA90001DCC4 /* Pomodoro.xcdatamodeld */,
 				1F567B261BD9F6A9007C8734 /* PomodoroStack.swift */,
 				1FEDBCA81BB694BA008C50B5 /* Card.swift */,
 				1F0582C61BD6524100AA8307 /* CardStack.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		1FAF8C0F1BDDDCC7006397B0 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				1FAF8C101BDDDCFD006397B0 /* RemoteDeletable.swift */,
-			);
-			name = Protocols;
 			sourceTree = "<group>";
 		};
 		992C3B24C6B34242CC053CE8 /* Frameworks */ = {
@@ -487,7 +476,6 @@
 				1FEDBCA91BB694BB008C50B5 /* Card.swift in Sources */,
 				1F58CDEA1BC5279C00A7E0D1 /* SegueHandlerType.swift in Sources */,
 				1F5D22311BC2884700FDD41D /* ManagedObject.swift in Sources */,
-				1FAF8C111BDDDCFD006397B0 /* RemoteDeletable.swift in Sources */,
 				1F87D2081BADBBAC00B9948B /* AppDelegate.swift in Sources */,
 				1F7AAC9E1BDB3F2700C70E6E /* AddNewCardViewController.swift in Sources */,
 				1F0582C71BD6524100AA8307 /* CardStack.swift in Sources */,
