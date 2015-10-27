@@ -22,6 +22,7 @@
 		1F58CDE81BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58CDE71BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift */; };
 		1F58CDEA1BC5279C00A7E0D1 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58CDE91BC5279C00A7E0D1 /* SegueHandlerType.swift */; };
 		1F5D22311BC2884700FDD41D /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D22301BC2884700FDD41D /* ManagedObject.swift */; };
+		1F7928A51BDF286B00F126A7 /* Pomodoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7928A41BDF286B00F126A7 /* Pomodoro.swift */; };
 		1F7AAC9E1BDB3F2700C70E6E /* AddNewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7AAC9D1BDB3F2700C70E6E /* AddNewCardViewController.swift */; };
 		1F7E4DF11BCC508B00F27E13 /* CardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E4DF01BCC508B00F27E13 /* CardsTableViewController.swift */; };
 		1F87D2081BADBBAC00B9948B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2071BADBBAC00B9948B /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		1F58CDE71BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
 		1F58CDE91BC5279C00A7E0D1 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		1F5D22301BC2884700FDD41D /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
+		1F7928A41BDF286B00F126A7 /* Pomodoro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pomodoro.swift; sourceTree = "<group>"; };
 		1F7AAC9D1BDB3F2700C70E6E /* AddNewCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCardViewController.swift; sourceTree = "<group>"; };
 		1F7E4DF01BCC508B00F27E13 /* CardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewController.swift; sourceTree = "<group>"; };
 		1F87D2041BADBBAC00B9948B /* PomiTrello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomiTrello.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +263,7 @@
 				1F0563181BD11EA90001DCC4 /* Pomodoro.xcdatamodeld */,
 				1F567B261BD9F6A9007C8734 /* PomodoroStack.swift */,
 				1FEDBCA81BB694BA008C50B5 /* Card.swift */,
+				1F7928A41BDF286B00F126A7 /* Pomodoro.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				1F0716271BC402F200EB40B6 /* DataProvider.swift in Sources */,
 				1F87D23D1BAECECD00B9948B /* Constants.swift in Sources */,
 				1F567B271BD9F6A9007C8734 /* PomodoroStack.swift in Sources */,
+				1F7928A51BDF286B00F126A7 /* Pomodoro.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
