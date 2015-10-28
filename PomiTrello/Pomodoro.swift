@@ -48,6 +48,6 @@ extension Pomodoro: ManagedObjectType {
     }
 }
 
-extension Pomodoro: UpdatedTimestampable {
-    
-}
+//extension Pomodoro: UpdatedTimestampable {
+//    
+//}
