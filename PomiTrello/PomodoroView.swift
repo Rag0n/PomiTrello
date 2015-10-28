@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PomodoroDataSource: class {
+    var pomodoroTimer: Double { get set }
+}
+
 class PomodoroView: UIView {
     
     var scale: CGFloat = 0.9 { didSet { setNeedsDisplay() } }

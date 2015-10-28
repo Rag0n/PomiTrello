@@ -9,7 +9,7 @@
 import UIKit
 import Cartography
 
-class CardDetailViewController: UIViewController {
+class CardDetailViewController: UIViewController, PomodoroDataSource {
     
     var card: Card! { didSet { updateUI() } }
     
