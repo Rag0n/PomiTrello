@@ -13,6 +13,12 @@ class CardDetailViewController: UIViewController, PomodoroDataSource {
     
     var card: Card! { didSet { updateUI() } }
     
+    var pomodoroTimer: Double {
+        get {
+            return 25
+        }
+    }
+    
     // MARK: ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +40,17 @@ class CardDetailViewController: UIViewController, PomodoroDataSource {
         let deleteButton = UIBarButtonItem(barButtonSystemItem: .Trash, target: self, action: "delete")
         navigationItem.rightBarButtonItem = deleteButton
         
-        
         view.addSubview(cardName)
-        
-        pomodoroView.backgroundColor = UIColor.grayColor()
-        view.addSubview(pomodoroView)
-        
+        configurePomodoroView()
         
         setupConstraints()
+    }
+    
+    private func configurePomodoroView() {
+        pomodoroView.backgroundColor = UIColor.grayColor()
+        pomodoroView.dataSource = self
+        pomodoroView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "changePomodoroState:"))
+        view.addSubview(pomodoroView)
     }
     
     private func updateUI() {
@@ -50,11 +59,7 @@ class CardDetailViewController: UIViewController, PomodoroDataSource {
     
     // MARK: UI
     private var cardName = UILabel()
-    private var pomodoroView = PomodoroView() {
-        didSet {
-            
-        }
-    }
+    private var pomodoroView = PomodoroView()
     
     
     func setupConstraints() {

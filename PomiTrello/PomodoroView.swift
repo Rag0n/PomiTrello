@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PomodoroDataSource: class {
-    var pomodoroTimer: Double { get set }
+    var pomodoroTimer: Double { get }
 }
 
 class PomodoroView: UIView {
@@ -17,7 +17,7 @@ class PomodoroView: UIView {
     var scale: CGFloat = 0.9 { didSet { setNeedsDisplay() } }
     var color: UIColor = UIColor.redColor() { didSet { setNeedsDisplay() } }
     var lineWidth: CGFloat = 5.0 { didSet { setNeedsDisplay() } }
-    
+    weak var dataSource: PomodoroDataSource?
     
     private var pomodoroCenter: CGPoint {
         return convertPoint(center, fromView: superview)
