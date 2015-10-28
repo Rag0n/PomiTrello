@@ -13,11 +13,15 @@ class CardDetailViewController: UIViewController {
     
     var card: Card! { didSet { updateUI() } }
     
+    
+    // MARK: ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
+    
+    // MARK: Target actions
     func delete() {
         card.managedObjectContext?.performChanges() {
             self.card.managedObjectContext?.deleteObject(self.card)
@@ -47,20 +51,8 @@ class CardDetailViewController: UIViewController {
     
     // MARK: UI
     private var cardName = UILabel()
-    private var pomodoroView = UIView()
+    private var pomodoroView = PomodoroView()
     
-//    private lazy var cardName: UILabel = {
-//        let cardNameLabel = UILabel()
-//        
-//        self.view.addSubview(cardNameLabel)
-//        
-//        constrain(cardNameLabel, cardNameLabel.superview!, block: { (cardNameLabel, superview) -> () in
-//            cardNameLabel.centerX == superview.centerX
-//            cardNameLabel.centerY == superview.centerY
-//        })
-//        
-//        return cardNameLabel
-//    }()
     
     func setupConstraints() {
         let length = self.topLayoutGuide.length // TODO: почему 0?
