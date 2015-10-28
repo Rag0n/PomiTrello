@@ -63,12 +63,12 @@ class CardDetailViewController: UIViewController {
 //    }()
     
     func setupConstraints() {
-        let length = self.topLayoutGuide.length
+        let length = self.topLayoutGuide.length // TODO: почему 0?
         let navHeight: CGFloat = self.navigationController?.navigationBar.frame.size.height ?? 0
         
         constrain(pomodoroView, self.view, cardName, block: { (pomodoroView, view, cardName) -> () in
-            let topMarginHeight = navHeight + length
-            cardName.topMargin == view.topMargin + topMarginHeight + 38
+            let topMarginHeight = navHeight + length + 44
+            cardName.topMargin == view.topMargin + topMarginHeight
             cardName.centerX == view.centerX
             
             pomodoroView.topMargin == cardName.bottomMargin + 20
