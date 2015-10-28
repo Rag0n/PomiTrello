@@ -10,7 +10,9 @@ import UIKit
 
 class PomodoroView: UIView {
     
-    var scale: CGFloat = 0.8 { didSet { setNeedsDisplay() } }
+    var scale: CGFloat = 0.9 { didSet { setNeedsDisplay() } }
+    var color: UIColor = UIColor.redColor() { didSet { setNeedsDisplay() } }
+    var lineWidth: CGFloat = 5.0 { didSet { setNeedsDisplay() } }
     
     
     private var pomodoroCenter: CGPoint {
@@ -25,8 +27,9 @@ class PomodoroView: UIView {
         let path = UIBezierPath()
         path.addArcWithCenter(pomodoroCenter, radius: pomodoroRadius, startAngle: 0, endAngle: CGFloat(2 * M_PI), clockwise: true)
         path.closePath()
-        UIColor.redColor().setStroke()
-        path.lineWidth = 3.0
+        
+        color.set()
+        path.lineWidth = lineWidth
         
         path.stroke()
     }

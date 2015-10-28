@@ -13,7 +13,6 @@ class CardDetailViewController: UIViewController {
     
     var card: Card! { didSet { updateUI() } }
     
-    
     // MARK: ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +50,11 @@ class CardDetailViewController: UIViewController {
     
     // MARK: UI
     private var cardName = UILabel()
-    private var pomodoroView = PomodoroView()
+    private var pomodoroView = PomodoroView() {
+        didSet {
+            
+        }
+    }
     
     
     func setupConstraints() {
