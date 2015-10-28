@@ -11,8 +11,27 @@ import CoreData
 
 public final class Pomodoro: ManagedObject {
     @NSManaged private(set) var time: Int32
-    @NSManaged internal var updatedAt: NSDate
+    @NSManaged private(set) var updatedAt: String
     @NSManaged private(set) var card: Card
+    
+    public static func insertIntoContext(moc: NSManagedObjectContext, card: Card) -> Pomodoro {
+        let pomodoro: Pomodoro = moc.insertObject()
+        pomodoro.time = 0
+        pomodoro.card = card
+        
+        let currentDate = NSDate(timeIntervalSinceNow: 0)
+        let currentDateFormatter = NSDateFormatter()
+        currentDateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        currentDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        // TODO: Исправить на dateFormat
+        currentDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        // TODO: Исправить на локализацию пользователя
+        currentDateFormatter.locale = NSLocale(localeIdentifier: "ru_Ru")
+        
+        pomodoro.updatedAt = currentDateFormatter.stringFromDate(currentDate)
+        
+        return pomodoro
+    }
 }
 
 extension Pomodoro: ManagedObjectType {
