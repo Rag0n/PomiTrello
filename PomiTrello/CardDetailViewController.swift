@@ -36,6 +36,11 @@ class CardDetailViewController: UIViewController, PomodoroDataSource {
     
     
     // MARK: Private
+    private enum CurrentState {
+        case Pause
+        case Stopped
+    }
+    
     private func setupView() {
         let deleteButton = UIBarButtonItem(barButtonSystemItem: .Trash, target: self, action: "delete")
         navigationItem.rightBarButtonItem = deleteButton
@@ -55,6 +60,12 @@ class CardDetailViewController: UIViewController, PomodoroDataSource {
     
     private func updateUI() {
         cardName.text = card.name
+    }
+    
+    
+    // MARK: Gesture Handlers
+    func changePomodoroState(gesture: UITapGestureRecognizer) {
+        print("it works")
     }
     
     // MARK: UI
