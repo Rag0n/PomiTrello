@@ -15,7 +15,8 @@ class CardDetailViewController: UIViewController, PomodoroDataSource {
     
     var pomodoroTimer: Double {
         get {
-            return 25
+            // в секундах
+            return 1500
         }
     }
     
@@ -36,9 +37,13 @@ class CardDetailViewController: UIViewController, PomodoroDataSource {
     
     
     // MARK: Private
+    private var state: CurrentState = .NotStarted
+    
     private enum CurrentState {
+        case NotStarted
+        case Started
         case Pause
-        case Stopped
+        case Ended
     }
     
     private func setupView() {
@@ -65,6 +70,22 @@ class CardDetailViewController: UIViewController, PomodoroDataSource {
     
     // MARK: Gesture Handlers
     func changePomodoroState(gesture: UITapGestureRecognizer) {
+        switch state {
+        case .NotStarted:
+            state = .Started
+            // регистрируем нотификашин
+            // начинаем обновлять вью(точнее обновляем pomodoroTimer, а вью сама мониторит обновления)
+        case .Started:
+            state = .Pause
+            // убираем нотификашион
+        case .Pause:
+            // опять регистрируем нотификашион, но уже с оставшимся временем
+        case .Ended:
+            // создаем новый помидор
+        }
+        // проверяем текущее состояние
+        // если ended - начинаем новый помидор
+        // если pause - продолжаем текущий
         print("it works")
     }
     
