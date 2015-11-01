@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import CoreData
 import Cartography
 
-class CardDetailViewController: UIViewController, PomodoroDataSource {
+class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObjectContextSettable {
     
     var card: Card! { didSet { updateUI() } }
+    var managedObjectContext: NSManagedObjectContext!
+    lazy var currentPomodoro: Pomodoro = {
+       Pomodoro.insertIntoContext(self.managedObjectContext, card: self.card)
+    }()
     
-    var pomodoroTimer: Double {
+    var pomodoroTimer: Int {
         get {
-            // в секундах
-            return 1500
+            return Int(currentPomodoro.time)
         }
     }
     
@@ -77,10 +81,13 @@ class CardDetailViewController: UIViewController, PomodoroDataSource {
             // начинаем обновлять вью(точнее обновляем pomodoroTimer, а вью сама мониторит обновления)
         case .Started:
             state = .Pause
+            // сохраняем состояние помидра
             // убираем нотификашион
         case .Pause:
+            // сохраняем состояние помидра
             // опять регистрируем нотификашион, но уже с оставшимся временем
         case .Ended:
+            // сохраняем состояние помидра
             // создаем новый помидор
         }
         // проверяем текущее состояние
