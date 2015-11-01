@@ -14,7 +14,7 @@ protocol PomodoroDataSource: class {
 
 class PomodoroView: UIView {
     
-    var scale: CGFloat = 0.9 { didSet { setNeedsDisplay() } }
+    var scale: CGFloat = 1 { didSet { setNeedsDisplay() } }
     var color: UIColor = UIColor.redColor() { didSet { setNeedsDisplay() } }
     var lineWidth: CGFloat = 5.0 { didSet { setNeedsDisplay() } }
     weak var dataSource: PomodoroDataSource?

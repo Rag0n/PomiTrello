@@ -33,6 +33,7 @@ class CardsTableViewController: UITableViewController, ManagedObjectContextSetta
             guard let card = dataSource.selectedObject else {
                 fatalError("Impossible to show detail without selected object")
             }
+            vc.managedObjectContext = managedObjectContext
             vc.card = card
         case .AddNewCard:
             guard let vc = segue.destinationViewController.contentViewController as? AddNewCardViewController else {

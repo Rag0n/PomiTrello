@@ -119,7 +119,7 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
             
             pomodoroView.topMargin == cardName.bottomMargin + 20
             pomodoroView.centerX == view.centerX
-            pomodoroView.width == view.width * 0.8
+            pomodoroView.width == view.width * 0.7
             pomodoroView.height == 200
         })
     }
