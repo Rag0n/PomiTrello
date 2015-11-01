@@ -14,9 +14,7 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
     
     var card: Card! { didSet { updateUI() } }
     var managedObjectContext: NSManagedObjectContext!
-    lazy var currentPomodoro: Pomodoro = {
-       Pomodoro.insertIntoContext(self.managedObjectContext, card: self.card)
-    }()
+    var currentPomodoro: Pomodoro!
     
     var pomodoroTimer: Int {
         get {
@@ -28,6 +26,9 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        self.managedObjectContext.performChanges {
+            self.currentPomodoro = Pomodoro.insertIntoContext(self.managedObjectContext, card: self.card)
+        }
     }
     
     
@@ -57,6 +58,11 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
         view.addSubview(cardName)
         configurePomodoroView()
         
+        slider.minimumValue = 5
+        slider.maximumValue = 60
+        slider.value = 25
+        view.addSubview(slider)
+        
         setupConstraints()
     }
     
@@ -74,22 +80,22 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
     
     // MARK: Gesture Handlers
     func changePomodoroState(gesture: UITapGestureRecognizer) {
-        switch state {
-        case .NotStarted:
-            state = .Started
-            // регистрируем нотификашин
-            // начинаем обновлять вью(точнее обновляем pomodoroTimer, а вью сама мониторит обновления)
-        case .Started:
-            state = .Pause
-            // сохраняем состояние помидра
-            // убираем нотификашион
-        case .Pause:
-            // сохраняем состояние помидра
-            // опять регистрируем нотификашион, но уже с оставшимся временем
-        case .Ended:
-            // сохраняем состояние помидра
-            // создаем новый помидор
-        }
+//        switch state {
+//        case .NotStarted:
+//            state = .Started
+//            // регистрируем нотификашин
+//            // начинаем обновлять вью(точнее обновляем pomodoroTimer, а вью сама мониторит обновления)
+//        case .Started:
+//            state = .Pause
+//            // сохраняем состояние помидра
+//            // убираем нотификашион
+//        case .Pause:
+//            // сохраняем состояние помидра
+//            // опять регистрируем нотификашион, но уже с оставшимся временем
+//        case .Ended:
+//            // сохраняем состояние помидра
+//            // создаем новый помидор
+//        }
         // проверяем текущее состояние
         // если ended - начинаем новый помидор
         // если pause - продолжаем текущий
@@ -99,6 +105,7 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
     // MARK: UI
     private var cardName = UILabel()
     private var pomodoroView = PomodoroView()
+    private var slider = UISlider()
     
     
     func setupConstraints() {

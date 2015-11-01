@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PomodoroDataSource: class {
-    var pomodoroTimer: Double { get }
+    var pomodoroTimer: Int { get }
 }
 
 class PomodoroView: UIView {
