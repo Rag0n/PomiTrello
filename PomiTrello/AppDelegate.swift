@@ -43,8 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc.managedObjectContext = managedObjectContext
         
         let tabCon = UITabBarController()
-        tabCon.setViewControllers([window!.rootViewController!], animated: true)
+
         window!.rootViewController!.tabBarItem = UITabBarItem(title: "Tasks", image: nil, tag: 0)
+        let settingsCon = SettingsTableViewController()
+        settingsCon.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 1)
+        
+        tabCon.setViewControllers([window!.rootViewController!, settingsCon], animated: true)
         
         window?.rootViewController = tabCon
         

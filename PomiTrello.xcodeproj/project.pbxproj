@@ -26,6 +26,7 @@
 		1F7928A51BDF286B00F126A7 /* Pomodoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7928A41BDF286B00F126A7 /* Pomodoro.swift */; };
 		1F7928A71BDF2E1200F126A7 /* UpdateTimestampable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7928A61BDF2E1200F126A7 /* UpdateTimestampable.swift */; };
 		1F7AAC9E1BDB3F2700C70E6E /* AddNewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7AAC9D1BDB3F2700C70E6E /* AddNewCardViewController.swift */; };
+		1F7B6F2D1BE5D9DA0071E5E1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B6F2C1BE5D9DA0071E5E1 /* SettingsTableViewController.swift */; };
 		1F7E4DF11BCC508B00F27E13 /* CardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7E4DF01BCC508B00F27E13 /* CardsTableViewController.swift */; };
 		1F87D2081BADBBAC00B9948B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87D2071BADBBAC00B9948B /* AppDelegate.swift */; };
 		1F87D20D1BADBBAC00B9948B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F87D20B1BADBBAC00B9948B /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		1F7928A41BDF286B00F126A7 /* Pomodoro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pomodoro.swift; sourceTree = "<group>"; };
 		1F7928A61BDF2E1200F126A7 /* UpdateTimestampable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTimestampable.swift; sourceTree = "<group>"; };
 		1F7AAC9D1BDB3F2700C70E6E /* AddNewCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCardViewController.swift; sourceTree = "<group>"; };
+		1F7B6F2C1BE5D9DA0071E5E1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		1F7E4DF01BCC508B00F27E13 /* CardsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTableViewController.swift; sourceTree = "<group>"; };
 		1F87D2041BADBBAC00B9948B /* PomiTrello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomiTrello.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F87D2071BADBBAC00B9948B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				1F567B241BD9F2D1007C8734 /* CardDetailViewController.swift */,
 				1FED68D41BBB293A007E3A99 /* WelcomeViewController.swift */,
 				1F87D23A1BAE9E8F00B9948B /* LoginViewController.swift */,
+				1F7B6F2C1BE5D9DA0071E5E1 /* SettingsTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				1F7E4DF11BCC508B00F27E13 /* CardsTableViewController.swift in Sources */,
 				1FE4FCF61BD65C970077F4F8 /* ManagedObjectContextSettable.swift in Sources */,
 				1F58CDE81BC513BF00A7E0D1 /* NSManagedObjectContextExtensions.swift in Sources */,
+				1F7B6F2D1BE5D9DA0071E5E1 /* SettingsTableViewController.swift in Sources */,
 				1F0716251BC4003D00EB40B6 /* FetchedResultsDataProvider.swift in Sources */,
 				1FED68D51BBB293A007E3A99 /* WelcomeViewController.swift in Sources */,
 				1F0716271BC402F200EB40B6 /* DataProvider.swift in Sources */,
