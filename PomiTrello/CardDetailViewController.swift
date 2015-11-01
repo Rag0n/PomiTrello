@@ -63,6 +63,9 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
         slider.value = 25
         view.addSubview(slider)
         
+        sliderLabel.text = "\(slider.value)"
+        view.addSubview(sliderLabel)
+        
         setupConstraints()
     }
     
@@ -106,6 +109,7 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
     private var cardName = UILabel()
     private var pomodoroView = PomodoroView()
     private var slider = UISlider()
+    private var sliderLabel = UILabel()
     
     
     func setupConstraints() {
@@ -117,10 +121,19 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
             cardName.topMargin == view.topMargin + topMarginHeight
             cardName.centerX == view.centerX
             
-            pomodoroView.topMargin == cardName.bottomMargin + 20
+            pomodoroView.topMargin == cardName.bottomMargin + 30
             pomodoroView.centerX == view.centerX
             pomodoroView.width == view.width * 0.7
             pomodoroView.height == 200
         })
+        
+        constrain(pomodoroView, slider, sliderLabel) { (pomodoroView, slider, sliderLabel) -> () in
+            sliderLabel.topMargin == pomodoroView.bottomMargin + 30
+            sliderLabel.centerX == slider.superview!.centerX
+            
+            slider.topMargin == sliderLabel.bottomMargin + 20
+            slider.centerX == slider.superview!.centerX
+            slider.width == pomodoroView.width
+        }
     }
 }

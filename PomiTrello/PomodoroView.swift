@@ -24,7 +24,7 @@ class PomodoroView: UIView {
     }
     
     private var pomodoroRadius: CGFloat {
-        return min(bounds.size.width, bounds.size.height) / 2 * scale
+        return min(bounds.size.width, bounds.size.height) / 2 * scale - lineWidth
     }
 
     override func drawRect(rect: CGRect) {
