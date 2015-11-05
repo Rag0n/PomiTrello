@@ -32,9 +32,8 @@ public final class Card: ManagedObject {
     }
     
     public func setCardName(name: String?) {
-        if let newName = name {
-            self.name = newName
-        }
+        guard let name = name else { return }
+        self.name = name
     }
 }
 
