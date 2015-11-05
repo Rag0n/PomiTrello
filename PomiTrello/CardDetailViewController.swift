@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Cartography
 
-class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObjectContextSettable {
+class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObjectContextSettable, UITextFieldDelegate {
     
     var card: Card! { didSet { updateUI() } }
     var managedObjectContext: NSManagedObjectContext!
@@ -26,9 +26,14 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        self.managedObjectContext.performChanges {
-            self.currentPomodoro = Pomodoro.insertIntoContext(self.managedObjectContext, card: self.card)
-        }
+//        self.managedObjectContext.performChanges {
+//            self.currentPomodoro = Pomodoro.insertIntoContext(self.managedObjectContext, card: self.card)
+//        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillAppear(animated)
+        cardName.resignFirstResponder()
     }
     
     
@@ -40,6 +45,12 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    
+    // MARK: TextField Delefate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     // MARK: Private
     private var state: CurrentState = .NotStarted
@@ -54,8 +65,11 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
     private func setupView() {
         let deleteButton = UIBarButtonItem(barButtonSystemItem: .Trash, target: self, action: "delete")
         navigationItem.rightBarButtonItem = deleteButton
-        
+
+        cardName.delegate = self
+        cardName.borderStyle = UITextBorderStyle.RoundedRect
         view.addSubview(cardName)
+        
         configurePomodoroView()
         
         slider.minimumValue = 5
@@ -106,7 +120,7 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
     }
     
     // MARK: UI
-    private var cardName = UILabel()
+    private var cardName = UITextField()
     private var pomodoroView = PomodoroView()
     private var slider = UISlider()
     private var sliderLabel = UILabel()
@@ -120,6 +134,8 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
             let topMarginHeight = navHeight + length + 44
             cardName.topMargin == view.topMargin + topMarginHeight
             cardName.centerX == view.centerX
+            cardName.leftMargin == view.leftMargin + 20
+            cardName.rightMargin == view.rightMargin - 20
             
             pomodoroView.topMargin == cardName.bottomMargin + 30
             pomodoroView.centerX == view.centerX
