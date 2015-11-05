@@ -30,6 +30,12 @@ public final class Card: ManagedObject {
         card.pos = pos
         return card
     }
+    
+    public func setCardName(name: String?) {
+        if let newName = name {
+            self.name = newName
+        }
+    }
 }
 
 

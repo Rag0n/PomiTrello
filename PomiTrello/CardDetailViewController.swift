@@ -32,7 +32,10 @@ class CardDetailViewController: UIViewController, PomodoroDataSource, ManagedObj
     }
     
     override func viewWillDisappear(animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillDisappear(animated)
+        managedObjectContext.performChanges { () -> () in
+            self.card.setCardName(self.cardName.text)
+        }
         cardName.resignFirstResponder()
     }
     
